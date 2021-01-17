@@ -33,3 +33,8 @@ firebase Storage
 ### 認証機能
 
 firebase Authentication
+
+#### memo
+
+git remote add origin https://github.com/ryosuke1256/quiz-react-typescript.git <br>
+ブランチ分けて作業してみる
