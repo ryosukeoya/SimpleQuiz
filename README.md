@@ -1,8 +1,8 @@
-# quiz-react
+# quiz
 
 ## 機能
 
-新規登録機能、ログイン機能、ログアウト機能
+ユーザー新規登録機能、ログイン機能、ログアウト機能、点数表示機能、点数保存機能
 
 ## フロントエンド　
 
@@ -24,15 +24,15 @@ Cloud Firestore
 
 ### Hosting
 
-firebase Hosting
+Firebase Hosting
 
 ### storage
 
-firebase Storage
+Firebase Storage
 
 ### 認証機能
 
-firebase Authentication
+Firebase Authentication
 
 #### memo
 
