@@ -1,47 +1,35 @@
-# Getting Started with Create React App
+# quiz-react
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 機能
 
-## Available Scripts
+新規登録機能、ログイン機能、ログアウト機能
 
-In the project directory, you can run:
+## フロントエンド　
 
-### `yarn start`
+### 言語
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+typescript
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### フレームワーク
 
-### `yarn test`
+react
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## バックエンド
 
-### `yarn build`
+firebase
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### DB
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Cloud Firestore
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Hosting
 
-### `yarn eject`
+firebase Hosting
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### storage
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+firebase Storage
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### 認証機能
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-# quiz-react-typescript
+firebase Authentication
