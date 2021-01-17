@@ -35,6 +35,6 @@ firebase Storage
 firebase Authentication
 
 #### memo
-npx create-react-app quiz-react-typescript --template typescript
+npx create-react-app quiz-react-typescript --template typescript <br>
 git remote add origin https://github.com/ryosuke1256/quiz-react-typescript.git <br>
 ブランチ分けて作業してみる
