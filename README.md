@@ -40,7 +40,7 @@ Firebase Authentication
 
 #### memo
 
-$ npx create-react-app quiz-react-typescript --template typescript
+$ npx create-react-app quiz-react-typescript --template typescript  
 $ yarn add styled-components @types/styled-components
 
 git remote add origin https://github.com/ryosuke1256/quiz-react-typescript.git <br>
