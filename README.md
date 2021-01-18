@@ -2,7 +2,7 @@
 
 ## 機能
 
-ユーザー新規登録機能、ログイン機能、ログアウト機能、点数表示機能、点数保存機能
+ユーザー新規登録機能、ログイン機能、ログアウト機能、点数表示機能、点数保存機能、背景画像を切り替える
 
 ## フロントエンド　
 
@@ -43,6 +43,5 @@ Firebase Authentication
 $ npx create-react-app quiz-react-typescript --template typescript  
 $ yarn add styled-components @types/styled-components
 
-npx create-react-app quiz-react-typescript --template typescript <br>
 git remote add origin https://github.com/ryosuke1256/quiz-react-typescript.git <br>
 ブランチ分けて作業してみる
