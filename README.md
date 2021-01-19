@@ -1,42 +1,46 @@
 # quiz
 
+## 概要
+
+- quiz アプリ
+
 ## 機能
 
-ユーザー新規登録機能、ログイン機能、ログアウト機能、点数表示機能、点数保存機能、背景画像を切り替える
+- ユーザー新規登録機能、ログイン機能、ログアウト機能、点数表示機能、点数保存機能、背景画像を切り替える、
 
 ## フロントエンド　
 
 ### 言語
 
-typescript
+- typescript
 
 ### フレームワーク
 
-react
+- react
 
 ### style
 
-styled components
+- styled components
 
 ## バックエンド
 
-firebase
+- firebase
 
 ### DB
 
-Cloud Firestore
+- Cloud Firestore
 
 ### Hosting
 
-Firebase Hosting
+- Firebase Hosting
 
 ### storage
 
-Firebase Storage
+- Firebase Storage
 
 ### 認証機能
 
-Firebase Authentication
+- Firebase Authentication
 
 #### memo
 
