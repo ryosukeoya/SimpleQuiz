@@ -1,5 +1,5 @@
 import React from 'react';
-import Style from '../style/quizTitleStyle';
+import Style from '../style/TitleStyle';
 
 const Question2: React.FC = () => {
   return <Style>Game</Style>;

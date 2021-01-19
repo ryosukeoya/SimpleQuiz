@@ -1,7 +1,15 @@
 import React from 'react';
-import Style from '../style/quizTitleStyle';
+import finance from '../images/finance.jpg';
+import QuestionStyle from '../style/QuestionStyle';
+import TitleStyle from '../style/TitleStyle';
+import ImageStyle from '../style/ImageStyle';
 
 const Question2: React.FC = () => {
-  return <Style>Finacial</Style>;
+  return (
+    <QuestionStyle>
+      <ImageStyle src={finance} alt="computer"></ImageStyle>
+      <TitleStyle>Finance</TitleStyle>
+    </QuestionStyle>
+  );
 };
 export default Question2;
