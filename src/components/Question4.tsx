@@ -1,7 +1,15 @@
 import React from 'react';
-import Style from '../style/TitleStyle';
+import history from '../images/history.jpg';
+import QuestionStyle from '../style/QuestionStyle';
+import TitleStyle from '../style/TitleStyle';
+import ImageStyle from '../style/ImageStyle';
 
-const Question2: React.FC = () => {
-  return <Style>History</Style>;
+const Question4: React.FC = () => {
+  return (
+    <QuestionStyle>
+      <ImageStyle src={history} alt="history"></ImageStyle>
+      <TitleStyle>History</TitleStyle>
+    </QuestionStyle>
+  );
 };
-export default Question2;
+export default Question4;
