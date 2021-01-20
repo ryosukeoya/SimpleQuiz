@@ -1,7 +1,15 @@
 import React from 'react';
-import Style from '../style/TitleStyle';
+import game2 from '../images/game2.jpg';
+import QuestionStyle from '../style/QuestionStyle';
+import TitleStyle from '../style/TitleStyle';
+import ImageStyle from '../style/ImageStyle';
 
-const Question2: React.FC = () => {
-  return <Style>Game</Style>;
+const Question3: React.FC = () => {
+  return (
+    <QuestionStyle>
+      <ImageStyle src={game2} alt="finance"></ImageStyle>
+      <TitleStyle>Game</TitleStyle>
+    </QuestionStyle>
+  );
 };
-export default Question2;
+export default Question3;
