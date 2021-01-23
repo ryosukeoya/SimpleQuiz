@@ -6,10 +6,12 @@ import ImageStyle from '../style/ImageStyle';
 
 const Question1: React.FC = () => {
   return (
-    <QuestionStyle>
-      <ImageStyle src={computer} alt="computer"></ImageStyle>
-      <TitleStyle>Computer Science</TitleStyle>
-    </QuestionStyle>
+    <>
+      <QuestionStyle>
+        <ImageStyle src={computer} alt="computer"></ImageStyle>
+        <TitleStyle>Computer Science</TitleStyle>
+      </QuestionStyle>
+    </>
   );
 };
 export default Question1;
