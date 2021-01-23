@@ -18,9 +18,13 @@
 
 - react
 
-### style
+### Style
 
-- styled components
+- Styled Components
+
+### CSS Frameworks
+
+- Material UI
 
 ## バックエンド
 
@@ -41,6 +45,10 @@
 ### 認証機能
 
 - Firebase Authentication
+
+### 検索機能
+
+- Algolia
 
 #### memo
 
