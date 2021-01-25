@@ -13,18 +13,18 @@ const QuestionStyle = styled.div`
 
   //スマホ
   ${customMedia.lessThan('mobile')`
-    /* screen width is less than 768px (tablet) */
+    /* screen width is less than 599px (tablet) */
     margin: 5px 0px;
   `}
 
   //タブレット
   ${customMedia.between('mobile', 'tablet')`
-    /* screen width is between 768px (tablet) and 1170px (desktop) */
+    /* screen width is between 599px (tablet) and 1024px (desktop) */
     margin: 5px 20px;
   `}
   //PC
-  ${customMedia.greaterThan('desktop')`
-    /* screen width is greater than 1170px (desktop) */
+  ${customMedia.greaterThan('tablet')`
+    /* screen width is greater than 1024px (tablet) */
     margin: 5px 50px;
   `}
 `;

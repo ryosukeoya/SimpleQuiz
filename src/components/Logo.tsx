@@ -12,7 +12,7 @@ const Logo: React.FC = () => {
 export default Logo;
 
 const Style = styled.header`
-  padding-left: 2%;
+  padding-left: 50px;
   justify-content: center;
   font-size: 20px;
 `;
