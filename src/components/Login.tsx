@@ -12,8 +12,7 @@ const Login: React.FC = () => {
 export default Login;
 
 const Style = styled.div`
-  /* justify-content: right; */
-  margin-right: 1.2%;
-  font-size: 20px;
-  color: white;
+  justify-content: right;
+  padding-right: 1%;
+  font-size: 15px;
 `;
