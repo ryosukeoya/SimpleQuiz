@@ -13,6 +13,6 @@ export default Login;
 
 const Style = styled.div`
   justify-content: right;
-  padding-right: 1%;
+  padding-right: 5%;
   font-size: 15px;
 `;
