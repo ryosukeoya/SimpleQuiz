@@ -54,14 +54,15 @@
 
 - Algolia
 
+#### Installation
+
+`npx create-react-app quiz-react-typescript --template typescript `  
+`npm install @material-ui/core`  
+`yarn add styled-components @types/styled-components`  
+`npm install styled-media-query@latest`
+
 #### memo
 
 yarn でも npm でもどちらでも構いません
-
-`npx create-react-app quiz-react-typescript --template typescript `  
-`npm install @material-ui/core`
-`yarn add styled-components @types/styled-components`
-`npm install styled-media-query@latest`
-
 git remote add origin https://github.com/ryosuke1256/quiz-react-typescript.git <br>
 ブランチ分けて作業してみる

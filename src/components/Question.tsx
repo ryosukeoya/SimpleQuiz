@@ -7,7 +7,7 @@ const Question = (props) => {
 
   return (
     <>
-      <div>hello</div>
+      <div>{props.question}</div>
       <button onClick={props.top}>トップに戻る</button>
     </>
   );
