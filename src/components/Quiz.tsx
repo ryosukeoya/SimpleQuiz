@@ -1,31 +1,33 @@
-import React, { useState } from 'react';
-import computer from '../images/computer.jpg';
-import QuestionStyle from '../style/QuestionStyle';
+import React from 'react';
+import QuizStyle from '../style/QuizStyle';
 import TitleStyle from '../style/TitleStyle';
 import ImageStyle from '../style/ImageStyle';
 
-// type Props = {
-//   rename: React.FC;
-//   titleName: string;
-// };
+interface Props {
+  titleName: string;
+  image: any;
+  quizOpen: boolean;
+  quizStart: VoidFunction;
+  rename: (name: string) => void;
+}
 
-const Quiz: React.FC = (props) => {
+const Quiz: React.FC = (props: Props) => {
   if (!props.quizOpen) {
     return null;
   }
 
   return (
     <>
-      <div
-        onClick={() => {
-          props.quizStart(), props.rename(props.titleName);
-        }}
-      >
-        <QuestionStyle>
+      <QuizStyle>
+        <div
+          onClick={() => {
+            props.quizStart(), props.rename(props.titleName);
+          }}
+        >
           <ImageStyle src={props.image} alt="computer"></ImageStyle>
           <TitleStyle>{props.titleName}</TitleStyle>
-        </QuestionStyle>
-      </div>
+        </div>
+      </QuizStyle>
     </>
   );
 };
