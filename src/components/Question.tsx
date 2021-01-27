@@ -1,14 +1,20 @@
 import React from 'react';
 
-const Question = (props) => {
-  if (!props.questionOpen) {
+interface Props {
+  questionOpen: boolean;
+  question: string;
+  backTop: VoidFunction;
+}
+
+const Question: React.FC<Props> = ({ backTop, questionOpen, question }) => {
+  if (!questionOpen) {
     return null;
   }
 
   return (
     <>
-      <div>{props.question}</div>
-      <button onClick={props.top}>トップに戻る</button>
+      <div>{question}</div>
+      <button onClick={backTop}>トップに戻る</button>
     </>
   );
 };

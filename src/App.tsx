@@ -16,23 +16,18 @@ const App: React.FC = () => {
   const [questionOpen, setQuestionOpen] = useState(false);
   const [state, setState] = useState('Computer');
 
-  const rename: React.FC = (name: string) => {
-    setTitle(name);
-    console.log(title);
-  };
-
-  const quizStart = () => {
-    setQuizOpen(false);
-    setQuestionOpen(true);
-  };
-
-  const top = () => {
+  const backTop = (): void => {
     setQuizOpen(true);
     setQuestionOpen(false);
   };
 
-  const changeState = () => {
-    setState(title);
+  const quizStart = (): void => {
+    setQuizOpen(false);
+    setQuestionOpen(true);
+  };
+
+  const rename = (name: string): void => {
+    setTitle(name);
   };
 
   return (
@@ -40,42 +35,42 @@ const App: React.FC = () => {
       <Header />
       <Style>
         <Quiz
-          rename={rename}
           titleName={'Computer Science'}
           image={computer}
-          quizStart={quizStart}
           quizOpen={quizOpen}
-          top={top}
-          change={changeState}
+          backTop={backTop}
+          quizStart={quizStart}
+          rename={rename}
         />
         <Quiz
-          rename={rename}
           titleName={'Finance'}
           image={finance}
-          quizStart={quizStart}
           quizOpen={quizOpen}
-          top={top}
-          change={changeState}
+          backTop={backTop}
+          quizStart={quizStart}
+          rename={rename}
         />
         <Quiz
-          rename={rename}
           titleName={'Game'}
           image={game2}
-          quizStart={quizStart}
           quizOpen={quizOpen}
-          top={top}
-          change={changeState}
+          backTop={backTop}
+          quizStart={quizStart}
+          rename={rename}
         />
         <Quiz
-          rename={rename}
           titleName={'History'}
           image={history}
-          quizStart={quizStart}
           quizOpen={quizOpen}
-          top={top}
-          change={changeState}
+          backTop={backTop}
+          quizStart={quizStart}
+          rename={rename}
         />
-        <Question top={top} questionOpen={questionOpen} question={title} />
+        <Question
+          questionOpen={questionOpen}
+          question={title}
+          backTop={backTop}
+        />
       </Style>
     </>
   );
