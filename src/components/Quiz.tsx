@@ -18,16 +18,16 @@ const Quiz: React.FC = (props: Props) => {
 
   return (
     <>
-      <QuizStyle>
-        <div
-          onClick={() => {
-            props.quizStart(), props.rename(props.titleName);
-          }}
-        >
+      <div
+        onClick={() => {
+          props.quizStart(), props.rename(props.titleName);
+        }}
+      >
+        <QuizStyle>
           <ImageStyle src={props.image} alt="computer"></ImageStyle>
           <TitleStyle>{props.titleName}</TitleStyle>
-        </div>
-      </QuizStyle>
+        </QuizStyle>
+      </div>
     </>
   );
 };

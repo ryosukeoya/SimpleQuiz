@@ -8,13 +8,14 @@ import computer from './images/computer.jpg';
 import finance from './images/finance.jpg';
 import game2 from './images/game2.jpg';
 import history from './images/history.jpg';
-import data from './dataset';
+import datas from './dataset';
 
 const App: React.FC = () => {
   const [title, setTitle] = useState('title');
   const [quizOpen, setQuizOpen] = useState(true);
   const [questionOpen, setQuestionOpen] = useState(false);
   const [state, setState] = useState('Computer');
+  const [text, setText] = useState(null);
 
   const backTop = (): void => {
     setQuizOpen(true);
@@ -26,8 +27,13 @@ const App: React.FC = () => {
     setQuestionOpen(true);
   };
 
+  //titleNameでstateのtitleを変更
   const rename = (name: string): void => {
     setTitle(name);
+  };
+
+  const changeText = (texta: string): void => {
+    setText(texta);
   };
 
   return (
@@ -68,7 +74,10 @@ const App: React.FC = () => {
         />
         <Question
           questionOpen={questionOpen}
-          question={title}
+          title={title}
+          // datas={datas.Computer[1].question}
+          datas={datas}
+          text={text}
           backTop={backTop}
         />
       </Style>
