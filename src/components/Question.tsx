@@ -1,5 +1,7 @@
-import React from 'react';
-import { textSpanContainsTextSpan } from 'typescript';
+import React, { useState } from 'react';
+import QuestionText from './QuestionText';
+import QuestionAnswers from './QuestionAnswers';
+import QuestionAnswer from './QuestionAnswer';
 
 interface Props {
   questionOpen: boolean;
@@ -10,12 +12,17 @@ interface Props {
 }
 
 const Question: React.FC<Props> = ({ questionOpen, title, datas, backTop }) => {
+  const [ansClicked, setAnsClicked] = useState(false);
+
   if (!questionOpen) {
     return null;
   }
 
-  const getQuestion = () => {
-    console.log('getQuestion');
+  const clearAnswer = (): void => {
+    setAnsClicked(false);
+  };
+
+  const getQuestion = (): string => {
     if (title === 'Computer Science') {
       return datas.Computer[0].question;
     } else if (title === 'Finance') {
@@ -27,23 +34,39 @@ const Question: React.FC<Props> = ({ questionOpen, title, datas, backTop }) => {
     }
   };
 
-  const getTexts = () => {
-    console.log('getTexts');
+  const getAnswer = (): string => {
     if (title === 'Computer Science') {
-      return datas.Computer[0].answers.map((data) => (
-        <div key={data.toString()}>{data}</div>
+      return datas.Computer[0].answers.map((data: string) => (
+        <QuestionAnswer
+          key={data.toString()}
+          data={data}
+          ansClicked={ansClicked}
+          setAnsClicked={setAnsClicked}
+        />
       ));
     } else if (title === 'Finance') {
-      return datas.Finance[0].answers.map((data) => (
-        <div key={data.toString()}>{data}</div>
+      return datas.Finance[0].answers.map((data: string) => (
+        <QuestionAnswer
+          key={data.toString()}
+          data={data}
+          ansClicked={ansClicked}
+        />
       ));
     } else if (title === 'Game') {
-      return datas.Game[0].answers.map((data) => (
-        <div key={data.toString()}>{data}</div>
+      return datas.Game[0].answers.map((data: string) => (
+        <QuestionAnswer
+          key={data.toString()}
+          data={data}
+          ansClicked={ansClicked}
+        />
       ));
     } else {
-      return datas.History[0].answers.map((data) => (
-        <div key={data.toString()}>{data}</div>
+      return datas.History[0].answers.map((data: string) => (
+        <QuestionAnswer
+          key={data.toString()}
+          data={data}
+          ansClicked={ansClicked}
+        />
       ));
     }
   };
@@ -51,10 +74,17 @@ const Question: React.FC<Props> = ({ questionOpen, title, datas, backTop }) => {
   return (
     <>
       <div>{title}</div>
-      <div>{getQuestion()}</div>
-      <div>{getTexts()}</div>
+      <QuestionText getQuestion={getQuestion()} />
+      <QuestionAnswers getAnswer={getAnswer()} />
       <button>回答する</button> <br />
-      <button onClick={backTop}>トップに戻る</button>
+      <button
+        onClick={() => {
+          backTop();
+          clearAnswer();
+        }}
+      >
+        トップに戻る
+      </button>
     </>
   );
 };
