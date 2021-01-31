@@ -38,7 +38,7 @@ const App: React.FC = () => {
 
   return (
     <>
-      <Header />
+      <Header backTop={backTop} />
       <Style>
         <Quiz
           titleName={'Computer Science'}

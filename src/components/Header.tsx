@@ -3,10 +3,10 @@ import Login from './Login';
 import Logo from './Logo';
 import styled from 'styled-components';
 
-const Header: React.FC = () => {
+const Header: React.FC = (props) => {
   return (
     <Style>
-      <Logo />
+      <Logo backTop={props.backTop} />
       <Login />
     </Style>
   );
