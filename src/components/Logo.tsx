@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Logo: React.FC = () => {
+const Logo: React.FC = (props) => {
   return (
     <Style>
-      <div>QuizApp</div>
+      <div onClick={props.backTop}>QuizApp</div>
     </Style>
   );
 };
@@ -15,4 +15,5 @@ const Style = styled.header`
   padding-left: 50px;
   justify-content: center;
   font-size: 20px;
+  cursor: pointer;
 `;
