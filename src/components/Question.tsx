@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import QuestionText from './QuestionText';
 import QuestionAnswers from './QuestionAnswers';
+import datas from '../dataset';
 
 interface Props {
   questionOpen: boolean;
   title: string;
-  datas: string[];
   text: string;
   backTop: VoidFunction;
 }
 
-const Question: React.FC<Props> = ({ questionOpen, title, datas, backTop }) => {
+const Question: React.FC<Props> = ({ questionOpen, title, backTop }) => {
   if (!questionOpen) {
     return null;
   }
@@ -31,7 +31,12 @@ const Question: React.FC<Props> = ({ questionOpen, title, datas, backTop }) => {
     <>
       <div>{title}</div>
       <QuestionText getQuestion={getQuestion()} />
-      <QuestionAnswers title={title} datas={datas} backTop={backTop} />
+      <QuestionAnswers
+        title={title}
+        datas={datas}
+        backTop={backTop}
+        getQuestion={() => getQuestion()}
+      />
     </>
   );
 };
