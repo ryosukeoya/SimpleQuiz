@@ -5,9 +5,15 @@ interface Props {
   data: any;
   isOpen: any;
   setIsOpen: any;
+  setSelectAnswer: Function;
 }
 
-const QuestionAnswer: React.FC<Props> = ({ data, isOpen, setIsOpen }) => {
+const QuestionAnswer: React.FC<Props> = ({
+  data,
+  isOpen,
+  setIsOpen,
+  setSelectAnswer,
+}) => {
   const [blue, setBlue] = useState(false);
 
   return (
@@ -16,6 +22,7 @@ const QuestionAnswer: React.FC<Props> = ({ data, isOpen, setIsOpen }) => {
         onClick={() => {
           setBlue(!blue);
           setIsOpen(!isOpen);
+          setSelectAnswer(data);
         }}
         blue={blue}
       >

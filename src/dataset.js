@@ -4,6 +4,7 @@ const dataset = {
       question:
         '問1 トランスポート層のプロトコルであり、信頼性よりもリアルタイム性が重視される場合に用いられるものはどれか?',
       answers: ['HTTP', 'UDP', 'TCP', 'IP'],
+      correct: 'UDP',
     },
     { question: 'computerクイズ2', answers: ['1.2', '2.2', '3.2', '4.2'] },
     { question: 'computerクイズ3', answers: ['1.3', '2.3', '3.3', '4.3'] },
@@ -18,6 +19,7 @@ const dataset = {
         '平均賃金×物価上昇率',
         '平均賃金÷物価上昇率',
       ],
+      correct: '名目金利ー物価上昇率',
     },
     { question: 'financeクイズ2', answers: ['1.2', '2.2', '3.2', '4.2'] },
     { question: 'financeクイズ3', answers: ['1.3', '2.3', '3.3', '4.3'] },
@@ -27,6 +29,7 @@ const dataset = {
     {
       question: 'FF10の主人公の名前は？',
       answers: ['アーロン', 'クラウド', 'ユウナ', 'ティーダ'],
+      correct: 'ティーダ',
     },
     { question: 'computerクイズ2', answers: ['1.2', '2.2', '3.2', '4.2'] },
     { question: 'computerクイズ3', answers: ['1.3', '2.3', '3.3', '4.3'] },
@@ -36,6 +39,7 @@ const dataset = {
     {
       question: '本能寺の変を起こした人物の名前はなんでしょう？',
       answers: ['伊達政宗', '徳川家康', '明智光秀', '豊臣秀吉'],
+      correct: '明智光秀',
     },
     { question: 'computerクイズ2', answers: ['1.2', '2.2', '3.2', '4.2'] },
     { question: 'computerクイズ3', answers: ['1.3', '2.3', '3.3', '4.3'] },

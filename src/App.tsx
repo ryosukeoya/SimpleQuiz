@@ -8,7 +8,6 @@ import computer from './images/computer.jpg';
 import finance from './images/finance.jpg';
 import game2 from './images/game2.jpg';
 import history from './images/history.jpg';
-import datas from './dataset';
 
 const App: React.FC = () => {
   const [title, setTitle] = useState('title');
@@ -75,8 +74,6 @@ const App: React.FC = () => {
         <Question
           questionOpen={questionOpen}
           title={title}
-          // datas={datas.Computer[1].question}
-          datas={datas}
           text={text}
           backTop={backTop}
         />
