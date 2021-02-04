@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import QuestionAnswer from './QuestionAnswer';
 import datas from '../dataset';
-import Modal from '../Modal';
+// import Modal from '../Modal';
+import Modal from './modal/Modal';
 
 interface Props {
   title: string;
@@ -76,10 +77,7 @@ const QuestionAnswers: React.FC<Props> = ({ title, backTop, getQuestion }) => {
         onClose={() => setIsOpen(false)}
         selectAnswer={selectAnswer}
         title={title}
-        getQuestion={getQuestion}
-      >
-        modal画面
-      </Modal>
+      />
     </>
   );
 };

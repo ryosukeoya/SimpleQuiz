@@ -22,6 +22,10 @@
 
 - react-router
 
+### 状態管理
+
+- redux
+
 ### Style
 
 - Styled Components
