@@ -9,6 +9,7 @@ interface Props {
   quizOpen: boolean;
   quizStart: VoidFunction;
   rename: (name: string) => void;
+  plusTitle: any;
 }
 
 const Quiz: React.FC = (props: Props) => {
@@ -25,7 +26,10 @@ const Quiz: React.FC = (props: Props) => {
       >
         <QuizStyle>
           <ImageStyle src={props.image} alt="computer"></ImageStyle>
-          <TitleStyle>{props.titleName}</TitleStyle>
+          <TitleStyle>
+            {props.titleName}
+            {props.plusTitle}
+          </TitleStyle>
         </QuizStyle>
       </div>
     </>

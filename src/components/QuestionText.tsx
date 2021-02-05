@@ -3,12 +3,16 @@ import styled from 'styled-components';
 
 interface Props {
   getQuestion: () => string;
+  plusTitle: any;
 }
 
-const QuestionText: React.FC<Props> = ({ getQuestion }) => {
+const QuestionText: React.FC<Props> = ({ getQuestion, plusTitle }) => {
   return (
     <Style>
-      <div>{getQuestion}</div>
+      <div>
+        {getQuestion}
+        {plusTitle}
+      </div>
     </Style>
   );
 };

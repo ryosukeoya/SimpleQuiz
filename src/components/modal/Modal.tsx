@@ -3,19 +3,28 @@ import Text from './Text';
 import datas from '../../dataset';
 import styled from 'styled-components';
 import customMedia from '../../style/customMedia';
+import './Modal.css';
 
 interface Props {
   open: any;
   onClose: any;
   selectAnswer: any;
   title: any;
+  getIndex: any;
+  selectIndex: any;
 }
 
-const Modal: React.FC<Props> = ({ open, onClose, selectAnswer, title }) => {
+const Modal: React.FC<Props> = ({
+  open,
+  onClose,
+  selectAnswer,
+  title,
+  selectIndex,
+}) => {
   if (!open) return null;
 
   const getData = () => {
-    if (title === 'Computer Science') {
+    if (title === 'Computer') {
       return datas.Computer[0];
     } else if (title === 'Finance') {
       return datas.Finance[0];
@@ -28,20 +37,30 @@ const Modal: React.FC<Props> = ({ open, onClose, selectAnswer, title }) => {
 
   if (selectAnswer === getData().correct) {
     return (
-      <OVERLAY_STYLES>
-        <MODAL_STYLES>
+      <OVERLAY_STYLES className="overlay_styles">
+        <MODAL_STYLES className="modal_styles">
           <div>正解!</div>
-          <Text getData={getData} title={title} selectAnswer={selectAnswer} />
+          <Text
+            getData={getData}
+            title={title}
+            selectAnswer={selectAnswer}
+            selectIndex={selectIndex}
+          />
           <button onClick={onClose}>次の問題へ</button>
         </MODAL_STYLES>
       </OVERLAY_STYLES>
     );
   } else {
     return (
-      <OVERLAY_STYLES>
-        <MODAL_STYLES>
+      <OVERLAY_STYLES className="overlay_styles">
+        <MODAL_STYLES className="modal_styles">
           <div>不正解!</div>
-          <Text getData={getData} title={title} selectAnswer={selectAnswer} />
+          <Text
+            getData={getData}
+            title={title}
+            selectAnswer={selectAnswer}
+            selectIndex={selectIndex}
+          />
           <button onClick={onClose}>次の問題へ</button>
         </MODAL_STYLES>
       </OVERLAY_STYLES>
@@ -60,6 +79,8 @@ const MODAL_STYLES = styled.div`
   padding: 50px;
   z-index: 1000;
   color: red;
+  /* transition-delay: 0.5s; */
+
   //スマホ
   ${customMedia.lessThan('mobile')`
     /* screen width is less than 599px (tablet) */

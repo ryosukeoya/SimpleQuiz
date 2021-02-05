@@ -13,6 +13,7 @@ const QuestionAnswer: React.FC<Props> = ({
   isOpen,
   setIsOpen,
   setSelectAnswer,
+  componentDidMount,
 }) => {
   const [blue, setBlue] = useState(false);
 
