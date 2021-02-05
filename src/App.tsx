@@ -9,6 +9,7 @@ import finance from './images/finance.jpg';
 import game2 from './images/game2.jpg';
 import history from './images/history.jpg';
 import Ggg from './components/modal/Modal';
+import datas from './dataset';
 
 const App: React.FC = () => {
   const [title, setTitle] = useState('title');
@@ -16,6 +17,7 @@ const App: React.FC = () => {
   const [questionOpen, setQuestionOpen] = useState(false);
   const [state, setState] = useState('Computer');
   const [text, setText] = useState(null);
+  // const [plusTitle, setPlusTitle] = useState('a');
 
   const backTop = (): void => {
     setQuizOpen(true);
@@ -35,18 +37,44 @@ const App: React.FC = () => {
   const changeText = (texta: string): void => {
     setText(texta);
   };
+  // const quizs = () => {
+  //   return datas.map((data) => {
+  //     <Quiz
+  //       titleName={data}
+  //       image={computer}
+  //       quizOpen={quizOpen}
+  //       backTop={backTop}
+  //       quizStart={quizStart}
+  //       rename={rename}
+  //     />;
+  //   });
+  // };
 
   return (
     <>
       <Header backTop={backTop} />
+      {/* <div>
+        {datas.map((data) => (
+          <Quiz
+            titleName={data}
+            image={computer}
+            quizOpen={quizOpen}
+            backTop={backTop}
+            quizStart={quizStart}
+            rename={rename}
+          />
+        ))}
+      </div> */}
+
       <Style>
         <Quiz
-          titleName={'Computer Science'}
+          titleName={'Computer'}
           image={computer}
           quizOpen={quizOpen}
           backTop={backTop}
           quizStart={quizStart}
           rename={rename}
+          plusTitle={' Science'}
         />
         <Quiz
           titleName={'Finance'}
@@ -55,6 +83,7 @@ const App: React.FC = () => {
           backTop={backTop}
           quizStart={quizStart}
           rename={rename}
+          plusTitle={null}
         />
         <Quiz
           titleName={'Game'}
@@ -63,6 +92,7 @@ const App: React.FC = () => {
           backTop={backTop}
           quizStart={quizStart}
           rename={rename}
+          plusTitle={null}
         />
         <Quiz
           titleName={'History'}
@@ -71,6 +101,7 @@ const App: React.FC = () => {
           backTop={backTop}
           quizStart={quizStart}
           rename={rename}
+          plusTitle={null}
         />
         <Question
           questionOpen={questionOpen}

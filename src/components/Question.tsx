@@ -16,7 +16,7 @@ const Question: React.FC<Props> = ({ questionOpen, title, backTop }) => {
   }
 
   const getQuestion = (): string => {
-    if (title === 'Computer Science') {
+    if (title === 'Computer') {
       return datas.Computer[0].question;
     } else if (title === 'Finance') {
       return datas.Finance[0].question;
