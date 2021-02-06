@@ -8,8 +8,6 @@ import computer from './images/computer.jpg';
 import finance from './images/finance.jpg';
 import game2 from './images/game2.jpg';
 import history from './images/history.jpg';
-import Ggg from './components/modal/Modal';
-import datas from './dataset';
 
 const App: React.FC = () => {
   const [title, setTitle] = useState('title');
