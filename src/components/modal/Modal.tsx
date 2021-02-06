@@ -1,71 +1,31 @@
 import React from 'react';
-import Text from './Text';
-import datas from '../../dataset';
+import Text from './ModalText';
 import styled from 'styled-components';
 import customMedia from '../../style/customMedia';
 import './Modal.css';
 
 interface Props {
-  open: any;
-  onClose: any;
-  selectAnswer: any;
-  title: any;
-  getIndex: any;
-  selectIndex: any;
+  open: boolean;
+  onClose: () => void;
+  selectAnswer: string;
+  title: string;
+  selectIndex: number;
+  modalTitle: string;
+  getData: (title: string) => any;
 }
 
-const Modal: React.FC<Props> = ({
-  open,
-  onClose,
-  selectAnswer,
-  title,
-  selectIndex,
-}) => {
+const Modal: React.FC<Props> = ({ open, onClose, selectAnswer, title, selectIndex, modalTitle, getData }: Props) => {
   if (!open) return null;
 
-  const getData = () => {
-    if (title === 'Computer') {
-      return datas.Computer[0];
-    } else if (title === 'Finance') {
-      return datas.Finance[0];
-    } else if (title === 'Game') {
-      return datas.Game[0];
-    } else {
-      return datas.History[0];
-    }
-  };
-
-  if (selectAnswer === getData().correct) {
-    return (
-      <OVERLAY_STYLES className="overlay_styles">
-        <MODAL_STYLES className="modal_styles">
-          <div>正解!</div>
-          <Text
-            getData={getData}
-            title={title}
-            selectAnswer={selectAnswer}
-            selectIndex={selectIndex}
-          />
-          <button onClick={onClose}>次の問題へ</button>
-        </MODAL_STYLES>
-      </OVERLAY_STYLES>
-    );
-  } else {
-    return (
-      <OVERLAY_STYLES className="overlay_styles">
-        <MODAL_STYLES className="modal_styles">
-          <div>不正解!</div>
-          <Text
-            getData={getData}
-            title={title}
-            selectAnswer={selectAnswer}
-            selectIndex={selectIndex}
-          />
-          <button onClick={onClose}>次の問題へ</button>
-        </MODAL_STYLES>
-      </OVERLAY_STYLES>
-    );
-  }
+  return (
+    <OVERLAY_STYLES className="overlay_styles">
+      <MODAL_STYLES className="modal_styles">
+        <div>{modalTitle}</div>
+        <Text getData={getData} selectAnswer={selectAnswer} selectIndex={selectIndex} title={title} />
+        <button onClick={onClose}>次の問題へ</button>
+      </MODAL_STYLES>
+    </OVERLAY_STYLES>
+  );
 };
 
 export default Modal;

@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 
 interface Props {
   data: any;
-  isOpen: any;
+  isOpen: boolean;
   setIsOpen: any;
   setSelectAnswer: Function;
 }
@@ -14,6 +14,7 @@ const QuestionAnswer: React.FC<Props> = ({
   setIsOpen,
   setSelectAnswer,
   componentDidMount,
+  getModalTitle,
 }) => {
   const [blue, setBlue] = useState(false);
 
