@@ -2,7 +2,7 @@ import React from 'react';
 import Text from './ModalText';
 import styled from 'styled-components';
 import customMedia from '../../style/customMedia';
-import './Modal.css';
+// import './Modal.css';
 
 interface Props {
   open: boolean;
@@ -14,14 +14,27 @@ interface Props {
   getData: (title: string) => any;
 }
 
-const Modal: React.FC<Props> = ({ open, onClose, selectAnswer, title, selectIndex, modalTitle, getData }: Props) => {
+const Modal: React.FC<Props> = ({
+  open,
+  onClose,
+  selectAnswer,
+  title,
+  selectIndex,
+  modalTitle,
+  getData,
+}: Props) => {
   if (!open) return null;
 
   return (
-    <OVERLAY_STYLES className="overlay_styles">
+    <OVERLAY_STYLES className="overlay_styles" onClick={onClose}>
       <MODAL_STYLES className="modal_styles">
         <div>{modalTitle}</div>
-        <Text getData={getData} selectAnswer={selectAnswer} selectIndex={selectIndex} title={title} />
+        <Text
+          getData={getData}
+          selectAnswer={selectAnswer}
+          selectIndex={selectIndex}
+          title={title}
+        />
         <button onClick={onClose}>次の問題へ</button>
       </MODAL_STYLES>
     </OVERLAY_STYLES>

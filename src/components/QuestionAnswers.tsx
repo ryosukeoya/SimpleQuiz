@@ -15,12 +15,6 @@ const QuestionAnswers: React.FC<Props> = ({ title, backTop, getQuestion }) => {
   const [selectIndex, setSelectIndex] = useState(null);
   const [modalTitle, setModalTitle] = useState('title');
 
-  const getAnswer = () => {
-    return datas[title][0].answers.map((data: string) => (
-      <QuestionAnswer key={data.toString()} data={data} isOpen={isOpen} setIsOpen={setIsOpen} setSelectAnswer={getSelectAnswer} getModalTitle={getModalTitle} />
-    ));
-  };
-
   //selectAnswerのstateが変わったら呼び出される（後、初回のrender時も）
   useEffect(() => {
     const index = datas[title][0].answers.indexOf(selectAnswer);
@@ -37,21 +31,25 @@ const QuestionAnswers: React.FC<Props> = ({ title, backTop, getQuestion }) => {
   };
 
   const getModalTitle = () => {
-    console.log(getData(title));
     if (selectAnswer === getData(title).correct) {
-      console.log('正解');
       setModalTitle('正解');
     } else {
-      console.log(selectAnswer);
-      console.log(getData(title).correct);
-      console.log('不正解!!');
       setModalTitle('不正解');
     }
   };
 
   return (
     <>
-      <div>{getAnswer()}</div>
+      {datas[title][0].answers.map((data: string) => (
+        <QuestionAnswer
+          key={data.toString()}
+          data={data}
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          setSelectAnswer={getSelectAnswer}
+          getModalTitle={getModalTitle}
+        />
+      ))}
       <button
         onClick={() => {
           backTop();

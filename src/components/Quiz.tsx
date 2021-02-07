@@ -1,7 +1,7 @@
 import React from 'react';
-import QuizStyle from '../style/QuizStyle';
-import TitleStyle from '../style/TitleStyle';
-import ImageStyle from '../style/ImageStyle';
+import QuizImage from './QuizImage';
+import QuizTitle from './QuizTitle';
+import Style from '../style/QuizStyle';
 
 interface Props {
   titleName: string;
@@ -9,11 +9,10 @@ interface Props {
   quizOpen: boolean;
   quizStart: VoidFunction;
   rename: (name: string) => void;
-  plusTitle: any;
 }
 
-const Quiz: React.FC = (props: Props) => {
-  if (!props.quizOpen) {
+const Quiz: React.FC = ({ titleName, image, quizOpen, quizStart, rename }: Props) => {
+  if (!quizOpen) {
     return null;
   }
 
@@ -21,16 +20,13 @@ const Quiz: React.FC = (props: Props) => {
     <>
       <div
         onClick={() => {
-          props.quizStart(), props.rename(props.titleName);
+          quizStart(), rename(titleName);
         }}
       >
-        <QuizStyle>
-          <ImageStyle src={props.image} alt="computer"></ImageStyle>
-          <TitleStyle>
-            {props.titleName}
-            {props.plusTitle}
-          </TitleStyle>
-        </QuizStyle>
+        <Style>
+          <QuizImage image={image} titleName={titleName} />
+          <QuizTitle titleName={titleName} />
+        </Style>
       </div>
     </>
   );
