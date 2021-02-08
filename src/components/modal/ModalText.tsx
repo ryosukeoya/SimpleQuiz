@@ -9,7 +9,6 @@ interface Props {
 const Text: React.FC = ({ getData, selectIndex, title }: Props) => {
   //indexから判定ver []
   const getExplain = () => {
-    console.log(selectIndex);
     const explain = getData(title).explain[selectIndex];
     return explain;
   };

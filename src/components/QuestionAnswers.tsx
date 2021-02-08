@@ -6,10 +6,11 @@ import Modal from './modal/Modal';
 interface Props {
   title: string;
   backTop: VoidFunction;
-  getQuestion: any;
+  getQuestion: () => string | null;
+  nextQuestionNumber: Function;
 }
 
-const QuestionAnswers: React.FC<Props> = ({ title, backTop, getQuestion }) => {
+const QuestionAnswers: React.FC<Props> = ({ title, backTop, getQuestion, nextQuestionNumber }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [selectAnswer, setSelectAnswer] = useState('answer');
   const [selectIndex, setSelectIndex] = useState(null);
@@ -32,9 +33,9 @@ const QuestionAnswers: React.FC<Props> = ({ title, backTop, getQuestion }) => {
 
   const getModalTitle = () => {
     if (selectAnswer === getData(title).correct) {
-      setModalTitle('正解');
+      setModalTitle('正解！');
     } else {
-      setModalTitle('不正解');
+      setModalTitle('不正解！');
     }
   };
 
@@ -65,6 +66,8 @@ const QuestionAnswers: React.FC<Props> = ({ title, backTop, getQuestion }) => {
         selectIndex={selectIndex}
         modalTitle={modalTitle}
         getData={getData}
+        getQuestion={getQuestion}
+        nextQuestionNumber={nextQuestionNumber}
       />
     </>
   );

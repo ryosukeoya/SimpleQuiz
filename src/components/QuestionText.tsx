@@ -1,18 +1,19 @@
 import React from 'react';
+import datas from '../dataset';
 import styled from 'styled-components';
 
 interface Props {
-  getQuestion: () => string;
+  getQuestion: () => string | null;
   plusTitle: any;
+  title: string;
+  questionNumber: number;
 }
 
-const QuestionText: React.FC<Props> = ({ getQuestion, plusTitle }) => {
+const QuestionText: React.FC = ({ getQuestion, plusTitle, title, questionNumber }: Props) => {
   return (
     <Style>
-      <div>
-        {getQuestion}
-        {plusTitle}
-      </div>
+      {datas[title][questionNumber].question}
+      {plusTitle}
     </Style>
   );
 };

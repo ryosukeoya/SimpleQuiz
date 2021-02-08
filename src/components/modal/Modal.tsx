@@ -1,5 +1,7 @@
 import React from 'react';
 import Text from './ModalText';
+import NextButton from './NextButton';
+import ModalTitle from './ModalTitle';
 import styled from 'styled-components';
 import customMedia from '../../style/customMedia';
 // import './Modal.css';
@@ -12,6 +14,8 @@ interface Props {
   selectIndex: number;
   modalTitle: string;
   getData: (title: string) => any;
+  getQuestion: () => string | null;
+  nextQuestionNumber: Function;
 }
 
 const Modal: React.FC<Props> = ({
@@ -22,20 +26,26 @@ const Modal: React.FC<Props> = ({
   selectIndex,
   modalTitle,
   getData,
+  getQuestion,
+  nextQuestionNumber,
 }: Props) => {
   if (!open) return null;
 
   return (
     <OVERLAY_STYLES className="overlay_styles" onClick={onClose}>
       <MODAL_STYLES className="modal_styles">
-        <div>{modalTitle}</div>
+        <ModalTitle modalTitle={modalTitle} />
         <Text
           getData={getData}
           selectAnswer={selectAnswer}
           selectIndex={selectIndex}
           title={title}
         />
-        <button onClick={onClose}>次の問題へ</button>
+        <NextButton
+          onClose={onClose}
+          getQuestion={getQuestion}
+          nextQuestionNumber={nextQuestionNumber}
+        />
       </MODAL_STYLES>
     </OVERLAY_STYLES>
   );
@@ -58,8 +68,8 @@ const MODAL_STYLES = styled.div`
   ${customMedia.lessThan('mobile')`
     /* screen width is less than 599px (tablet) */
     height:50vh;
-    width:90vw;
-    padding: 0;
+    width:80vw;
+    padding: 5vw;
     display: flex;
     flex-direction:column;
     justify-content: center;

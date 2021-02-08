@@ -10,32 +10,38 @@ interface Props {
   backTop: VoidFunction;
 }
 
-const Question: React.FC<Props> = ({ questionOpen, title, backTop }) => {
+const Question: React.FC<Props> = ({ questionOpen, title, backTop }: Props) => {
+  const [questionNumber, setQuestionNumber] = useState(0);
   if (!questionOpen) {
     return null;
   }
+  if (questionNumber >= 4) {
+    return null;
+  }
 
-  const getQuestion = (): string => {
-    if (title === 'Computer') {
-      return datas.Computer[0].question;
-    } else if (title === 'Finance') {
-      return datas.Finance[0].question;
-    } else if (title === 'Game') {
-      return datas.Game[0].question;
-    } else {
-      return datas.History[0].question;
-    }
+  const getQuestion = (): string | null => {
+    console.log(questionNumber);
+    return datas[title][0].question;
+  };
+
+  const nextQuestionNumber = () => {
+    setQuestionNumber(questionNumber + 1);
   };
 
   return (
     <>
       <div>{title}</div>
-      <QuestionText getQuestion={getQuestion()} />
+      <QuestionText
+        getQuestion={() => getQuestion()}
+        title={title}
+        questionNumber={questionNumber}
+      />
       <QuestionAnswers
         title={title}
         datas={datas}
         backTop={backTop}
         getQuestion={() => getQuestion()}
+        nextQuestionNumber={() => nextQuestionNumber()}
       />
     </>
   );
