@@ -19,18 +19,16 @@ const QuestionAnswer: React.FC<Props> = ({
   const [blue, setBlue] = useState(false);
 
   return (
-    <div>
-      <ButtonStyle
-        onClick={() => {
-          setBlue(!blue);
-          setIsOpen(!isOpen);
-          setSelectAnswer(data);
-        }}
-        blue={blue}
-      >
-        {data}
-      </ButtonStyle>
-    </div>
+    <Style
+      onClick={() => {
+        setBlue(!blue);
+        setIsOpen(!isOpen);
+        setSelectAnswer(data);
+      }}
+      blue={blue}
+    >
+      {data}
+    </Style>
   );
 };
 
@@ -40,7 +38,7 @@ type Color = {
   blue?: boolean;
 };
 
-const ButtonStyle = styled.button<Color>`
+const Style = styled.button<Color>`
   width: 100%;
   padding: 30px 0;
   margin-bottom: 5px;
