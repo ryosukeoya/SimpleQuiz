@@ -9,14 +9,22 @@ interface Props {
 }
 
 const NextButton = ({ onClose, getQuestion, nextQuestionNumber }: Props) => {
-  return <Style onClick={() => nextQuestionNumber()}>次の問題へ</Style>;
+  return (
+    <Style
+      onClick={() => {
+        nextQuestionNumber(), onClose();
+      }}
+    >
+      次の問題へ
+    </Style>
+  );
 };
 
 export default NextButton;
 
 const Style = styled.div`
   position: inline-block;
-  padding: 7px;
+  padding: 9px;
   background-color: #1976d2;
   color: white;
   border-radius: 10px;

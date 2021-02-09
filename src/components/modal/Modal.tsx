@@ -9,9 +9,9 @@ import customMedia from '../../style/customMedia';
 interface Props {
   open: boolean;
   onClose: () => void;
-  selectAnswer: string;
+  selectAnsName: string;
   title: string;
-  selectIndex: number;
+  selectAnsIndex: number;
   modalTitle: string;
   getData: (title: string) => any;
   getQuestion: () => string | null;
@@ -21,9 +21,9 @@ interface Props {
 const Modal: React.FC<Props> = ({
   open,
   onClose,
-  selectAnswer,
+  selectAnsName,
   title,
-  selectIndex,
+  selectAnsIndex,
   modalTitle,
   getData,
   getQuestion,
@@ -32,13 +32,13 @@ const Modal: React.FC<Props> = ({
   if (!open) return null;
 
   return (
-    <OVERLAY_STYLES className="overlay_styles" onClick={onClose}>
+    <OVERLAY_STYLES className="overlay_styles">
       <MODAL_STYLES className="modal_styles">
         <ModalTitle modalTitle={modalTitle} />
         <Text
           getData={getData}
-          selectAnswer={selectAnswer}
-          selectIndex={selectIndex}
+          selectAnsName={selectAnsName}
+          selectAnsIndex={selectAnsIndex}
           title={title}
         />
         <NextButton
