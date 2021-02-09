@@ -42,6 +42,8 @@ const Question: React.FC<Props> = ({ questionOpen, title, backTop }: Props) => {
         backTop={backTop}
         getQuestion={() => getQuestion()}
         nextQuestionNumber={() => nextQuestionNumber()}
+        questionNumber={questionNumber}
+        setQuestionNumber={setQuestionNumber}
       />
     </>
   );

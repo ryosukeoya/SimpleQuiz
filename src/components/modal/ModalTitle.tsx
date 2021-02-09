@@ -13,6 +13,6 @@ const ModalTitle = ({ modalTitle }: Props) => {
 export default ModalTitle;
 
 const Style = styled.div`
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   margin-bottom: 10px;
 `;

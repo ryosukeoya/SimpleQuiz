@@ -2,14 +2,16 @@ import React from 'react';
 
 interface Props {
   getData: (title: string) => any;
-  selectIndex: number;
+  selectAnsIndex: number;
   title: string;
 }
 
-const Text: React.FC = ({ getData, selectIndex, title }: Props) => {
+const Text: React.FC = ({ getData, selectAnsIndex, title }: Props) => {
   //indexから判定ver []
   const getExplain = () => {
-    const explain = getData(title).explain[selectIndex];
+    const explain = getData(title).explain[selectAnsIndex];
+    console.log(getData(title).explain);
+    console.log(selectAnsIndex);
     return explain;
   };
 

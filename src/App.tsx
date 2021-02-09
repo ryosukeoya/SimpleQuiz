@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Header from './components/Header';
 import Question from './components/Question';
 import Quiz from './components/Quiz';
-import Style from './style/Style';
+import TitleCategory from './components/TitleCategory';
 import Computer from './images/computer.jpg';
 import Finance from './images/finance.jpg';
 import Game from './images/game2.jpg';
@@ -41,22 +41,21 @@ const App: React.FC = () => {
   return (
     <>
       <Header backTop={backTop} />
-      <Style>
-        {Object.keys(datas).map((data) => {
-          i++;
-          return (
-            <Quiz
-              key={data.toString()}
-              titleName={data}
-              image={image[i]}
-              quizOpen={quizOpen}
-              quizStart={quizStart}
-              rename={rename}
-            />
-          );
-        })}
-        <Question questionOpen={questionOpen} title={title} text={text} backTop={backTop} />
-      </Style>
+      <TitleCategory />
+      {Object.keys(datas).map((data) => {
+        i++;
+        return (
+          <Quiz
+            key={data.toString()}
+            titleName={data}
+            image={image[i]}
+            quizOpen={quizOpen}
+            quizStart={quizStart}
+            rename={rename}
+          />
+        );
+      })}
+      <Question questionOpen={questionOpen} title={title} text={text} backTop={backTop} />
     </>
   );
 };

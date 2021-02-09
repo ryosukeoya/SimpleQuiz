@@ -8,31 +8,41 @@ interface Props {
   backTop: VoidFunction;
   getQuestion: () => string | null;
   nextQuestionNumber: Function;
+  questionNumber: number;
+  setQuestionNumber: any;
 }
 
-const QuestionAnswers: React.FC<Props> = ({ title, backTop, getQuestion, nextQuestionNumber }) => {
+const QuestionAnswers: React.FC<Props> = ({
+  title,
+  backTop,
+  getQuestion,
+  nextQuestionNumber,
+  questionNumber,
+  setQuestionNumber,
+}) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [selectAnswer, setSelectAnswer] = useState('answer');
-  const [selectIndex, setSelectIndex] = useState(null);
+  const [selectAnsName, setSelectAnsName] = useState('answer');
+  const [selectAnsIndex, setSelectAnsIndex] = useState(null);
   const [modalTitle, setModalTitle] = useState('title');
 
   //selectAnswerのstateが変わったら呼び出される（後、初回のrender時も）
   useEffect(() => {
-    const index = datas[title][0].answers.indexOf(selectAnswer);
-    setSelectIndex(index);
+    const index = datas[title][questionNumber].answers.indexOf(selectAnsName);
+    setSelectAnsIndex(index);
     getModalTitle();
-  }, [selectAnswer]);
+  }, [selectAnsName]);
 
+  //引数getData←data←datas[title][questionNumber].answers.map
   const getSelectAnswer = (getData) => {
-    setSelectAnswer(getData);
+    setSelectAnsName(getData);
   };
 
   const getData = (title) => {
-    return datas[title][0];
+    return datas[title][questionNumber];
   };
 
   const getModalTitle = () => {
-    if (selectAnswer === getData(title).correct) {
+    if (selectAnsName === getData(title).correct) {
       setModalTitle('正解！');
     } else {
       setModalTitle('不正解！');
@@ -41,19 +51,20 @@ const QuestionAnswers: React.FC<Props> = ({ title, backTop, getQuestion, nextQue
 
   return (
     <>
-      {datas[title][0].answers.map((data: string) => (
+      {datas[title][questionNumber].answers.map((data: string) => (
         <QuestionAnswer
           key={data.toString()}
           data={data}
           isOpen={isOpen}
           setIsOpen={setIsOpen}
-          setSelectAnswer={getSelectAnswer}
+          setSelectAnsName={getSelectAnswer}
           getModalTitle={getModalTitle}
         />
       ))}
       <button
         onClick={() => {
           backTop();
+          setQuestionNumber(0);
         }}
       >
         トップに戻る
@@ -61,9 +72,9 @@ const QuestionAnswers: React.FC<Props> = ({ title, backTop, getQuestion, nextQue
       <Modal
         open={isOpen}
         onClose={() => setIsOpen(false)}
-        selectAnswer={selectAnswer}
+        selectAnsName={selectAnsName}
         title={title}
-        selectIndex={selectIndex}
+        selectAnsIndex={selectAnsIndex}
         modalTitle={modalTitle}
         getData={getData}
         getQuestion={getQuestion}
