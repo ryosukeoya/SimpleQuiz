@@ -1,11 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const TitleCategory = () => {
+const Title = ({ categoryClose }) => {
+  if (categoryClose) {
+    return null;
+  }
   return <Style>category</Style>;
 };
 
-export default TitleCategory;
+export default Title;
 
 const Style = styled.div`
   font-size: 1.3rem;

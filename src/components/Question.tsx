@@ -8,9 +8,10 @@ interface Props {
   title: string;
   text: string;
   backTop: VoidFunction;
+  categoryTitle: string;
 }
 
-const Question: React.FC<Props> = ({ questionOpen, title, backTop }: Props) => {
+const Question: React.FC<Props> = ({ questionOpen, title, backTop, categoryTitle }: Props) => {
   const [questionNumber, setQuestionNumber] = useState(0);
   if (!questionOpen) {
     return null;
@@ -35,6 +36,7 @@ const Question: React.FC<Props> = ({ questionOpen, title, backTop }: Props) => {
         getQuestion={() => getQuestion()}
         title={title}
         questionNumber={questionNumber}
+        categoryTitle={categoryTitle}
       />
       <QuestionAnswers
         title={title}

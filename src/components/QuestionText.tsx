@@ -7,12 +7,19 @@ interface Props {
   plusTitle: any;
   title: string;
   questionNumber: number;
+  categoryTitle: string;
 }
 
-const QuestionText: React.FC = ({ getQuestion, plusTitle, title, questionNumber }: Props) => {
+const QuestionText: React.FC = ({
+  getQuestion,
+  plusTitle,
+  title,
+  questionNumber,
+  categoryTitle,
+}: Props) => {
   return (
     <Style>
-      {datas[title][questionNumber].question}
+      {datas[categoryTitle][title][questionNumber].question}
       {plusTitle}
     </Style>
   );
