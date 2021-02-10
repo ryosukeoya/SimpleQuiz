@@ -9,17 +9,17 @@ interface Props {
   quizOpen: boolean;
   quizStart: VoidFunction;
   setSlctCategoryTitle: (name: string) => void;
-  setCategoryClose: any;
+  setQuizOpen: any;
 }
 
 const Category: React.FC = ({
   categoryName,
   image,
   setSlctCategoryTitle,
-  categoryClose,
-  setCategoryClose,
+  quizOpen,
+  setQuizOpen,
 }) => {
-  if (categoryClose) {
+  if (quizOpen) {
     return null;
   }
 
@@ -31,7 +31,7 @@ const Category: React.FC = ({
     <>
       <div
         onClick={() => {
-          setSlctCategoryTitle(categoryName), setCategoryClose(!categoryClose);
+          setSlctCategoryTitle(categoryName), setQuizOpen(!quizOpen);
         }}
       >
         <Style>

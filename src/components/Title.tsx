@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Title = ({ categoryClose }) => {
-  if (categoryClose) {
+const Title = ({ quizOpen }) => {
+  if (quizOpen) {
     return null;
   }
-  return <Style>category</Style>;
+  return <Style>カテゴリ一覧</Style>;
 };
 
 export default Title;

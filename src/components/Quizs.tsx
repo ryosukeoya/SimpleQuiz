@@ -3,41 +3,41 @@ import datas from '../dataset';
 import Question from './Question';
 import Quiz from './Quiz';
 import TitleQuiz from './TitleQuiz';
-import styled from 'styled-components';
+import ReturnCategory from './ReturnCategory';
 import { Computer, Finance, Game, History } from '../images/CategoryImage';
 import FF from '../images/FF.jpg';
+import metalGear from '../images/metalGear.jpg';
 
-const Quizs = ({ categoryClose, selectCategoryTitle }) => {
-  const [QuizTitle, setQuizTitle] = useState('title');
-  const [quizsOpen, setQuizsOpen] = useState(false);
+interface Props {
+  quizOpen: boolean;
+  selectedCategoryTitle: string;
+  setQuizOpen: any;
+}
+
+const Quizs = ({ quizOpen, selectedCategoryTitle, setQuizOpen }) => {
+  const [selectedQuizTitle, setSelectedQuizTitle] = useState('title');
   const [questionOpen, setQuestionOpen] = useState(false);
-  const [quizOpen, setQuizOpen] = useState(true);
-  const [categoryTitle, setCategoryTitle] = useState('categoryTitle');
   const [text, setText] = useState(null);
 
-  if (!categoryClose) {
+  if (!quizOpen) {
     return null;
   }
-  const backTop = (): void => {
-    setQuizOpen(true);
-    setQuestionOpen(false);
-  };
 
   const quizStart = (): void => {
-    setQuizOpen(false);
+    setQuestionOpen(false);
     setQuestionOpen(true);
   };
   const getImage = () => {
-    if (selectCategoryTitle === 'Computer') {
+    if (selectedCategoryTitle === 'Computer') {
       const image = [Computer];
       return image;
-    } else if (selectCategoryTitle === 'Finance') {
+    } else if (selectedCategoryTitle === 'Finance') {
       const image = [Finance];
       return image;
-    } else if (selectCategoryTitle === 'Game') {
-      const image = [FF, Game];
+    } else if (selectedCategoryTitle === 'Game') {
+      const image = [FF, metalGear];
       return image[i];
-    } else if (selectCategoryTitle === 'History') {
+    } else if (selectedCategoryTitle === 'History') {
       const image = [History];
       return image;
     }
@@ -47,31 +47,34 @@ const Quizs = ({ categoryClose, selectCategoryTitle }) => {
 
   return (
     <>
-      <TitleQuiz />
-      <Style>
-        {Object.keys(datas[selectCategoryTitle]).map((data) => {
-          i++;
-          return (
-            <Quiz
-              key={data.toString()}
-              titleName={data}
-              image={getImage()}
-              quizOpen={quizOpen}
-              quizStart={quizStart}
-            />
-          );
-        })}
-      </Style>
-      <Question
-        categoryTitle={categoryTitle}
+      <TitleQuiz questionOpen={questionOpen} />
+      {Object.keys(datas[selectedCategoryTitle]).map((data) => {
+        i++;
+        return (
+          <Quiz
+            key={data.toString()}
+            quizTitleName={data}
+            image={getImage()}
+            questionOpen={questionOpen}
+            quizStart={quizStart}
+            setSelectedQuizTitle={setSelectedQuizTitle}
+          />
+        );
+      })}
+      <ReturnCategory
         questionOpen={questionOpen}
-        QuizTitle={QuizTitle}
+        setQuestionOpen={setQuestionOpen}
+        setQuizOpen={setQuizOpen}
+      />
+      <Question
+        questionOpen={questionOpen}
+        setQuestionOpen={setQuestionOpen}
         text={text}
+        selectedCategoryTitle={selectedCategoryTitle}
+        selectedQuizTitle={selectedQuizTitle}
       />
     </>
   );
 };
 
 export default Quizs;
-
-const Style = styled.div``;

@@ -1,7 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const TitleQuiz = ({}) => {
+interface Props {
+  questionOpen: boolean;
+}
+
+const TitleQuiz = ({ questionOpen }: Props) => {
+  if (questionOpen) {
+    return null;
+  }
   return <Style>Quiz一覧</Style>;
 };
 

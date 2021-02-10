@@ -2,17 +2,17 @@ import React, { useState } from 'react';
 import Style from '../style/TitleStyle';
 
 interface Props {
-  titleName: string;
+  quizTitleName: string;
 }
 
-const QuizTitle: React.FC = ({ titleName }: Props) => {
+const QuizTitle: React.FC = ({ quizTitleName }: Props) => {
   let plusTitle: String = '';
-  if (titleName === 'Computer') {
+  if (quizTitleName === 'Computer') {
     plusTitle = ' Science';
   }
   return (
     <Style>
-      {titleName}
+      {quizTitleName}
       {plusTitle}
     </Style>
   );

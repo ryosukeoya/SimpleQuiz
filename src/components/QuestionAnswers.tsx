@@ -1,24 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import QuestionAnswer from './QuestionAnswer';
+import ReturnQuiz from './ReturnQuiz';
 import datas from '../dataset';
 import Modal from './modal/Modal';
 
 interface Props {
-  title: string;
-  backTop: VoidFunction;
+  questionOpen: boolean;
+  setQuestionOpen: any;
   getQuestion: () => string | null;
   nextQuestionNumber: Function;
   questionNumber: number;
   setQuestionNumber: any;
+  selectedCategoryTitle: string;
+  selectedQuizTitle: string;
 }
 
 const QuestionAnswers: React.FC<Props> = ({
-  title,
-  backTop,
+  questionOpen,
+  setQuestionOpen,
   getQuestion,
   nextQuestionNumber,
   questionNumber,
   setQuestionNumber,
+  selectedCategoryTitle,
+  selectedQuizTitle,
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [selectAnsName, setSelectAnsName] = useState('answer');
@@ -27,7 +32,9 @@ const QuestionAnswers: React.FC<Props> = ({
 
   //selectAnswerのstateが変わったら呼び出される（後、初回のrender時も）
   useEffect(() => {
-    const index = datas[title][questionNumber].answers.indexOf(selectAnsName);
+    const index = datas[selectedCategoryTitle][selectedQuizTitle][questionNumber].answers.indexOf(
+      selectAnsName
+    );
     setSelectAnsIndex(index);
     getModalTitle();
   }, [selectAnsName]);
@@ -37,12 +44,12 @@ const QuestionAnswers: React.FC<Props> = ({
     setSelectAnsName(getData);
   };
 
-  const getData = (title) => {
-    return datas[title][questionNumber];
+  const getData = (selectedCategoryTitle) => {
+    return datas[selectedCategoryTitle][selectedQuizTitle][questionNumber];
   };
 
   const getModalTitle = () => {
-    if (selectAnsName === getData(title).correct) {
+    if (selectAnsName === getData(selectedCategoryTitle).correct) {
       setModalTitle('正解！');
     } else {
       setModalTitle('不正解！');
@@ -51,29 +58,24 @@ const QuestionAnswers: React.FC<Props> = ({
 
   return (
     <>
-      {datas[title][questionNumber].answers.map((data: string) => (
-        <QuestionAnswer
-          key={data.toString()}
-          data={data}
-          isOpen={isOpen}
-          setIsOpen={setIsOpen}
-          setSelectAnsName={getSelectAnswer}
-          getModalTitle={getModalTitle}
-        />
-      ))}
-      <button
-        onClick={() => {
-          backTop();
-          setQuestionNumber(0);
-        }}
-      >
-        トップに戻る
-      </button>
+      {datas[selectedCategoryTitle][selectedQuizTitle][questionNumber].answers.map(
+        (data: string) => (
+          <QuestionAnswer
+            key={data.toString()}
+            data={data}
+            isOpen={isOpen}
+            setIsOpen={setIsOpen}
+            setSelectAnsName={getSelectAnswer}
+            getModalTitle={getModalTitle}
+          />
+        )
+      )}
+      <ReturnQuiz setQuestionNumber={setQuestionNumber} setQuestionOpen={setQuestionOpen} />
       <Modal
         open={isOpen}
         onClose={() => setIsOpen(false)}
         selectAnsName={selectAnsName}
-        title={title}
+        selectedCategoryTitle={selectedCategoryTitle}
         selectAnsIndex={selectAnsIndex}
         modalTitle={modalTitle}
         getData={getData}

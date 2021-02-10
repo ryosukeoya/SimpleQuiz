@@ -2,15 +2,12 @@ import React, { useState } from 'react';
 import Category from './Category';
 import Quizs from './Quizs';
 import datas from '../dataset';
-import Computer from '../images/computer.jpg';
-import Finance from '../images/finance.jpg';
-import Game from '../images/game2.jpg';
-import History from '../images/history.jpg';
 import Title from './Title';
+import { Computer, Finance, Game, History } from '../images/CategoryImage';
 
-const Categorys = () => {
-  const [selectCategoryTitle, setSelectCategoryTitle] = useState('title');
-  const [categoryClose, setCategoryClose] = useState(false);
+const Categorys: React.FC = () => {
+  const [selectedCategoryTitle, setSelectCategoryTitle] = useState('title');
+  const [quizOpen, setQuizOpen] = useState(false);
 
   //categoryNameでstateのcategoryTitleを変更
   const setSlctCategoryTitle = (name: string): void => {
@@ -22,7 +19,7 @@ const Categorys = () => {
 
   return (
     <>
-      <Title categoryClose={categoryClose} />
+      <Title quizOpen={quizOpen} />
       {Object.keys(datas).map((data) => {
         i++;
         return (
@@ -31,12 +28,16 @@ const Categorys = () => {
             categoryName={data}
             image={image[i]}
             setSlctCategoryTitle={setSlctCategoryTitle}
-            categoryClose={categoryClose}
-            setCategoryClose={setCategoryClose}
+            quizOpen={quizOpen}
+            setQuizOpen={setQuizOpen}
           />
         );
       })}
-      <Quizs selectCategoryTitle={selectCategoryTitle} categoryClose={categoryClose} />
+      <Quizs
+        selectedCategoryTitle={selectedCategoryTitle}
+        quizOpen={quizOpen}
+        setQuizOpen={setQuizOpen}
+      />
     </>
   );
 };
