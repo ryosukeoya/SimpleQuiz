@@ -4,28 +4,34 @@ import QuizTitle from './QuizTitle';
 import Style from '../style/QuizStyle';
 
 interface Props {
-  titleName: string;
+  quizTitleName: string;
   image: any;
-  quizOpen: boolean;
+  questionOpen: boolean;
   quizStart: VoidFunction;
-  rename: (name: string) => void;
+  setSelectedQuizTitle: any;
 }
 
-const Quiz: React.FC = ({ titleName, image, quizOpen, quizStart, rename }: Props) => {
-  if (!quizOpen) {
+const Quiz: React.FC = ({
+  quizTitleName,
+  image,
+  questionOpen,
+  quizStart,
+  setSelectedQuizTitle,
+}: Props) => {
+  if (questionOpen) {
     return null;
   }
-
+  console.log(quizTitleName);
   return (
     <>
       <div
         onClick={() => {
-          quizStart(), rename(titleName);
+          quizStart(), setSelectedQuizTitle(quizTitleName);
         }}
       >
         <Style>
-          <QuizImage image={image} titleName={titleName} />
-          <QuizTitle titleName={titleName} />
+          <QuizImage image={image} quizTitleName={quizTitleName} />
+          <QuizTitle quizTitleName={quizTitleName} />
         </Style>
       </div>
     </>

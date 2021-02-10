@@ -2,20 +2,20 @@ import React, { useState } from 'react';
 import Style from '../style/TitleStyle';
 
 interface Props {
-  quizTitleName: string;
+  categoryName: string;
 }
 
-const QuizTitle: React.FC = ({ quizTitleName }: Props) => {
+const CategoryTitle: React.FC = ({ categoryName }: Props) => {
   let plusTitle: String = '';
-  if (quizTitleName === 'Computer') {
+  if (categoryName === 'Computer') {
     plusTitle = ' Science';
   }
   return (
     <Style>
-      {quizTitleName}
+      {categoryName}
       {plusTitle}
     </Style>
   );
 };
 
-export default QuizTitle;
+export default CategoryTitle;

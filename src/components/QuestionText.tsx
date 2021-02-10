@@ -5,14 +5,23 @@ import styled from 'styled-components';
 interface Props {
   getQuestion: () => string | null;
   plusTitle: any;
-  title: string;
   questionNumber: number;
+  selectedCategoryTitle: string;
+  selectedQuizTitle: string;
 }
 
-const QuestionText: React.FC = ({ getQuestion, plusTitle, title, questionNumber }: Props) => {
+const QuestionText: React.FC = ({
+  getQuestion,
+  plusTitle,
+  questionNumber,
+  selectedCategoryTitle,
+  selectedQuizTitle,
+}: Props) => {
+  console.log(datas[selectedCategoryTitle]);
+  console.log(datas[selectedCategoryTitle][selectedQuizTitle]);
   return (
     <Style>
-      {datas[title][questionNumber].question}
+      {datas[selectedCategoryTitle][selectedQuizTitle][questionNumber].question}
       {plusTitle}
     </Style>
   );

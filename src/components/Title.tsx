@@ -1,11 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const TitleCategory = () => {
-  return <Style>category</Style>;
+const Title = ({ quizOpen }) => {
+  if (quizOpen) {
+    return null;
+  }
+  return <Style>カテゴリ一覧</Style>;
 };
 
-export default TitleCategory;
+export default Title;
 
 const Style = styled.div`
   font-size: 1.3rem;

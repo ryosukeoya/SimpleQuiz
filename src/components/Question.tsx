@@ -2,15 +2,22 @@ import React, { useState } from 'react';
 import QuestionText from './QuestionText';
 import QuestionAnswers from './QuestionAnswers';
 import datas from '../dataset';
+import styled from 'styled-components';
 
 interface Props {
   questionOpen: boolean;
-  title: string;
+  setQuestionOpen: any;
   text: string;
-  backTop: VoidFunction;
+  selectedCategoryTitle: string;
+  selectedQuizTitle: string;
 }
 
-const Question: React.FC<Props> = ({ questionOpen, title, backTop }: Props) => {
+const Question: React.FC<Props> = ({
+  questionOpen,
+  setQuestionOpen,
+  selectedCategoryTitle,
+  selectedQuizTitle,
+}: Props) => {
   const [questionNumber, setQuestionNumber] = useState(0);
   if (!questionOpen) {
     return null;
@@ -21,7 +28,7 @@ const Question: React.FC<Props> = ({ questionOpen, title, backTop }: Props) => {
 
   const getQuestion = (): string | null => {
     console.log(questionNumber);
-    return datas[title][0].question;
+    return datas[selectedCategoryTitle][selectedQuizTitle][0].question;
   };
 
   const nextQuestionNumber = () => {
@@ -30,22 +37,30 @@ const Question: React.FC<Props> = ({ questionOpen, title, backTop }: Props) => {
 
   return (
     <>
-      <div>{title}</div>
-      <QuestionText
-        getQuestion={() => getQuestion()}
-        title={title}
-        questionNumber={questionNumber}
-      />
-      <QuestionAnswers
-        title={title}
-        datas={datas}
-        backTop={backTop}
-        getQuestion={() => getQuestion()}
-        nextQuestionNumber={() => nextQuestionNumber()}
-        questionNumber={questionNumber}
-        setQuestionNumber={setQuestionNumber}
-      />
+      <Style>
+        <div>{selectedCategoryTitle}</div>
+        <QuestionText
+          getQuestion={() => getQuestion()}
+          questionNumber={questionNumber}
+          selectedCategoryTitle={selectedCategoryTitle}
+          selectedQuizTitle={selectedQuizTitle}
+        />
+        <QuestionAnswers
+          questionOpen={questionOpen}
+          setQuestionOpen={setQuestionOpen}
+          getQuestion={() => getQuestion()}
+          nextQuestionNumber={() => nextQuestionNumber()}
+          questionNumber={questionNumber}
+          setQuestionNumber={setQuestionNumber}
+          selectedCategoryTitle={selectedCategoryTitle}
+          selectedQuizTitle={selectedQuizTitle}
+        />
+      </Style>
     </>
   );
 };
 export default Question;
+
+const Style = styled.div`
+  margin-top: 60px;
+`;
