@@ -4,13 +4,13 @@ import Logo from './Logo';
 import styled from 'styled-components';
 
 interface Props {
-  backTop: () => void;
+  setQuizOpen: VoidFunction;
 }
 
-const Header: React.FC = ({ backTop }: Props) => {
+const Header: React.FC = ({ setQuizOpen }: Props) => {
   return (
     <Style>
-      <Logo backTop={backTop} />
+      <Logo setQuizOpen={setQuizOpen} />
       <Login />
     </Style>
   );

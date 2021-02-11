@@ -68,6 +68,10 @@
 `npm install @material-ui/core`  
 `yarn add styled-components @types/styled-components`  
 `npm install styled-media-query@latest`
+`npm install redux react-redux`  
+お好みで  
+`npm install @reduxjs/toolkit`  
+`npm install —save-dev redux-devtools`
 
 #### memo
 

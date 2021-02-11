@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import QuestionAnswer from './QuestionAnswer';
-import ReturnQuiz from './ReturnQuiz';
 import datas from '../dataset';
 import Modal from './modal/Modal';
 
@@ -40,16 +39,16 @@ const QuestionAnswers: React.FC<Props> = ({
   }, [selectAnsName]);
 
   //引数getData←data←datas[title][questionNumber].answers.map
-  const getSelectAnswer = (getData) => {
-    setSelectAnsName(getData);
+  const getSelectAnswer = (getQuizData) => {
+    setSelectAnsName(getQuizData);
   };
 
-  const getData = (selectedCategoryTitle) => {
+  const getQuizData = () => {
     return datas[selectedCategoryTitle][selectedQuizTitle][questionNumber];
   };
 
   const getModalTitle = () => {
-    if (selectAnsName === getData(selectedCategoryTitle).correct) {
+    if (selectAnsName === getQuizData().correct) {
       setModalTitle('正解！');
     } else {
       setModalTitle('不正解！');
@@ -70,7 +69,6 @@ const QuestionAnswers: React.FC<Props> = ({
           />
         )
       )}
-      <ReturnQuiz setQuestionNumber={setQuestionNumber} setQuestionOpen={setQuestionOpen} />
       <Modal
         open={isOpen}
         onClose={() => setIsOpen(false)}
@@ -78,7 +76,7 @@ const QuestionAnswers: React.FC<Props> = ({
         selectedCategoryTitle={selectedCategoryTitle}
         selectAnsIndex={selectAnsIndex}
         modalTitle={modalTitle}
-        getData={getData}
+        getQuizData={getQuizData}
         getQuestion={getQuestion}
         nextQuestionNumber={nextQuestionNumber}
       />
