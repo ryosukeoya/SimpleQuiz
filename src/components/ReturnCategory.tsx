@@ -7,7 +7,7 @@ interface Props {
   setQuizOpen: Function;
 }
 
-const ReturnCategory = ({ questionOpen, setQuestionOpen, setQuizOpen }) => {
+const ReturnCategory = ({ questionOpen, setQuestionOpen, setQuizOpen }: Props) => {
   if (questionOpen) {
     return null;
   }
@@ -29,4 +29,6 @@ export default ReturnCategory;
 const Style = styled.div`
   color: #2c8fd1;
   text-decoration: underline;
+  margin-top: 8px;
+  cursor: pointer;
 `;

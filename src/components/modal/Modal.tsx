@@ -1,5 +1,5 @@
 import React from 'react';
-import Text from './ModalText';
+import ModalText from './ModalText';
 import NextButton from './NextButton';
 import ModalTitle from './ModalTitle';
 import styled from 'styled-components';
@@ -13,7 +13,7 @@ interface Props {
   title: string;
   selectAnsIndex: number;
   modalTitle: string;
-  getData: (title: string) => any;
+  getQuizData: (title: string) => any;
   getQuestion: () => string | null;
   nextQuestionNumber: Function;
 }
@@ -25,7 +25,7 @@ const Modal: React.FC<Props> = ({
   title,
   selectAnsIndex,
   modalTitle,
-  getData,
+  getQuizData,
   getQuestion,
   nextQuestionNumber,
 }: Props) => {
@@ -35,8 +35,8 @@ const Modal: React.FC<Props> = ({
     <OVERLAY_STYLES className="overlay_styles">
       <MODAL_STYLES className="modal_styles">
         <ModalTitle modalTitle={modalTitle} />
-        <Text
-          getData={getData}
+        <ModalText
+          getQuizData={getQuizData}
           selectAnsName={selectAnsName}
           selectAnsIndex={selectAnsIndex}
           title={title}

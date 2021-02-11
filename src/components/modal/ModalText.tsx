@@ -1,27 +1,27 @@
 import React from 'react';
 
 interface Props {
-  getData: (title: string) => any;
+  getQuizData: () => any;
   selectAnsIndex: number;
   title: string;
 }
 
-const Text: React.FC = ({ getData, selectAnsIndex, title }: Props) => {
+const ModalText: React.FC = ({ getQuizData, selectAnsIndex, title }: Props) => {
   //indexから判定ver []
   const getExplain = () => {
-    const explain = getData(title).explain[selectAnsIndex];
-    console.log(getData(title).explain);
+    const explain = getQuizData().explain[selectAnsIndex];
+    console.log(getQuizData().explain);
     console.log(selectAnsIndex);
     return explain;
   };
 
   // 名前から判定ver {}
   //   const getExplain = () => {
-  //     const explain = getData().explain;
+  //     const explain = getQuizData().explain;
   //     return explain[selectAnswer];
   //   };
 
   return <div style={{ color: 'black' }}>{getExplain()}</div>;
 };
 
-export default Text;
+export default ModalText;

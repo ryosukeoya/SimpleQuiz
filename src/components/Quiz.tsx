@@ -7,7 +7,7 @@ interface Props {
   quizTitleName: string;
   image: any;
   questionOpen: boolean;
-  quizStart: VoidFunction;
+  questionStart: VoidFunction;
   setSelectedQuizTitle: any;
 }
 
@@ -15,7 +15,7 @@ const Quiz: React.FC = ({
   quizTitleName,
   image,
   questionOpen,
-  quizStart,
+  questionStart,
   setSelectedQuizTitle,
 }: Props) => {
   if (questionOpen) {
@@ -26,7 +26,7 @@ const Quiz: React.FC = ({
     <>
       <div
         onClick={() => {
-          quizStart(), setSelectedQuizTitle(quizTitleName);
+          questionStart(), setSelectedQuizTitle(quizTitleName);
         }}
       >
         <Style>

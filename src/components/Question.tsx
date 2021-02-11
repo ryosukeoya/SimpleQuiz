@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import QuestionText from './QuestionText';
 import QuestionAnswers from './QuestionAnswers';
+import ReturnQuiz from './ReturnQuiz';
+import QuestionTitle from './QuestionTitle';
+
 import datas from '../dataset';
 import styled from 'styled-components';
 
@@ -38,7 +41,7 @@ const Question: React.FC<Props> = ({
   return (
     <>
       <Style>
-        <div>{selectedCategoryTitle}</div>
+        <QuestionTitle selectedQuizTitle={selectedQuizTitle} />
         <QuestionText
           getQuestion={() => getQuestion()}
           questionNumber={questionNumber}
@@ -55,6 +58,7 @@ const Question: React.FC<Props> = ({
           selectedCategoryTitle={selectedCategoryTitle}
           selectedQuizTitle={selectedQuizTitle}
         />
+        <ReturnQuiz setQuestionNumber={setQuestionNumber} setQuestionOpen={setQuestionOpen} />
       </Style>
     </>
   );

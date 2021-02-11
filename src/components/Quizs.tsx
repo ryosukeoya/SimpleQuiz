@@ -14,7 +14,7 @@ interface Props {
   setQuizOpen: any;
 }
 
-const Quizs = ({ quizOpen, selectedCategoryTitle, setQuizOpen }) => {
+const Quizs = ({ quizOpen, selectedCategoryTitle, setQuizOpen }: Props) => {
   const [selectedQuizTitle, setSelectedQuizTitle] = useState('title');
   const [questionOpen, setQuestionOpen] = useState(false);
   const [text, setText] = useState(null);
@@ -23,10 +23,11 @@ const Quizs = ({ quizOpen, selectedCategoryTitle, setQuizOpen }) => {
     return null;
   }
 
-  const quizStart = (): void => {
-    setQuestionOpen(false);
+  const questionStart = (): void => {
     setQuestionOpen(true);
   };
+
+  //後でリファクタリング
   const getImage = () => {
     if (selectedCategoryTitle === 'Computer') {
       const image = [Computer];
@@ -47,7 +48,7 @@ const Quizs = ({ quizOpen, selectedCategoryTitle, setQuizOpen }) => {
 
   return (
     <>
-      <TitleQuiz questionOpen={questionOpen} />
+      <TitleQuiz questionOpen={questionOpen} selectedCategoryTitle={selectedCategoryTitle} />
       {Object.keys(datas[selectedCategoryTitle]).map((data) => {
         i++;
         return (
@@ -56,7 +57,7 @@ const Quizs = ({ quizOpen, selectedCategoryTitle, setQuizOpen }) => {
             quizTitleName={data}
             image={getImage()}
             questionOpen={questionOpen}
-            quizStart={quizStart}
+            questionStart={questionStart}
             setSelectedQuizTitle={setSelectedQuizTitle}
           />
         );

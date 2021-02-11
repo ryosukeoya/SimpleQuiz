@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Logo: React.FC = (props) => {
   return (
     <Style>
-      <div onClick={props.backTop}>QuizApp</div>
+      <div onClick={() => props.setQuizOpen(false)}>QuizApp</div>
     </Style>
   );
 };
@@ -12,7 +12,7 @@ const Logo: React.FC = (props) => {
 export default Logo;
 
 const Style = styled.header`
-  padding-left: 50px;
+  margin-left: 50px;
   justify-content: center;
   font-size: 20px;
   cursor: pointer;

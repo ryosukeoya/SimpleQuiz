@@ -5,16 +5,20 @@ import datas from '../dataset';
 import Title from './Title';
 import { Computer, Finance, Game, History } from '../images/CategoryImage';
 
-const Categorys: React.FC = () => {
+interface Props {
+  quizOpen: boolean;
+  setQuizOpen: Function;
+}
+
+const Categorys: React.FC = ({ quizOpen, setQuizOpen }: Props) => {
   const [selectedCategoryTitle, setSelectCategoryTitle] = useState('title');
-  const [quizOpen, setQuizOpen] = useState(false);
 
   //categoryNameでstateのcategoryTitleを変更
   const setSlctCategoryTitle = (name: string): void => {
     setSelectCategoryTitle(name);
   };
 
-  const image = [Computer, Finance, Game, History];
+  const image = [Game, Computer, Finance, History];
   let i = -1;
 
   return (

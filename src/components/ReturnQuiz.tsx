@@ -6,7 +6,7 @@ interface Props {
   setQuestionOpen: Function;
 }
 
-const ReturnQuiz = ({ setQuestionNumber, setQuestionOpen }) => {
+const ReturnQuiz = ({ setQuestionNumber, setQuestionOpen }: Props) => {
   return (
     <div>
       <Style
@@ -26,4 +26,6 @@ export default ReturnQuiz;
 const Style = styled.div`
   color: #2c8fd1;
   text-decoration: underline;
+  margin-top: 8px;
+  cursor: pointer;
 `;
