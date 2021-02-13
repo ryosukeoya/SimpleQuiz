@@ -3,16 +3,16 @@ import styled from 'styled-components';
 import customMedia from '../../style/customMedia';
 
 interface Props {
-  onClose: () => void;
+  setModalOpen: Function;
   getQuestion: () => string | null;
   nextQuestionNumber: Function;
 }
 
-const NextButton = ({ onClose, getQuestion, nextQuestionNumber }: Props) => {
+const NextButton = ({ setModalOpen, getQuestion, nextQuestionNumber }: Props) => {
   return (
     <Style
       onClick={() => {
-        nextQuestionNumber(), onClose();
+        nextQuestionNumber(), setModalOpen(false);
       }}
     >
       次の問題へ

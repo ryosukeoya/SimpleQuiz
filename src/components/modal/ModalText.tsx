@@ -3,10 +3,10 @@ import React from 'react';
 interface Props {
   getQuizData: () => any;
   selectAnsIndex: number;
-  title: string;
+  titlselectedCategoryTitle: string;
 }
 
-const ModalText: React.FC = ({ getQuizData, selectAnsIndex, title }: Props) => {
+const ModalText: React.FC = ({ getQuizData, selectAnsIndex }: Props) => {
   //indexから判定ver []
   const getExplain = () => {
     const explain = getQuizData().explain[selectAnsIndex];
