@@ -5,7 +5,7 @@ import Quiz from './Quiz';
 import TitleQuiz from './TitleQuiz';
 import ReturnCategory from './ReturnCategory';
 import { Computer, Anime, Finance, Game, History } from '../images/_CategoryImages';
-import { FF, metalGear, Eva } from '../images/_QuizImages';
+import { FF, metalGear, Eva, Re } from '../images/_QuizImages';
 
 interface Props {
   quizOpen: boolean;
@@ -32,8 +32,8 @@ const Quizs = ({ quizOpen, selectedCategoryTitle, setQuizOpen }: Props) => {
       const image = [FF, metalGear];
       return image[i];
     } else if (selectedCategoryTitle === 'Anime') {
-      const image = [Eva];
-      return image;
+      const image = [Eva, Re];
+      return image[i];
     } else if (selectedCategoryTitle === 'Computer') {
       const image = [Computer];
       return image;
