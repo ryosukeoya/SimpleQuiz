@@ -4,8 +4,6 @@ import datas from '../../dataset';
 import Modal from '../modal/Modal';
 
 interface Props {
-  questionOpen: boolean;
-  setQuestionOpen: any;
   getQuestion: () => string | null;
   nextQuestionNumber: Function;
   questionNumber: number;
@@ -15,8 +13,6 @@ interface Props {
 }
 
 const QuestionAnswers: React.FC<Props> = ({
-  questionOpen,
-  setQuestionOpen,
   getQuestion,
   nextQuestionNumber,
   questionNumber,
@@ -25,30 +21,31 @@ const QuestionAnswers: React.FC<Props> = ({
   selectedQuizTitle,
 }) => {
   const [modalOpen, setModalOpen] = useState(false);
-  const [selectAnsName, setSelectAnsName] = useState('answer');
+  const [selectedAnsName, setSelectedAnsName] = useState('answer');
   const [selectAnsIndex, setSelectAnsIndex] = useState(null);
   const [modalTitle, setModalTitle] = useState('title');
 
   //selectAnswerのstateが変わったら呼び出される（後、初回のrender時も）
   useEffect(() => {
     const index = datas[selectedCategoryTitle][selectedQuizTitle][questionNumber].answers.indexOf(
-      selectAnsName
+      selectedAnsName
     );
     setSelectAnsIndex(index);
     getModalTitle();
-  }, [selectAnsName]);
+  }, [selectedAnsName]);
 
   //引数getData←data←datas[title][questionNumber].answers.map
   const getSelectAnswer = (getQuizData) => {
-    setSelectAnsName(getQuizData);
+    setSelectedAnsName(getQuizData);
   };
 
   const getQuizData = () => {
     return datas[selectedCategoryTitle][selectedQuizTitle][questionNumber];
   };
 
+  //selectedAnsName(state)が変わったら呼び出される(useEffect)
   const getModalTitle = () => {
-    if (selectAnsName === getQuizData().correct) {
+    if (selectedAnsName === getQuizData().correct) {
       setModalTitle('正解！');
     } else {
       setModalTitle('不正解！');
@@ -64,7 +61,7 @@ const QuestionAnswers: React.FC<Props> = ({
             data={data}
             modalOpen={modalOpen}
             setModalOpen={setModalOpen}
-            setSelectAnsName={getSelectAnswer}
+            setSelectedAnsName={getSelectAnswer}
             getModalTitle={getModalTitle}
           />
         )
@@ -72,7 +69,7 @@ const QuestionAnswers: React.FC<Props> = ({
       <Modal
         modalOpen={modalOpen}
         setModalOpen={setModalOpen}
-        selectAnsName={selectAnsName}
+        selectedAnsName={selectedAnsName}
         selectedCategoryTitle={selectedCategoryTitle}
         selectAnsIndex={selectAnsIndex}
         modalTitle={modalTitle}

@@ -1,18 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
+import { questionClose } from '../../actions';
 
 interface Props {
   setQuestionNumber: Function;
-  setQuestionOpen: Function;
 }
 
-const ReturnQuiz = ({ setQuestionNumber, setQuestionOpen }: Props) => {
+const ReturnQuiz = ({ setQuestionNumber }: Props) => {
+  const dispatch = useDispatch();
+
   return (
     <div>
       <Style
         onClick={() => {
           setQuestionNumber(0);
-          setQuestionOpen(false);
+          dispatch(questionClose());
         }}
       >
         クイズ一覧へ

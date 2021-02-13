@@ -3,7 +3,6 @@ import React from 'react';
 interface Props {
   getQuizData: () => any;
   selectAnsIndex: number;
-  titlselectedCategoryTitle: string;
 }
 
 const ModalText: React.FC = ({ getQuizData, selectAnsIndex }: Props) => {

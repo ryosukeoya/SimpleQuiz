@@ -5,16 +5,14 @@ interface Props {
   data: any;
   modalOpen: boolean;
   setModalOpen: Function;
-  setSelectAnsName: Function;
-  getModalTitle: any;
+  setSelectedAnsName: Function;
 }
 
 const QuestionAnswer: React.FC<Props> = ({
   data,
   modalOpen,
   setModalOpen,
-  setSelectAnsName,
-  getModalTitle,
+  setSelectedAnsName,
 }: Props) => {
   const [blue, setBlue] = useState(false);
 
@@ -23,7 +21,7 @@ const QuestionAnswer: React.FC<Props> = ({
       onClick={() => {
         setBlue(!blue);
         setModalOpen(true);
-        setSelectAnsName(data);
+        setSelectedAnsName(data);
       }}
       blue={blue}
     >

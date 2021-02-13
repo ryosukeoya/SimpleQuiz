@@ -1,13 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useSelector } from 'react-redux';
 
 interface Props {
-  questionOpen: boolean;
   selectedCategoryTitle: string;
 }
 
-const TitleQuiz = ({ questionOpen, selectedCategoryTitle }: Props) => {
-  if (questionOpen) {
+const TitleQuiz = ({ selectedCategoryTitle }: Props) => {
+  const questionOpenState = useSelector((state) => state.questionOpenState);
+  if (questionOpenState) {
     return null;
   }
   return <Style>{selectedCategoryTitle}クイズ一覧</Style>;

@@ -1,11 +1,11 @@
 //Action Creators
-export const closeQuiz = () => {
+export const questionOpen = () => {
   return {
-    type: 'CLOSEQUIZ',
+    type: 'QUESTIONOPEN',
   };
 };
-export const openQuiz = () => {
+export const questionClose = () => {
   return {
-    type: 'OPENQUIZ',
+    type: 'QUESTIONCLOSE',
   };
 };

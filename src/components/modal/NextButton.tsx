@@ -24,10 +24,10 @@ export default NextButton;
 
 const Style = styled.div`
   position: inline-block;
-  padding: 9px;
+  padding: 11px;
   background-color: #1976d2;
   color: white;
   border-radius: 10px;
-  margin-top: 10px;
+  margin-top: 10%;
   cursor: pointer;
 `;

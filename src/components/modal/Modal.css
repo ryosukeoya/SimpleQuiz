@@ -1,3 +1,5 @@
+/* modalアニメーション */
+
 /* 表示開始 */
 .overlay_styles-enter-active {
   opacity: 0;
@@ -5,25 +7,25 @@
 /* 表示完了 */
 .overlay_styles-enter-done {
   opacity: 1;
-  transition: opacity 400ms;
+  transition: opacity 250ms;
 }
 /* 非表示完了  */
 .overlay_styles-exit-active {
   opacity: 0;
-  transition: opacity 400ms;
+  transition: opacity 170ms;
 }
 
 /* 表示開始 */
 .overlay_styles-enter-active .modal_style {
-  transform: scale(0.9);
+  transform: scale(0.75);
 }
 /* 表示完了 */
 .overlay_styles-enter-done .modal_style {
   transform: scale(1);
-  transition: transform 400ms;
+  transition: transform 250ms;
 }
 /* 非表示完了  */
 .overlay_styles-exit-active .modal_style {
-  transform: scale(0.9);
-  transition: transform 400ms;
+  transform: scale(0.75);
+  transition: transform 170ms;
 }

@@ -15,16 +15,11 @@ interface Props {
 
 const Quizs = ({ quizOpen, selectedCategoryTitle, setQuizOpen }: Props) => {
   const [selectedQuizTitle, setSelectedQuizTitle] = useState('title');
-  const [questionOpen, setQuestionOpen] = useState(false);
   const [text, setText] = useState(null);
 
   if (!quizOpen) {
     return null;
   }
-
-  const questionStart = (): void => {
-    setQuestionOpen(true);
-  };
 
   //後でリファクタリング
   const getImage = () => {
@@ -50,7 +45,7 @@ const Quizs = ({ quizOpen, selectedCategoryTitle, setQuizOpen }: Props) => {
 
   return (
     <>
-      <TitleQuiz questionOpen={questionOpen} selectedCategoryTitle={selectedCategoryTitle} />
+      <TitleQuiz selectedCategoryTitle={selectedCategoryTitle} />
       {Object.keys(datas[selectedCategoryTitle]).map((data) => {
         i++;
         return (
@@ -58,20 +53,12 @@ const Quizs = ({ quizOpen, selectedCategoryTitle, setQuizOpen }: Props) => {
             key={data.toString()}
             quizTitleName={data}
             image={getImage()}
-            questionOpen={questionOpen}
-            questionStart={questionStart}
             setSelectedQuizTitle={setSelectedQuizTitle}
           />
         );
       })}
-      <ReturnCategory
-        questionOpen={questionOpen}
-        setQuestionOpen={setQuestionOpen}
-        setQuizOpen={setQuizOpen}
-      />
+      <ReturnCategory setQuizOpen={setQuizOpen} />
       <Question
-        questionOpen={questionOpen}
-        setQuestionOpen={setQuestionOpen}
         text={text}
         selectedCategoryTitle={selectedCategoryTitle}
         selectedQuizTitle={selectedQuizTitle}
