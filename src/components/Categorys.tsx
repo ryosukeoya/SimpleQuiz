@@ -3,7 +3,7 @@ import Category from './Category';
 import Quizs from './Quizs';
 import datas from '../dataset';
 import Title from './Title';
-import { Computer, Finance, Game, History } from '../images/CategoryImage';
+import { Computer, Anime, Finance, Game, History } from '../images/_CategoryImages';
 
 interface Props {
   quizOpen: boolean;
@@ -18,7 +18,7 @@ const Categorys: React.FC = ({ quizOpen, setQuizOpen }: Props) => {
     setSelectCategoryTitle(name);
   };
 
-  const image = [Game, Computer, Finance, History];
+  const image = [Game, Anime, Computer, Finance, History];
   let i = -1;
 
   return (

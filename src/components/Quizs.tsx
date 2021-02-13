@@ -4,9 +4,8 @@ import Question from './Question';
 import Quiz from './Quiz';
 import TitleQuiz from './TitleQuiz';
 import ReturnCategory from './ReturnCategory';
-import { Computer, Finance, Game, History } from '../images/CategoryImage';
-import FF from '../images/FF.jpg';
-import metalGear from '../images/metalGear.jpg';
+import { Computer, Anime, Finance, Game, History } from '../images/_CategoryImages';
+import { FF, metalGear, Eva } from '../images/_QuizImages';
 
 interface Props {
   quizOpen: boolean;
@@ -29,15 +28,18 @@ const Quizs = ({ quizOpen, selectedCategoryTitle, setQuizOpen }: Props) => {
 
   //後でリファクタリング
   const getImage = () => {
-    if (selectedCategoryTitle === 'Computer') {
+    if (selectedCategoryTitle === 'Game') {
+      const image = [FF, metalGear];
+      return image[i];
+    } else if (selectedCategoryTitle === 'Anime') {
+      const image = [Eva];
+      return image;
+    } else if (selectedCategoryTitle === 'Computer') {
       const image = [Computer];
       return image;
     } else if (selectedCategoryTitle === 'Finance') {
       const image = [Finance];
       return image;
-    } else if (selectedCategoryTitle === 'Game') {
-      const image = [FF, metalGear];
-      return image[i];
     } else if (selectedCategoryTitle === 'History') {
       const image = [History];
       return image;
