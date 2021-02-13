@@ -4,8 +4,8 @@ import NextButton from './NextButton';
 import ModalTitle from './ModalTitle';
 import styled from 'styled-components';
 import customMedia from '../../style/customMedia';
-import './Modal.css';
 import { CSSTransition } from 'react-transition-group';
+import './Modal.css';
 
 interface Props {
   modalOpen: boolean;

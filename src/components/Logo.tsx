@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Logo: React.FC = (props) => {
   return (
     <Style>
-      <div onClick={() => props.setQuizOpen(false)}>QuizApp</div>
+      <div onClick={() => props.setQuizOpen(false)}>いろんなクイズ</div>
     </Style>
   );
 };
