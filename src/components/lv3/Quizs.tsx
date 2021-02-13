@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import datas from '../dataset';
+import datas from '../../dataset';
 import Question from './Question';
-import Quiz from './Quiz';
-import TitleQuiz from './TitleQuiz';
-import ReturnCategory from './ReturnCategory';
-import { Computer, Anime, Finance, Game, History } from '../images/_CategoryImages';
-import { FF, metalGear, Eva, Re } from '../images/_QuizImages';
+import Quiz from '../lv2/Quiz';
+import TitleQuiz from '../lv1/TitleQuiz';
+import ReturnCategory from '../lv1/ReturnCategory';
+import { Computer, Anime, Finance, Game, History } from '../../images/_CategoryImages';
+import { FF, metalGear, Eva, Re } from '../../images/_QuizImages';
 
 interface Props {
   quizOpen: boolean;

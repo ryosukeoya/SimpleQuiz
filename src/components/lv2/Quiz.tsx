@@ -1,7 +1,7 @@
 import React from 'react';
-import QuizImage from './QuizImage';
-import QuizTitle from './QuizTitle';
-import Style from '../style/QuizStyle';
+import QuizImage from '../lv1/QuizImage';
+import QuizTitle from '../lv1/QuizTitle';
+import Style from '../../style/QuizStyle';
 
 interface Props {
   quizTitleName: string;

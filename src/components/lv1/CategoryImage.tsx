@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import customMedia from '../style/customMedia';
+import customMedia from '../../style/customMedia';
 
 const CategoryImage = (props) => {
   return <Style src={props.image} alt={props.titleName} />;

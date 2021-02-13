@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import QuestionAnswer from './QuestionAnswer';
-import datas from '../dataset';
-import Modal from './modal/Modal';
+import QuestionAnswer from '../lv1/QuestionAnswer';
+import datas from '../../dataset';
+import Modal from '../modal/Modal';
 
 interface Props {
   questionOpen: boolean;

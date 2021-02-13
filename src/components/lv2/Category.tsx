@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import CategoryImage from './CategoryImage';
-import CategoryTitle from './CategoryTitle';
-import Style from '../style/QuizStyle';
+import CategoryImage from '../lv1/CategoryImage';
+import CategoryTitle from '../lv1/CategoryTitle';
+import Style from '../../style/QuizStyle';
 
 interface Props {
   categoryName: string;
