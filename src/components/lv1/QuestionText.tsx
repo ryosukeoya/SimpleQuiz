@@ -1,5 +1,5 @@
 import React from 'react';
-import datas from '../dataset';
+import datas from '../../dataset';
 import styled from 'styled-components';
 
 interface Props {

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import QuestionText from './QuestionText';
-import QuestionAnswers from './QuestionAnswers';
-import ReturnQuiz from './ReturnQuiz';
-import QuestionTitle from './QuestionTitle';
+import QuestionText from '../lv1/QuestionText';
+import QuestionAnswers from '../lv2/QuestionAnswers';
+import ReturnQuiz from '../lv1/ReturnQuiz';
+import QuestionTitle from '../lv1/QuestionTitle';
 
-import datas from '../dataset';
+import datas from '../../dataset';
 import styled from 'styled-components';
 
 interface Props {

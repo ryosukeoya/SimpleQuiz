@@ -1,7 +1,7 @@
 //quiz-react-typescript.web.app
 import React, { useState } from 'react';
-import Header from './components/Header';
-import Categorys from './components/Categorys';
+import Header from './components/lv3/Header';
+import Categorys from './components/lv3/Categorys';
 
 const App: React.FC = () => {
   const [quizOpen, setQuizOpen] = useState(false);

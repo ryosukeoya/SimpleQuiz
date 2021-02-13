@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import Category from './Category';
+import Category from '../lv2/Category';
 import Quizs from './Quizs';
-import datas from '../dataset';
-import Title from './Title';
-import { Computer, Anime, Finance, Game, History } from '../images/_CategoryImages';
+import datas from '../../dataset';
+import Title from '../lv1/Title';
+import { Computer, Anime, Finance, Game, History } from '../../images/_CategoryImages';
 
 interface Props {
   quizOpen: boolean;
