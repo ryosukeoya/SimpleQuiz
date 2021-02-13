@@ -24,7 +24,7 @@ const QuestionAnswers: React.FC<Props> = ({
   selectedCategoryTitle,
   selectedQuizTitle,
 }) => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [modalOpen, setModalOpen] = useState(false);
   const [selectAnsName, setSelectAnsName] = useState('answer');
   const [selectAnsIndex, setSelectAnsIndex] = useState(null);
   const [modalTitle, setModalTitle] = useState('title');
@@ -62,16 +62,16 @@ const QuestionAnswers: React.FC<Props> = ({
           <QuestionAnswer
             key={data.toString()}
             data={data}
-            isOpen={isOpen}
-            setIsOpen={setIsOpen}
+            modalOpen={modalOpen}
+            setModalOpen={setModalOpen}
             setSelectAnsName={getSelectAnswer}
             getModalTitle={getModalTitle}
           />
         )
       )}
       <Modal
-        open={isOpen}
-        onClose={() => setIsOpen(false)}
+        modalOpen={modalOpen}
+        setModalOpen={setModalOpen}
         selectAnsName={selectAnsName}
         selectedCategoryTitle={selectedCategoryTitle}
         selectAnsIndex={selectAnsIndex}

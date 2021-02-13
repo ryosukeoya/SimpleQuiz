@@ -69,6 +69,7 @@
 `yarn add styled-components @types/styled-components`  
 `npm install styled-media-query@latest`
 `npm install redux react-redux`  
+`npm i @types/react-transition-group`
 お好みで  
 `npm install @reduxjs/toolkit`  
 `npm install —save-dev redux-devtools`

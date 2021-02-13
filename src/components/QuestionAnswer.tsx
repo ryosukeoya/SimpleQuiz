@@ -3,19 +3,26 @@ import styled, { css } from 'styled-components';
 
 interface Props {
   data: any;
-  isOpen: boolean;
-  setIsOpen: any;
+  modalOpen: boolean;
+  setModalOpen: Function;
   setSelectAnsName: Function;
+  getModalTitle: any;
 }
 
-const QuestionAnswer: React.FC<Props> = ({ data, isOpen, setIsOpen, setSelectAnsName }: Props) => {
+const QuestionAnswer: React.FC<Props> = ({
+  data,
+  modalOpen,
+  setModalOpen,
+  setSelectAnsName,
+  getModalTitle,
+}: Props) => {
   const [blue, setBlue] = useState(false);
 
   return (
     <Style
       onClick={() => {
         setBlue(!blue);
-        setIsOpen(!isOpen);
+        setModalOpen(true);
         setSelectAnsName(data);
       }}
       blue={blue}

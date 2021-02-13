@@ -4,50 +4,58 @@ import NextButton from './NextButton';
 import ModalTitle from './ModalTitle';
 import styled from 'styled-components';
 import customMedia from '../../style/customMedia';
-// import './Modal.css';
+import './Modal.css';
+import { CSSTransition } from 'react-transition-group';
 
 interface Props {
-  open: boolean;
-  onClose: () => void;
+  modalOpen: boolean;
+  setModalOpen: Function;
   selectAnsName: string;
-  title: string;
-  selectAnsIndex: number;
+  selectedCategoryTitle: string;
+  selectAnsIndex: any;
   modalTitle: string;
-  getQuizData: (title: string) => any;
+  getQuizData: () => any;
   getQuestion: () => string | null;
   nextQuestionNumber: Function;
 }
 
 const Modal: React.FC<Props> = ({
-  open,
-  onClose,
+  modalOpen,
+  setModalOpen,
   selectAnsName,
-  title,
+  selectedCategoryTitle,
   selectAnsIndex,
   modalTitle,
   getQuizData,
   getQuestion,
   nextQuestionNumber,
 }: Props) => {
-  if (!open) return null;
-
+  // if (!modalOpen) return null;
   return (
-    <OVERLAY_STYLES className="overlay_styles">
-      <MODAL_STYLES className="modal_styles">
-        <ModalTitle modalTitle={modalTitle} />
-        <ModalText
-          getQuizData={getQuizData}
-          selectAnsName={selectAnsName}
-          selectAnsIndex={selectAnsIndex}
-          title={title}
-        />
-        <NextButton
-          onClose={onClose}
-          getQuestion={getQuestion}
-          nextQuestionNumber={nextQuestionNumber}
-        />
-      </MODAL_STYLES>
-    </OVERLAY_STYLES>
+    // modalアニメーション
+    <CSSTransition
+      in={modalOpen}
+      timeout={{ enter: 0, exit: 500 }}
+      unmountOnExit
+      classNames="overlay_styles"
+    >
+      <OVERLAY_STYLES>
+        <MODAL_STYLES className="modal_style">
+          <ModalTitle modalTitle={modalTitle} />
+          <ModalText
+            getQuizData={getQuizData}
+            selectAnsName={selectAnsName}
+            selectAnsIndex={selectAnsIndex}
+            selectedCategoryTitle={selectedCategoryTitle}
+          />
+          <NextButton
+            setModalOpen={setModalOpen}
+            getQuestion={getQuestion}
+            nextQuestionNumber={nextQuestionNumber}
+          />
+        </MODAL_STYLES>
+      </OVERLAY_STYLES>
+    </CSSTransition>
   );
 };
 
@@ -55,13 +63,11 @@ export default Modal;
 
 const MODAL_STYLES = styled.div`
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   background-color: #fff;
   padding: 50px;
   z-index: 1000;
   color: red;
+  border-radius: 10px;
   /* transition-delay: 0.5s; */
 
   //スマホ
@@ -88,10 +94,13 @@ const MODAL_STYLES = styled.div`
 
 const OVERLAY_STYLES = styled.div`
   position: fixed;
+  z-index: 1000;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
+  height: 100vh;
+  width: 100vw;
   background-color: rgba(0, 0, 0, 0.7);
-  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
