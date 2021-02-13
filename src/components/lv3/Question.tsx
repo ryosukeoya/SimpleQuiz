@@ -3,28 +3,24 @@ import QuestionText from '../lv1/QuestionText';
 import QuestionAnswers from '../lv2/QuestionAnswers';
 import ReturnQuiz from '../lv1/ReturnQuiz';
 import QuestionTitle from '../lv1/QuestionTitle';
-
 import datas from '../../dataset';
 import styled from 'styled-components';
+import { useSelector } from 'react-redux';
 
 interface Props {
-  questionOpen: boolean;
-  setQuestionOpen: any;
   text: string;
   selectedCategoryTitle: string;
   selectedQuizTitle: string;
 }
 
-const Question: React.FC<Props> = ({
-  questionOpen,
-  setQuestionOpen,
-  selectedCategoryTitle,
-  selectedQuizTitle,
-}: Props) => {
+const Question: React.FC<Props> = ({ selectedCategoryTitle, selectedQuizTitle }: Props) => {
   const [questionNumber, setQuestionNumber] = useState(0);
-  if (!questionOpen) {
+
+  const questionOpenState = useSelector((state) => state.questionOpenState);
+  if (!questionOpenState) {
     return null;
   }
+
   if (questionNumber >= 4) {
     return null;
   }
@@ -49,8 +45,6 @@ const Question: React.FC<Props> = ({
           selectedQuizTitle={selectedQuizTitle}
         />
         <QuestionAnswers
-          questionOpen={questionOpen}
-          setQuestionOpen={setQuestionOpen}
           getQuestion={() => getQuestion()}
           nextQuestionNumber={() => nextQuestionNumber()}
           questionNumber={questionNumber}
@@ -58,7 +52,7 @@ const Question: React.FC<Props> = ({
           selectedCategoryTitle={selectedCategoryTitle}
           selectedQuizTitle={selectedQuizTitle}
         />
-        <ReturnQuiz setQuestionNumber={setQuestionNumber} setQuestionOpen={setQuestionOpen} />
+        <ReturnQuiz setQuestionNumber={setQuestionNumber} />
       </Style>
     </>
   );

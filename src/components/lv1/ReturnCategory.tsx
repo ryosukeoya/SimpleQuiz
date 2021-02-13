@@ -1,16 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useSelector } from 'react-redux';
 
 interface Props {
-  questionOpen: boolean;
-  setQuestionOpen: Function;
   setQuizOpen: Function;
 }
 
-const ReturnCategory = ({ questionOpen, setQuestionOpen, setQuizOpen }: Props) => {
-  if (questionOpen) {
+const ReturnCategory = ({ setQuizOpen }: Props) => {
+  const questionOpenState = useSelector((state) => state.questionOpenState);
+  if (questionOpenState) {
     return null;
   }
+
   return (
     <div>
       <Style
