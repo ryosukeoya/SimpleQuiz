@@ -67,7 +67,7 @@
 `npx create-react-app quiz-react-typescript --template typescript `  
 `npm install @material-ui/core`  
 `yarn add styled-components @types/styled-components`  
-`npm install styled-media-query@latest`
+`npm install styled-media-query@latest`  
 `npm install redux react-redux`  
 `npm i @types/react-transition-group`
 お好みで  
