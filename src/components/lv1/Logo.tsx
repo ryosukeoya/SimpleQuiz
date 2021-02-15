@@ -3,13 +3,20 @@ import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
 import { questionClose } from '../../actions';
 
-const Logo: React.FC = (props) => {
+interface Props {
+  setQuizOpen: Function;
+  setSelectedQuizTitle: Function;
+}
+
+const Logo: React.FC = ({ setQuizOpen, setSelectedQuizTitle }: Props) => {
+  console.log(setSelectedQuizTitle);
   const dispatch = useDispatch();
   return (
     <Style>
       <div
         onClick={() => {
-          props.setQuizOpen(false), dispatch(questionClose());
+          setQuizOpen(false), setSelectedQuizTitle(null);
+          dispatch(questionClose());
         }}
       >
         いろんなクイズ

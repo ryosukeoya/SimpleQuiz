@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Style from '../../style/TitleStyle';
+import Style from '../../style/QuizTitleStyle';
 
 interface Props {
   quizTitleName: string;

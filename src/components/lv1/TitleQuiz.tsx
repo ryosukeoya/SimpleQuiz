@@ -1,6 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
 import { useSelector } from 'react-redux';
+import Style from '../../style/TitleStyle';
 
 interface Props {
   selectedCategoryTitle: string;
@@ -15,11 +15,3 @@ const TitleQuiz = ({ selectedCategoryTitle }: Props) => {
 };
 
 export default TitleQuiz;
-
-const Style = styled.div`
-  font-size: 1.2rem;
-  text-align: center;
-  color: #2c8fd1;
-  margin-top: 60px;
-  margin-bottom: 10px;
-`;
