@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import datas from '../../dataset';
 import Question from './Question';
+import Header from '../lv3/Header';
 import Quiz from '../lv2/Quiz';
 import TitleQuiz from '../lv1/TitleQuiz';
-import ReturnCategory from '../lv1/ReturnCategory';
+import ReturnCategorys from '../lv1/ReturnCategorys';
+import BreadcrumbList from '../lv1/BreadcrumbList';
 import { Computer, Anime, Finance, Game, History } from '../../images/_CategoryImages';
 import { FF, metalGear, Eva, Re } from '../../images/_QuizImages';
 
@@ -14,7 +16,7 @@ interface Props {
 }
 
 const Quizs = ({ quizOpen, selectedCategoryTitle, setQuizOpen }: Props) => {
-  const [selectedQuizTitle, setSelectedQuizTitle] = useState('title');
+  const [selectedQuizTitle, setSelectedQuizTitle] = useState(null);
   const [text, setText] = useState(null);
 
   if (!quizOpen) {
@@ -45,6 +47,11 @@ const Quizs = ({ quizOpen, selectedCategoryTitle, setQuizOpen }: Props) => {
 
   return (
     <>
+      <Header setSelectedQuizTitle={setSelectedQuizTitle} setQuizOpen={setQuizOpen} />
+      <BreadcrumbList
+        selectedCategoryTitle={selectedCategoryTitle}
+        selectedQuizTitle={selectedQuizTitle}
+      />
       <TitleQuiz selectedCategoryTitle={selectedCategoryTitle} />
       {Object.keys(datas[selectedCategoryTitle]).map((data) => {
         i++;
@@ -57,11 +64,12 @@ const Quizs = ({ quizOpen, selectedCategoryTitle, setQuizOpen }: Props) => {
           />
         );
       })}
-      <ReturnCategory setQuizOpen={setQuizOpen} />
+      <ReturnCategorys setQuizOpen={setQuizOpen} />
       <Question
         text={text}
         selectedCategoryTitle={selectedCategoryTitle}
         selectedQuizTitle={selectedQuizTitle}
+        setSelectedQuizTitle={setSelectedQuizTitle}
       />
     </>
   );

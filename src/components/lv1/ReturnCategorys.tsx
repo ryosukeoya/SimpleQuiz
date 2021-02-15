@@ -6,11 +6,12 @@ interface Props {
   setQuizOpen: Function;
 }
 
-const ReturnCategory = ({ setQuizOpen }: Props) => {
+const ReturnCategorys = ({ setQuizOpen }: Props) => {
   const questionOpenState = useSelector((state) => state.questionOpenState);
   if (questionOpenState) {
     return null;
   }
+  const element = '< カテゴリ一覧へ';
 
   return (
     <div>
@@ -19,13 +20,13 @@ const ReturnCategory = ({ setQuizOpen }: Props) => {
           setQuizOpen(false);
         }}
       >
-        カテゴリ一覧へ
+        {element}
       </Style>
     </div>
   );
 };
 
-export default ReturnCategory;
+export default ReturnCategorys;
 
 const Style = styled.div`
   color: #2c8fd1;
