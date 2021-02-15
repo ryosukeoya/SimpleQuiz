@@ -10,7 +10,7 @@ import './Modal.css';
 interface Props {
   modalOpen: boolean;
   setModalOpen: Function;
-  selectAnsName: string;
+  selectedAnsName: string;
   selectedCategoryTitle: string;
   selectAnsIndex: any;
   modalTitle: string;
@@ -18,11 +18,10 @@ interface Props {
   getQuestion: () => string | null;
   nextQuestionNumber: Function;
 }
-
+//Portals
 const Modal: React.FC<Props> = ({
   modalOpen,
   setModalOpen,
-  selectAnsName,
   selectedCategoryTitle,
   selectAnsIndex,
   modalTitle,
@@ -30,9 +29,8 @@ const Modal: React.FC<Props> = ({
   getQuestion,
   nextQuestionNumber,
 }: Props) => {
-  // if (!modalOpen) return null;
   return (
-    // modalアニメーション
+    // modalアニメーション　modalOpen->trueなら呼ばれる
     <CSSTransition
       in={modalOpen}
       timeout={{ enter: 0, exit: 500 }}
@@ -44,7 +42,6 @@ const Modal: React.FC<Props> = ({
           <ModalTitle modalTitle={modalTitle} />
           <ModalText
             getQuizData={getQuizData}
-            selectAnsName={selectAnsName}
             selectAnsIndex={selectAnsIndex}
             selectedCategoryTitle={selectedCategoryTitle}
           />

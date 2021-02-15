@@ -1,18 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
-import customMedia from '../../style/customMedia';
 
 interface Props {
   modalTitle: string;
 }
 
 const ModalTitle = ({ modalTitle }: Props) => {
-  return <Style>{modalTitle}</Style>;
+  if (modalTitle === '正解！') {
+    return <Style style={{ color: 'red' }}>{modalTitle}</Style>;
+  } else {
+    return <Style style={{ color: 'blue' }}>{modalTitle}</Style>;
+  }
 };
 
 export default ModalTitle;
 
 const Style = styled.div`
-  font-size: 1.8rem;
+  font-size: 2rem;
   margin-bottom: 10px;
 `;

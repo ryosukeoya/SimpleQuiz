@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import datas from '../dataset';
+import datas from '../../dataset';
 import Question from './Question';
-import Quiz from './Quiz';
-import TitleQuiz from './TitleQuiz';
-import ReturnCategory from './ReturnCategory';
-import { Computer, Anime, Finance, Game, History } from '../images/_CategoryImages';
-import { FF, metalGear, Eva, Re } from '../images/_QuizImages';
+import Header from '../lv3/Header';
+import Quiz from '../lv2/Quiz';
+import TitleQuiz from '../lv1/TitleQuiz';
+import ReturnCategorys from '../lv1/ReturnCategorys';
+import BreadcrumbList from '../lv1/BreadcrumbList';
+import { Computer, Anime, Finance, Game, History } from '../../images/_CategoryImages';
+import { FF, metalGear, Eva, Re } from '../../images/_QuizImages';
 
 interface Props {
   quizOpen: boolean;
@@ -14,17 +16,12 @@ interface Props {
 }
 
 const Quizs = ({ quizOpen, selectedCategoryTitle, setQuizOpen }: Props) => {
-  const [selectedQuizTitle, setSelectedQuizTitle] = useState('title');
-  const [questionOpen, setQuestionOpen] = useState(false);
+  const [selectedQuizTitle, setSelectedQuizTitle] = useState(null);
   const [text, setText] = useState(null);
 
   if (!quizOpen) {
     return null;
   }
-
-  const questionStart = (): void => {
-    setQuestionOpen(true);
-  };
 
   //後でリファクタリング
   const getImage = () => {
@@ -50,7 +47,12 @@ const Quizs = ({ quizOpen, selectedCategoryTitle, setQuizOpen }: Props) => {
 
   return (
     <>
-      <TitleQuiz questionOpen={questionOpen} selectedCategoryTitle={selectedCategoryTitle} />
+      <Header setSelectedQuizTitle={setSelectedQuizTitle} setQuizOpen={setQuizOpen} />
+      <BreadcrumbList
+        selectedCategoryTitle={selectedCategoryTitle}
+        selectedQuizTitle={selectedQuizTitle}
+      />
+      <TitleQuiz selectedCategoryTitle={selectedCategoryTitle} />
       {Object.keys(datas[selectedCategoryTitle]).map((data) => {
         i++;
         return (
@@ -58,23 +60,16 @@ const Quizs = ({ quizOpen, selectedCategoryTitle, setQuizOpen }: Props) => {
             key={data.toString()}
             quizTitleName={data}
             image={getImage()}
-            questionOpen={questionOpen}
-            questionStart={questionStart}
             setSelectedQuizTitle={setSelectedQuizTitle}
           />
         );
       })}
-      <ReturnCategory
-        questionOpen={questionOpen}
-        setQuestionOpen={setQuestionOpen}
-        setQuizOpen={setQuizOpen}
-      />
+      <ReturnCategorys setQuizOpen={setQuizOpen} />
       <Question
-        questionOpen={questionOpen}
-        setQuestionOpen={setQuestionOpen}
         text={text}
         selectedCategoryTitle={selectedCategoryTitle}
         selectedQuizTitle={selectedQuizTitle}
+        setSelectedQuizTitle={setSelectedQuizTitle}
       />
     </>
   );

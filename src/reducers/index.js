@@ -1,8 +1,8 @@
-import changeQuizOpenStateReducers from './changeQuizOpenState';
+import questionOpenStateReducers from './questionOpenState';
 import { combineReducers } from 'redux';
 
 const allReducers = combineReducers({
-  changeQuizOpenState: changeQuizOpenStateReducers,
+  questionOpenState: questionOpenStateReducers,
 });
 
 export default allReducers;

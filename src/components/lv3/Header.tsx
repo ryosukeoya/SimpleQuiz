@@ -1,16 +1,18 @@
 import React from 'react';
-import Login from './Login';
-import Logo from './Logo';
+import Login from '../lv1/Login';
+import Logo from '../lv1/Logo';
 import styled from 'styled-components';
 
 interface Props {
-  setQuizOpen: VoidFunction;
+  setQuizOpen: Function;
+  setSelectedQuizTitle: Function;
 }
 
-const Header: React.FC = ({ setQuizOpen }: Props) => {
+//Portalで管理
+const Header: React.FC = ({ setQuizOpen, setSelectedQuizTitle }: Props) => {
   return (
     <Style>
-      <Logo setQuizOpen={setQuizOpen} />
+      <Logo setQuizOpen={setQuizOpen} setSelectedQuizTitle={setSelectedQuizTitle} />
       <Login />
     </Style>
   );

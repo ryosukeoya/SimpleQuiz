@@ -1,30 +1,32 @@
 import React, { useState } from 'react';
-import QuestionText from './QuestionText';
-import QuestionAnswers from './QuestionAnswers';
-import ReturnQuiz from './ReturnQuiz';
-import QuestionTitle from './QuestionTitle';
-
-import datas from '../dataset';
+import QuestionText from '../lv1/QuestionText';
+import QuestionAnswers from '../lv2/QuestionAnswers';
+import ReturnQuizs from '../lv1/ReturnQuizs';
+import QuestionTitle from '../lv1/QuestionTitle';
+import BreadcrumbList from '../lv1/BreadcrumbList';
+import datas from '../../dataset';
 import styled from 'styled-components';
+import { useSelector } from 'react-redux';
 
 interface Props {
-  questionOpen: boolean;
-  setQuestionOpen: any;
   text: string;
   selectedCategoryTitle: string;
   selectedQuizTitle: string;
+  setSelectedQuizTitle: Function;
 }
 
 const Question: React.FC<Props> = ({
-  questionOpen,
-  setQuestionOpen,
   selectedCategoryTitle,
   selectedQuizTitle,
+  setSelectedQuizTitle,
 }: Props) => {
   const [questionNumber, setQuestionNumber] = useState(0);
-  if (!questionOpen) {
+
+  const questionOpenState = useSelector((state) => state.questionOpenState);
+  if (!questionOpenState) {
     return null;
   }
+
   if (questionNumber >= 4) {
     return null;
   }
@@ -49,8 +51,6 @@ const Question: React.FC<Props> = ({
           selectedQuizTitle={selectedQuizTitle}
         />
         <QuestionAnswers
-          questionOpen={questionOpen}
-          setQuestionOpen={setQuestionOpen}
           getQuestion={() => getQuestion()}
           nextQuestionNumber={() => nextQuestionNumber()}
           questionNumber={questionNumber}
@@ -58,7 +58,10 @@ const Question: React.FC<Props> = ({
           selectedCategoryTitle={selectedCategoryTitle}
           selectedQuizTitle={selectedQuizTitle}
         />
-        <ReturnQuiz setQuestionNumber={setQuestionNumber} setQuestionOpen={setQuestionOpen} />
+        <ReturnQuizs
+          setQuestionNumber={setQuestionNumber}
+          setSelectedQuizTitle={setSelectedQuizTitle}
+        />
       </Style>
     </>
   );
@@ -66,5 +69,5 @@ const Question: React.FC<Props> = ({
 export default Question;
 
 const Style = styled.div`
-  margin-top: 60px;
+  margin-top: 10px;
 `;
