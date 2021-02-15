@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import QuestionText from '../lv1/QuestionText';
 import QuestionAnswers from '../lv2/QuestionAnswers';
-import ReturnQuiz from '../lv1/ReturnQuiz';
+import ReturnQuizs from '../lv1/ReturnQuizs';
 import QuestionTitle from '../lv1/QuestionTitle';
+import BreadcrumbList from '../lv1/BreadcrumbList';
 import datas from '../../dataset';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
@@ -11,9 +12,14 @@ interface Props {
   text: string;
   selectedCategoryTitle: string;
   selectedQuizTitle: string;
+  setSelectedQuizTitle: Function;
 }
 
-const Question: React.FC<Props> = ({ selectedCategoryTitle, selectedQuizTitle }: Props) => {
+const Question: React.FC<Props> = ({
+  selectedCategoryTitle,
+  selectedQuizTitle,
+  setSelectedQuizTitle,
+}: Props) => {
   const [questionNumber, setQuestionNumber] = useState(0);
 
   const questionOpenState = useSelector((state) => state.questionOpenState);
@@ -52,7 +58,10 @@ const Question: React.FC<Props> = ({ selectedCategoryTitle, selectedQuizTitle }:
           selectedCategoryTitle={selectedCategoryTitle}
           selectedQuizTitle={selectedQuizTitle}
         />
-        <ReturnQuiz setQuestionNumber={setQuestionNumber} />
+        <ReturnQuizs
+          setQuestionNumber={setQuestionNumber}
+          setSelectedQuizTitle={setSelectedQuizTitle}
+        />
       </Style>
     </>
   );
@@ -60,5 +69,5 @@ const Question: React.FC<Props> = ({ selectedCategoryTitle, selectedQuizTitle }:
 export default Question;
 
 const Style = styled.div`
-  margin-top: 60px;
+  margin-top: 10px;
 `;

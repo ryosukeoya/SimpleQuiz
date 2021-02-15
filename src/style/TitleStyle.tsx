@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
 const TitleStyle = styled.div`
-  display: inline-block;
-  padding-left: 15px;
-  vertical-align: top;
+  font-size: 1.2rem;
+  text-align: center;
+  color: #2c8fd1;
+  margin-bottom: 10px;
 `;
 
 export default TitleStyle;

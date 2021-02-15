@@ -29,9 +29,8 @@ const Modal: React.FC<Props> = ({
   getQuestion,
   nextQuestionNumber,
 }: Props) => {
-  // if (!modalOpen) return null;
   return (
-    // modalアニメーション
+    // modalアニメーション　modalOpen->trueなら呼ばれる
     <CSSTransition
       in={modalOpen}
       timeout={{ enter: 0, exit: 500 }}

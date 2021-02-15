@@ -5,26 +5,30 @@ import { questionClose } from '../../actions';
 
 interface Props {
   setQuestionNumber: Function;
+  setSelectedQuizTitle: Function;
 }
 
-const ReturnQuiz = ({ setQuestionNumber }: Props) => {
+const ReturnQuizs = ({ setQuestionNumber, setSelectedQuizTitle }: Props) => {
   const dispatch = useDispatch();
+
+  const element = '< クイズ一覧へ';
 
   return (
     <div>
       <Style
         onClick={() => {
+          setSelectedQuizTitle(null);
           setQuestionNumber(0);
           dispatch(questionClose());
         }}
       >
-        クイズ一覧へ
+        {element}
       </Style>
     </div>
   );
 };
 
-export default ReturnQuiz;
+export default ReturnQuizs;
 
 const Style = styled.div`
   color: #2c8fd1;
