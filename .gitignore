@@ -12,7 +12,7 @@
 /build
 
 #追加　
-/.firebase
+.firebase
 
 # misc
 .DS_Store
