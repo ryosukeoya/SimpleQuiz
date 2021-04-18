@@ -6,3 +6,4 @@ export { default as Re } from './Re.jpeg';
 export { default as Computer } from './computer.jpg';
 export { default as Finance } from './finance.jpg';
 export { default as History } from './history.jpg';
+export { default as kimetu } from './kimetu.png';
