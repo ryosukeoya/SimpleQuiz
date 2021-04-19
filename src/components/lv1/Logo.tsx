@@ -19,7 +19,7 @@ const Logo: React.FC = ({ setQuizOpen, setSelectedQuizTitle }: Props) => {
           dispatch(questionClose());
         }}
       >
-        いろんなクイズ
+        クイズの森
       </div>
     </Style>
   );
