@@ -12,6 +12,13 @@ type Props = {
   selectedQuizTitle: string;
 };
 
+type quizData = {
+  answers: string[];
+  correct: string;
+  explain: String[];
+  question: string;
+};
+
 const QuestionAnswers: React.VFC<Props> = ({
   getQuestion,
   nextQuestionNumber,
@@ -39,12 +46,13 @@ const QuestionAnswers: React.VFC<Props> = ({
     setSelectedAnsName(getQuizData);
   };
 
-  const getQuizData = () => {
+  const getQuizData = (): quizData => {
+    console.log(datas[selectedCategoryTitle][selectedQuizTitle][questionNumber]);
     return datas[selectedCategoryTitle][selectedQuizTitle][questionNumber];
   };
 
   //selectedAnsName(state)が変わったら呼び出される(useEffect)
-  const getModalTitle = () => {
+  const getModalTitle = (): void => {
     if (selectedAnsName === getQuizData().correct) {
       setModalTitle('正解！');
     } else {
