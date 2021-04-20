@@ -3,13 +3,12 @@ import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
 import { questionClose } from '../../actions';
 
-interface Props {
+type Props = {
   setQuizOpen: Function;
   setSelectedQuizTitle: Function;
-}
+};
 
-const Logo: React.FC = ({ setQuizOpen, setSelectedQuizTitle }: Props) => {
-  console.log(setSelectedQuizTitle);
+const Logo: React.VFC = ({ setQuizOpen, setSelectedQuizTitle }: Props) => {
   const dispatch = useDispatch();
   return (
     <Style>

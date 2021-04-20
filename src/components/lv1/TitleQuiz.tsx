@@ -1,17 +1,21 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import Style from '../../style/TitleStyle';
+import TitleStyle from '../../style/TitleStyle';
 
-interface Props {
+type Props = {
   selectedCategoryTitle: string;
-}
+};
 
-const TitleQuiz = ({ selectedCategoryTitle }: Props) => {
+const TitleQuiz: React.VFC = ({ selectedCategoryTitle }: Props) => {
   const questionOpenState = useSelector((state) => state.questionOpenState);
   if (questionOpenState) {
     return null;
   }
-  return <Style>{selectedCategoryTitle}クイズ一覧</Style>;
+  return (
+    <TitleStyle color={'#1d4154'} fontSize={'1.2rem'} marginTop={'0px'}>
+      {selectedCategoryTitle}クイズ一覧
+    </TitleStyle>
+  );
 };
 
 export default TitleQuiz;
