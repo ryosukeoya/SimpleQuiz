@@ -32,7 +32,6 @@ const Question: React.FC<Props> = ({
   }
 
   const getQuestion = (): string | null => {
-    console.log(questionNumber);
     return datas[selectedCategoryTitle][selectedQuizTitle][0].question;
   };
 
