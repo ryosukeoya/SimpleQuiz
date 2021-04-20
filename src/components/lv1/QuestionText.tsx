@@ -17,8 +17,6 @@ const QuestionText: React.VFC = ({
   selectedCategoryTitle,
   selectedQuizTitle,
 }: Props) => {
-  console.log(datas[selectedCategoryTitle]);
-  console.log(datas[selectedCategoryTitle][selectedQuizTitle]);
   return (
     <Style>
       {datas[selectedCategoryTitle][selectedQuizTitle][questionNumber].question}
