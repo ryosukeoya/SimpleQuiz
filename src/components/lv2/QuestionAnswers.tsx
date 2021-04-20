@@ -3,16 +3,16 @@ import QuestionAnswer from '../lv1/QuestionAnswer';
 import datas from '../../dataset';
 import Modal from '../modal/Modal';
 
-interface Props {
+type Props = {
   getQuestion: () => string | null;
   nextQuestionNumber: Function;
   questionNumber: number;
   setQuestionNumber: any;
   selectedCategoryTitle: string;
   selectedQuizTitle: string;
-}
+};
 
-const QuestionAnswers: React.FC<Props> = ({
+const QuestionAnswers: React.VFC<Props> = ({
   getQuestion,
   nextQuestionNumber,
   questionNumber,
@@ -35,7 +35,7 @@ const QuestionAnswers: React.FC<Props> = ({
   }, [selectedAnsName]);
 
   //引数getData←data←datas[title][questionNumber].answers.map
-  const getSelectAnswer = (getQuizData) => {
+  const getSelectAnswer = (getQuizData: string) => {
     setSelectedAnsName(getQuizData);
   };
 

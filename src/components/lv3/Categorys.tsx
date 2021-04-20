@@ -5,12 +5,12 @@ import datas from '../../dataset';
 import Title from '../lv1/Title';
 import { Computer, Anime, Finance, Game, History } from '../../images/_CategoryImages';
 
-interface Props {
+type Props = {
   quizOpen: boolean;
   setQuizOpen: Function;
-}
+};
 
-const Categorys: React.FC = ({ quizOpen, setQuizOpen }: Props) => {
+const Categorys: React.VFC = ({ quizOpen, setQuizOpen }: Props) => {
   const [selectedCategoryTitle, setSelectCategoryTitle] = useState('title');
 
   //categoryNameでstateのcategoryTitleを変更
