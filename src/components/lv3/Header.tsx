@@ -3,13 +3,13 @@ import Login from '../lv1/Login';
 import Logo from '../lv1/Logo';
 import styled from 'styled-components';
 
-interface Props {
-  setQuizOpen: Function;
-  setSelectedQuizTitle: Function;
-}
+type Props = {
+  setQuizOpen: (param: boolean) => void;
+  setSelectedQuizTitle: (param: string) => void;
+};
 
 //Portalで管理
-const Header: React.FC = ({ setQuizOpen, setSelectedQuizTitle }: Props) => {
+const Header: React.VFC = ({ setQuizOpen, setSelectedQuizTitle }: Props) => {
   return (
     <Style>
       <Logo setQuizOpen={setQuizOpen} setSelectedQuizTitle={setSelectedQuizTitle} />

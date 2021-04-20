@@ -8,14 +8,14 @@ import datas from '../../dataset';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 
-interface Props {
+type Props = {
   text: string;
   selectedCategoryTitle: string;
   selectedQuizTitle: string;
   setSelectedQuizTitle: Function;
-}
+};
 
-const Question: React.FC<Props> = ({
+const Question: React.VFC<Props> = ({
   selectedCategoryTitle,
   selectedQuizTitle,
   setSelectedQuizTitle,
@@ -35,7 +35,7 @@ const Question: React.FC<Props> = ({
     return datas[selectedCategoryTitle][selectedQuizTitle][0].question;
   };
 
-  const nextQuestionNumber = () => {
+  const nextQuestionNumber = (): void => {
     setQuestionNumber(questionNumber + 1);
   };
 
