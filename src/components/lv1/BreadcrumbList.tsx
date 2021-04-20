@@ -7,7 +7,7 @@ interface Props {
 }
 
 //パンくずリスト
-const BreadcrumbList: React.FC = ({ selectedCategoryTitle, selectedQuizTitle }: Props) => {
+const BreadcrumbList: React.VFC = ({ selectedCategoryTitle, selectedQuizTitle }: Props) => {
   return (
     <Style>
       Home{'>'}
@@ -21,7 +21,7 @@ export default BreadcrumbList;
 
 const Style = styled.div`
   font-size: 0.8rem;
-  color: #2c8fd1;
+  color: #4d4d4d;
   margin-top: 60px;
   margin-bottom: 10px;
 `;
