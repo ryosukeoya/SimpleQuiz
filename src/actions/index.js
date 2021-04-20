@@ -9,3 +9,13 @@ export const questionClose = () => {
     type: 'QUESTIONCLOSE',
   };
 };
+export const correctIncrement1 = () => {
+  return {
+    type: 'INCREMENT1',
+  };
+};
+export const correctClear = () => {
+  return {
+    type: 'CLEAR',
+  };
+};
