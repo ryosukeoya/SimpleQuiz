@@ -31,7 +31,7 @@ const Style = styled.header`
   background-color: #fff;
   display: flex;
   justify-content: space-between;
-  color: #006821;
+  color: #007224;
   margin-bottom: 5px;
   box-shadow: 0 1px 1px rgba(160, 166, 179, 0.3);
 `;
