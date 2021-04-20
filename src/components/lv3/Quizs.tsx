@@ -59,6 +59,7 @@ const Quizs = ({ quizOpen, selectedCategoryTitle, setQuizOpen }: Props) => {
           <Quiz
             key={data.toString()}
             quizTitleName={data}
+            selectedCategoryTitle={selectedCategoryTitle}
             image={getImage()}
             setSelectedQuizTitle={setSelectedQuizTitle}
           />

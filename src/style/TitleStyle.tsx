@@ -1,9 +1,13 @@
 import styled from 'styled-components';
 
-const TitleStyle = styled.div`
-  font-size: 1.2rem;
+//TitleQuizとQuestionTitleとTitle
+//↓消さないで！
+// prettier-ignore
+const TitleStyle = styled.div<{ color: string, fontSize: string, marginTop:string }>`
+  margin-top:${(props) => props.marginTop};
+  font-size: ${(props) => props.fontSize};
   text-align: center;
-  color: #2c8fd1;
+  color: ${(props) => props.color};
   margin-bottom: 10px;
 `;
 
