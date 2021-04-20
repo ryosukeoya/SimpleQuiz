@@ -3,22 +3,22 @@ import CategoryImage from '../lv1/CategoryImage';
 import CategoryTitle from '../lv1/CategoryTitle';
 import Style from '../../style/QuizStyle';
 
-interface Props {
+type Props = {
   categoryName: string;
   image: any;
   quizOpen: boolean;
   quizStart: VoidFunction;
   setSlctCategoryTitle: (name: string) => void;
   setQuizOpen: any;
-}
+};
 
-const Category: React.FC = ({
+const Category: React.VFC = ({
   categoryName,
   image,
   setSlctCategoryTitle,
   quizOpen,
   setQuizOpen,
-}) => {
+}: Props) => {
   if (quizOpen) {
     return null;
   }

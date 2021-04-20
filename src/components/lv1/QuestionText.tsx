@@ -10,7 +10,7 @@ interface Props {
   selectedQuizTitle: string;
 }
 
-const QuestionText: React.FC = ({
+const QuestionText: React.VFC = ({
   getQuestion,
   plusTitle,
   questionNumber,
