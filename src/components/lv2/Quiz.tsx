@@ -5,20 +5,27 @@ import Style from '../../style/QuizStyle';
 import { useSelector, useDispatch } from 'react-redux';
 import { questionOpen } from '../../actions';
 
-interface Props {
+type Props = {
   quizTitleName: string;
   image: any;
   setSelectedQuizTitle: any;
-}
+};
 
-const Quiz: React.FC = ({ quizTitleName, image, setSelectedQuizTitle }: Props) => {
+const Quiz: React.VFC = ({ quizTitleName, image, setSelectedQuizTitle }: Props) => {
   const questionOpenState = useSelector((state) => state.questionOpenState);
   if (questionOpenState) {
     return null;
   }
   const dispatch = useDispatch();
 
-  console.log(quizTitleName);
+  if (quizTitleName === 'Kimetu') {
+    quizTitleName = '鬼滅の刃';
+  } else if (quizTitleName === 'Eva') {
+    quizTitleName = 'エヴァンゲリオン';
+  } else if (quizTitleName === 'Re') {
+    quizTitleName = 'Re:ゼロから始める異世界生活';
+  }
+
   return (
     <>
       <div
