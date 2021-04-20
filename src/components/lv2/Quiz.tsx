@@ -17,13 +17,14 @@ const Quiz: React.VFC = ({ quizTitleName, image, setSelectedQuizTitle }: Props) 
     return null;
   }
   const dispatch = useDispatch();
+  let viewQuizTitleName = '';
 
   if (quizTitleName === 'Kimetu') {
-    quizTitleName = '鬼滅の刃';
+    viewQuizTitleName = '鬼滅の刃';
   } else if (quizTitleName === 'Eva') {
-    quizTitleName = 'エヴァンゲリオン';
+    viewQuizTitleName = 'エヴァンゲリオン';
   } else if (quizTitleName === 'Re') {
-    quizTitleName = 'Re:ゼロから始める異世界生活';
+    viewQuizTitleName = 'Re:ゼロから始める異世界生活';
   }
 
   return (
@@ -35,7 +36,7 @@ const Quiz: React.VFC = ({ quizTitleName, image, setSelectedQuizTitle }: Props) 
       >
         <Style>
           <QuizImage image={image} quizTitleName={quizTitleName} />
-          <QuizTitle quizTitleName={quizTitleName} />
+          <QuizTitle viewQuizTitleName={viewQuizTitleName} />
         </Style>
       </div>
     </>
