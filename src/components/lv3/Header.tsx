@@ -13,7 +13,7 @@ const Header: React.VFC = ({ setQuizOpen, setSelectedQuizTitle }: Props) => {
   return (
     <Style>
       <Logo setQuizOpen={setQuizOpen} setSelectedQuizTitle={setSelectedQuizTitle} />
-      <Login />
+      <Login>login</Login>
     </Style>
   );
 };
@@ -31,7 +31,7 @@ const Style = styled.header`
   background-color: #fff;
   display: flex;
   justify-content: space-between;
-  color: #2c8fd1;
+  color: #006821;
   margin-bottom: 5px;
   box-shadow: 0 1px 1px rgba(160, 166, 179, 0.3);
 `;

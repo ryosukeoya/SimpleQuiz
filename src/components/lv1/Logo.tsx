@@ -4,8 +4,8 @@ import { useDispatch } from 'react-redux';
 import { questionClose } from '../../actions';
 
 type Props = {
-  setQuizOpen: Function;
-  setSelectedQuizTitle: Function;
+  setQuizOpen: (param: boolean) => void;
+  setSelectedQuizTitle: (param: string | null) => void;
 };
 
 const Logo: React.VFC = ({ setQuizOpen, setSelectedQuizTitle }: Props) => {
