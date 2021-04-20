@@ -1,11 +1,11 @@
 import React from 'react';
 
-interface Props {
+type Props = {
   getQuizData: () => any;
   selectAnsIndex: number;
-}
+};
 
-const ModalText: React.FC = ({ getQuizData, selectAnsIndex }: Props) => {
+const ModalText: React.VFC = ({ getQuizData, selectAnsIndex }: Props) => {
   //indexから判定ver []
   const getExplain = () => {
     const explain = getQuizData().explain[selectAnsIndex];

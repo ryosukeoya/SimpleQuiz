@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import QuestionAnswer from '../lv1/QuestionAnswer';
 import datas from '../../dataset';
 import Modal from '../modal/Modal';
+import { useDispatch } from 'react-redux';
+import { correctIncrement1 } from '../../actions';
 
 type Props = {
   getQuestion: () => string | null;
@@ -26,11 +28,13 @@ const QuestionAnswers: React.VFC<Props> = ({
   setQuestionNumber,
   selectedCategoryTitle,
   selectedQuizTitle,
+  setCategoryOpen,
 }) => {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedAnsName, setSelectedAnsName] = useState('answer');
   const [selectAnsIndex, setSelectAnsIndex] = useState(null);
   const [modalTitle, setModalTitle] = useState('title');
+  const dispatch = useDispatch();
 
   //selectAnswerのstateが変わったら呼び出される（後、初回のrender時も）
   useEffect(() => {
@@ -52,9 +56,11 @@ const QuestionAnswers: React.VFC<Props> = ({
   };
 
   //selectedAnsName(state)が変わったら呼び出される(useEffect)
+  //正誤判定
   const getModalTitle = (): void => {
     if (selectedAnsName === getQuizData().correct) {
       setModalTitle('正解！');
+      dispatch(correctIncrement1());
     } else {
       setModalTitle('不正解！');
     }

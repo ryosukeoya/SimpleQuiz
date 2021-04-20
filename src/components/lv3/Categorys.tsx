@@ -7,10 +7,15 @@ import { Computer, Anime, Finance, Game, History } from '../../images/_CategoryI
 
 type Props = {
   quizOpen: boolean;
-  setQuizOpen: Function;
+  setQuizOpen: (param: boolean) => void;
+  categoryOpen: boolean;
+  setCategoryOpen: (param: boolean) => void;
 };
 
-const Categorys: React.VFC = ({ quizOpen, setQuizOpen }: Props) => {
+const Categorys: React.VFC = ({ quizOpen, setQuizOpen, categoryOpen, setCategoryOpen }: Props) => {
+  if (!categoryOpen) {
+    return null;
+  }
   const [selectedCategoryTitle, setSelectCategoryTitle] = useState('title');
 
   //categoryNameでstateのcategoryTitleを変更
@@ -34,6 +39,7 @@ const Categorys: React.VFC = ({ quizOpen, setQuizOpen }: Props) => {
             setSlctCategoryTitle={setSlctCategoryTitle}
             quizOpen={quizOpen}
             setQuizOpen={setQuizOpen}
+            setCategoryOpen={setCategoryOpen}
           />
         );
       })}
@@ -41,6 +47,7 @@ const Categorys: React.VFC = ({ quizOpen, setQuizOpen }: Props) => {
         selectedCategoryTitle={selectedCategoryTitle}
         quizOpen={quizOpen}
         setQuizOpen={setQuizOpen}
+        setCategoryOpen={setCategoryOpen}
       />
     </>
   );

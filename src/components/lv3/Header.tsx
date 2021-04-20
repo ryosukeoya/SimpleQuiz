@@ -2,17 +2,23 @@ import React from 'react';
 import Login from '../lv1/Login';
 import Logo from '../lv1/Logo';
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
 
 type Props = {
   setQuizOpen: (param: boolean) => void;
-  setSelectedQuizTitle: (param: string) => void;
+  setSelectedQuizTitle: (param: string | null) => void;
+  setCategoryOpen: (param: boolean) => void;
 };
 
 //Portalで管理
-const Header: React.VFC = ({ setQuizOpen, setSelectedQuizTitle }: Props) => {
+const Header: React.VFC = ({ setQuizOpen, setSelectedQuizTitle, setCategoryOpen }: Props) => {
   return (
     <Style>
-      <Logo setQuizOpen={setQuizOpen} setSelectedQuizTitle={setSelectedQuizTitle} />
+      <Logo
+        setQuizOpen={setQuizOpen}
+        setSelectedQuizTitle={setSelectedQuizTitle}
+        setCategoryOpen={setCategoryOpen}
+      />
       <Login>login</Login>
     </Style>
   );

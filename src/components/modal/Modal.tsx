@@ -9,17 +9,17 @@ import './Modal.css';
 
 interface Props {
   modalOpen: boolean;
-  setModalOpen: Function;
+  setModalOpen: (param: boolean) => void;
   selectedAnsName: string;
   selectedCategoryTitle: string;
   selectAnsIndex: any;
   modalTitle: string;
   getQuizData: () => any;
   getQuestion: () => string | null;
-  nextQuestionNumber: Function;
+  nextQuestionNumber: () => void;
 }
 //Portals
-const Modal: React.FC<Props> = ({
+const Modal: React.VFC<Props> = ({
   modalOpen,
   setModalOpen,
   selectedCategoryTitle,

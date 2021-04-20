@@ -1,21 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
-import { questionClose } from '../../actions';
+import { questionClose, correctClear } from '../../actions';
 
 type Props = {
   setQuizOpen: (param: boolean) => void;
-  setSelectedQuizTitle: (param: string | null) => void;
+  setSelectedQuizTitle: (param: string) => void;
+  setCategoryOpen: (param: boolean) => void;
 };
 
-const Logo: React.VFC = ({ setQuizOpen, setSelectedQuizTitle }: Props) => {
+const Logo: React.VFC = ({ setQuizOpen, setSelectedQuizTitle, setCategoryOpen }: Props) => {
   const dispatch = useDispatch();
   return (
     <Style>
       <div
         onClick={() => {
-          setQuizOpen(false), setSelectedQuizTitle(null);
+          setQuizOpen(false);
+          // setSelectedQuizTitle('');
           dispatch(questionClose());
+          dispatch(correctClear());
+          setCategoryOpen(true);
         }}
       >
         クイズの森
