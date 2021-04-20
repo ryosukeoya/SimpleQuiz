@@ -1,21 +1,20 @@
 import React, { useState } from 'react';
 import Style from '../../style/QuizTitleStyle';
 
-interface Props {
+type Props = {
   categoryName: string;
-}
+};
 
-const CategoryTitle: React.FC = ({ categoryName }: Props) => {
-  let plusTitle: String = '';
-  if (categoryName === 'Computer') {
-    plusTitle = ' Science';
+const CategoryTitle: React.VFC = ({ categoryName }: Props) => {
+  let Title: String = '';
+  if (categoryName === 'Game') {
+    Title = 'ゲーム';
+  } else if (categoryName === 'Anime') {
+    Title = 'アニメ';
+  } else if (categoryName === 'Computer') {
+    Title = 'エンジニアクイズ';
   }
-  return (
-    <Style>
-      {categoryName}
-      {plusTitle}
-    </Style>
-  );
+  return <Style>{Title}</Style>;
 };
 
 export default CategoryTitle;
