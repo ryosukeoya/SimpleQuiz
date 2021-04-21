@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
 import { questionClose } from '../../actions';
 
-interface Props {
-  setQuestionNumber: Function;
-  setSelectedQuizTitle: Function;
-}
+type Props = {
+  setQuestionNumber: (param: number) => void;
+  setSelectedQuizTitle: (param: string | null) => void;
+};
 
-const ReturnQuizs = ({ setQuestionNumber, setSelectedQuizTitle }: Props) => {
+const ReturnQuizs: React.VFC = ({ setQuestionNumber, setSelectedQuizTitle }: Props) => {
   const dispatch = useDispatch();
 
   const element = '< クイズ一覧へ';

@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
-import QuestionText from '../lv1/QuestionText';
-import QuestionAnswers from '../lv2/QuestionAnswers';
-import ReturnQuizs from '../lv1/ReturnQuizs';
-import QuestionTitle from '../lv1/QuestionTitle';
-import BreadcrumbList from '../lv1/BreadcrumbList';
-import datas from '../../dataset';
 import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import { questionClose } from '../../actions';
+import datas from '../../dataset';
+import { QuestionText, ReturnQuizs, QuestionTitle } from '../lv1/_index';
+import QuestionAnswers from '../lv2/QuestionAnswers';
 
 type Props = {
   text: string;

@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 
-interface Props {
-  setQuizOpen: Function;
-}
+type Props = {
+  setQuizOpen: (param: boolean) => void;
+};
 
-const ReturnCategorys = ({ setQuizOpen }: Props) => {
+const ReturnCategorys: React.VFC = ({ setQuizOpen }: Props) => {
   const questionOpenState = useSelector((state) => state.questionOpenState);
   if (questionOpenState) {
     return null;

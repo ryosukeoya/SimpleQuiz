@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
 import datas from '../../dataset';
-import Question from './Question';
-import Header from '../lv3/Header';
-import Quiz from '../lv2/Quiz';
-import TitleQuiz from '../lv1/TitleQuiz';
-import ReturnCategorys from '../lv1/ReturnCategorys';
-import BreadcrumbList from '../lv1/BreadcrumbList';
 import { Computer, Anime, Finance, Game, History } from '../../images/_CategoryImages';
 import { FF, metalGear, Eva2, Re, kimetu } from '../../images/_QuizImages';
+import { ReturnCategorys, TitleQuiz, BreadcrumbList } from '../lv1/_index';
+import { Quiz } from '../lv2/_index';
+import Question from './Question';
 
 type Props = {
   quizOpen: boolean;
