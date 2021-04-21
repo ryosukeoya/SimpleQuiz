@@ -8,10 +8,12 @@ const App: React.VFC = () => {
   const [quizOpen, setQuizOpen] = useState(false);
   const [categorysOpen, setCategoryOpen] = useState(true);
   const [scoreOpen, setScoreOpen] = useState(false);
+  const [selectedQuizTitle, setSelectedQuizTitle] = useState(null);
 
   return (
     <>
       <Header
+        setSelectedQuizTitle={setSelectedQuizTitle}
         setQuizOpen={setQuizOpen}
         setCategoryOpen={setCategoryOpen}
         setScoreOpen={setScoreOpen}
@@ -22,6 +24,8 @@ const App: React.VFC = () => {
         categoryOpen={categorysOpen}
         setCategoryOpen={setCategoryOpen}
         setScoreOpen={setScoreOpen}
+        selectedQuizTitle={selectedQuizTitle}
+        setSelectedQuizTitle={setSelectedQuizTitle}
       />
       <Score scoreOpen={scoreOpen} />
     </>

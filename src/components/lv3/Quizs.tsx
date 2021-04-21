@@ -15,6 +15,8 @@ type Props = {
   setQuizOpen: (param: boolean) => void;
   setCategoryOpen: (param: boolean) => void;
   setScoreOpen: (param: boolean) => void;
+  selectedQuizTitle: string;
+  setSelectedQuizTitle: (param: string) => void;
 };
 
 const Quizs: React.VFC = ({
@@ -23,8 +25,10 @@ const Quizs: React.VFC = ({
   setQuizOpen,
   setCategoryOpen,
   setScoreOpen,
+  selectedQuizTitle,
+  setSelectedQuizTitle,
 }: Props) => {
-  const [selectedQuizTitle, setSelectedQuizTitle] = useState('');
+  // const [selectedQuizTitle, setSelectedQuizTitle] = useState('');
   const [text, setText] = useState(null);
 
   if (!quizOpen) {
@@ -55,11 +59,6 @@ const Quizs: React.VFC = ({
 
   return (
     <>
-      <Header
-        setSelectedQuizTitle={setSelectedQuizTitle}
-        setQuizOpen={setQuizOpen}
-        setCategoryOpen={setCategoryOpen}
-      />
       <BreadcrumbList
         selectedCategoryTitle={selectedCategoryTitle}
         selectedQuizTitle={selectedQuizTitle}
