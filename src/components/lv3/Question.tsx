@@ -16,6 +16,7 @@ type Props = {
   setSelectedQuizTitle: Function;
   setQuizOpen: (param: boolean) => void;
   setCategoryOpen: (param: boolean) => void;
+  setScoreOpen: (param: boolean) => void;
 };
 
 const Question: React.VFC<Props> = ({
@@ -24,6 +25,7 @@ const Question: React.VFC<Props> = ({
   setSelectedQuizTitle,
   setQuizOpen,
   setCategoryOpen,
+  setScoreOpen,
 }: Props) => {
   const [questionNumber, setQuestionNumber] = useState<number>(0);
   const dispatch = useDispatch();
@@ -46,6 +48,7 @@ const Question: React.VFC<Props> = ({
       dispatch(questionClose());
       setQuizOpen(false);
       setCategoryOpen(false);
+      setScoreOpen(true);
       console.log('終わり');
     } else {
       setQuestionNumber(questionNumber + 1);
