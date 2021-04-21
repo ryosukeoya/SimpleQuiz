@@ -7,9 +7,8 @@ import QuestionAnswer from '../lv1/QuestionAnswer';
 
 type Props = {
   getQuestion: () => string | null;
-  nextQuestionNumber: Function;
+  nextQuestionNumber: () => void;
   questionNumber: number;
-  setQuestionNumber: any;
   selectedCategoryTitle: string;
   selectedQuizTitle: string;
 };
@@ -25,10 +24,8 @@ const QuestionAnswers: React.VFC<Props> = ({
   getQuestion,
   nextQuestionNumber,
   questionNumber,
-  setQuestionNumber,
   selectedCategoryTitle,
   selectedQuizTitle,
-  setCategoryOpen,
 }) => {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedAnsName, setSelectedAnsName] = useState('answer');
