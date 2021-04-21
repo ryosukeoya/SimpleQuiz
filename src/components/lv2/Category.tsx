@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import CategoryImage from '../lv1/CategoryImage';
 import CategoryTitle from '../lv1/CategoryTitle';
 import Style from '../../style/QuizStyle';

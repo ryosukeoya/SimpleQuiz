@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import datas from '../../dataset';
-import { Computer, Anime, Finance, Game, History } from '../../images/_CategoryImages';
-import { FF, metalGear, Eva2, Re, kimetu } from '../../images/_QuizImages';
+import { FF, metalGear, Eva2, Re, kimetu, FrontEnd, BackEnd } from '../../images/_QuizImages';
 import { TitleQuiz, ReturnNav, BreadcrumbList } from '../lv1/_index';
 import { Quiz } from '../lv2/_index';
 import Question from './Question';
@@ -40,15 +39,9 @@ const Quizs: React.VFC = ({
     } else if (selectedCategoryTitle === 'Anime') {
       const image = [kimetu, Eva2, Re];
       return image[i];
-    } else if (selectedCategoryTitle === 'Computer') {
-      const image = [Computer];
-      return image;
-    } else if (selectedCategoryTitle === 'Finance') {
-      const image = [Finance];
-      return image;
-    } else if (selectedCategoryTitle === 'History') {
-      const image = [History];
-      return image;
+    } else if (selectedCategoryTitle === 'Engineer') {
+      const image = [FrontEnd, BackEnd];
+      return image[i];
     }
   };
 

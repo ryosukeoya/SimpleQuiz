@@ -29,7 +29,7 @@ const Categorys: React.VFC = ({
   }
   const [selectedCategoryTitle, setSelectCategoryTitle] = useState('title');
 
-  //categoryNameでstateのcategoryTitleを変更
+  //categoryName(data(datasをmapで展開))でstateのcategoryTitleを変更
   const setSlctCategoryTitle = (name: string): void => {
     setSelectCategoryTitle(name);
   };

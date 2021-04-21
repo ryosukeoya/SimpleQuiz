@@ -11,7 +11,7 @@ const CategoryTitle: React.VFC = ({ categoryName }: Props) => {
     Title = 'ゲーム';
   } else if (categoryName === 'Anime') {
     Title = 'アニメ';
-  } else if (categoryName === 'Computer') {
+  } else if (categoryName === 'Engineer') {
     Title = 'エンジニアクイズ';
   }
   return <Style>{Title}</Style>;
