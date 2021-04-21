@@ -3,7 +3,7 @@ import Category from '../lv2/Category';
 import Quizs from './Quizs';
 import datas from '../../dataset';
 import Title from '../lv1/Title';
-import { Computer, Anime, Finance, Game, History } from '../../images/_CategoryImages';
+import { Anime2, Game, www } from '../../images/_CategoryImages';
 
 type Props = {
   quizOpen: boolean;
@@ -34,7 +34,7 @@ const Categorys: React.VFC = ({
     setSelectCategoryTitle(name);
   };
 
-  const image = [Game, Anime, Computer, Finance, History];
+  const image = [Game, Anime2, www];
   let i = -1;
 
   return (
