@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import QuestionAnswer from '../lv1/QuestionAnswer';
-import datas from '../../dataset';
 import Modal from '../modal/Modal';
 import { useDispatch } from 'react-redux';
 import { correctIncrement1 } from '../../actions';
+import datas from '../../dataset';
+import QuestionAnswer from '../lv1/QuestionAnswer';
 
 type Props = {
   getQuestion: () => string | null;

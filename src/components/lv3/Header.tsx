@@ -1,8 +1,6 @@
 import React from 'react';
-import Login from '../lv1/Login';
-import Logo from '../lv1/Logo';
 import styled from 'styled-components';
-import { useDispatch } from 'react-redux';
+import { Login, Logo } from '../lv1/_index';
 
 type Props = {
   setQuizOpen: (param: boolean) => void;
