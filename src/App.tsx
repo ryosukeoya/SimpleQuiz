@@ -7,17 +7,23 @@ import Score from './components/lv1/Score';
 const App: React.VFC = () => {
   const [quizOpen, setQuizOpen] = useState(false);
   const [categorysOpen, setCategoryOpen] = useState(true);
+  const [scoreOpen, setScoreOpen] = useState(false);
 
   return (
     <>
-      <Header setQuizOpen={setQuizOpen} setCategoryOpen={setCategoryOpen} />
+      <Header
+        setQuizOpen={setQuizOpen}
+        setCategoryOpen={setCategoryOpen}
+        setScoreOpen={setScoreOpen}
+      />
       <Categorys
         quizOpen={quizOpen}
         setQuizOpen={setQuizOpen}
         categoryOpen={categorysOpen}
         setCategoryOpen={setCategoryOpen}
+        setScoreOpen={setScoreOpen}
       />
-      <Score />
+      <Score scoreOpen={scoreOpen} />
     </>
   );
 };
