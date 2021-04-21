@@ -33,6 +33,6 @@ export default ReturnNav;
 const Style = styled.div`
   color: #2c8fd1;
   text-decoration: underline;
-  margin-top: 8px;
+  margin-top: 12px;
   cursor: pointer;
 `;
