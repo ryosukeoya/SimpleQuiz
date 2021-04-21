@@ -12,7 +12,7 @@ const BreadcrumbList: React.VFC = ({ selectedCategoryTitle, selectedQuizTitle }:
     <Style>
       Home{'>'}
       {selectedCategoryTitle}カテゴリ
-      {!(selectedQuizTitle === '') ? `>${selectedQuizTitle}クイズ` : ''}
+      {selectedQuizTitle === null ? '' : `>${selectedQuizTitle}クイズ`}
     </Style>
   );
 };

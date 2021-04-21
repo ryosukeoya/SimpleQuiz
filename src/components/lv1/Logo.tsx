@@ -5,7 +5,7 @@ import { questionClose, correctClear } from '../../actions';
 
 type Props = {
   setQuizOpen: (param: boolean) => void;
-  setSelectedQuizTitle: (param: string) => void;
+  setSelectedQuizTitle: (param: string | null) => void;
   setCategoryOpen: (param: boolean) => void;
   setScoreOpen: (param: boolean) => void;
 };
@@ -22,7 +22,7 @@ const Logo: React.VFC = ({
       <div
         onClick={() => {
           setQuizOpen(false);
-          // setSelectedQuizTitle('');
+          setSelectedQuizTitle(null);
           dispatch(questionClose());
           dispatch(correctClear());
           setCategoryOpen(true);

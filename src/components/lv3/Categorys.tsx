@@ -11,6 +11,8 @@ type Props = {
   categoryOpen: boolean;
   setCategoryOpen: (param: boolean) => void;
   setScoreOpen: (param: boolean) => void;
+  selectedQuizTitle: string;
+  setSelectedQuizTitle: (param: string) => void;
 };
 
 const Categorys: React.VFC = ({
@@ -19,6 +21,8 @@ const Categorys: React.VFC = ({
   categoryOpen,
   setCategoryOpen,
   setScoreOpen,
+  selectedQuizTitle,
+  setSelectedQuizTitle,
 }: Props) => {
   if (!categoryOpen) {
     return null;
@@ -56,6 +60,8 @@ const Categorys: React.VFC = ({
         setQuizOpen={setQuizOpen}
         setCategoryOpen={setCategoryOpen}
         setScoreOpen={setScoreOpen}
+        selectedQuizTitle={selectedQuizTitle}
+        setSelectedQuizTitle={setSelectedQuizTitle}
       />
     </>
   );
