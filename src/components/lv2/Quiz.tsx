@@ -41,6 +41,12 @@ const Quiz: React.VFC = ({
     } else if (quizTitleName === 'メタルギア') {
       viewQuizTitleName = 'メタルギア';
     }
+  } else if (selectedCategoryTitle === 'Engineer') {
+    if (quizTitleName === 'FrontEnd') {
+      viewQuizTitleName = 'フロントエンド';
+    } else if (quizTitleName === 'BackEnd') {
+      viewQuizTitleName = 'バックエンド';
+    }
   }
 
   return (

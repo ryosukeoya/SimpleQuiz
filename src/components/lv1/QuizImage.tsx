@@ -11,7 +11,7 @@ export default QuizImage;
 const Style = styled.img`
   display: inline-block;
   height: 100px;
-  width: 130px;
+  width: 119px;
   //スマホ
   ${customMedia.lessThan('mobile')`
     /* screen width is less than 599px (tablet) */
