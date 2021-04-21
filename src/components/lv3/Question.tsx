@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import { questionClose } from '../../actions';
 import datas from '../../dataset';
-import { QuestionText, ReturnQuizs, QuestionTitle } from '../lv1/_index';
+import { QuestionText, QuestionTitle } from '../lv1/_index';
 import QuestionAnswers from '../lv2/QuestionAnswers';
 
 type Props = {
@@ -46,7 +46,6 @@ const Question: React.VFC<Props> = ({
       setQuizOpen(false);
       setCategoryOpen(false);
       setScoreOpen(true);
-      console.log('終わり');
     } else {
       setQuestionNumber(questionNumber + 1);
     }
@@ -69,10 +68,6 @@ const Question: React.VFC<Props> = ({
           setQuestionNumber={setQuestionNumber}
           selectedCategoryTitle={selectedCategoryTitle}
           selectedQuizTitle={selectedQuizTitle}
-        />
-        <ReturnQuizs
-          setQuestionNumber={setQuestionNumber}
-          setSelectedQuizTitle={setSelectedQuizTitle}
         />
       </Style>
     </>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import datas from '../../dataset';
 import { Computer, Anime, Finance, Game, History } from '../../images/_CategoryImages';
 import { FF, metalGear, Eva2, Re, kimetu } from '../../images/_QuizImages';
-import { ReturnCategorys, TitleQuiz, BreadcrumbList } from '../lv1/_index';
+import { TitleQuiz, ReturnNav, BreadcrumbList } from '../lv1/_index';
 import { Quiz } from '../lv2/_index';
 import Question from './Question';
 
@@ -73,7 +73,7 @@ const Quizs: React.VFC = ({
           />
         );
       })}
-      <ReturnCategorys setQuizOpen={setQuizOpen} />
+      <ReturnNav setQuizOpen={setQuizOpen} />
       <Question
         text={text}
         selectedCategoryTitle={selectedCategoryTitle}
