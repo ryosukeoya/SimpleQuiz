@@ -42,7 +42,8 @@ const Style = styled.header`
   background-color: #fff;
   display: flex;
   justify-content: space-between;
-  color: #007224;
+  /* color: #007224; */
+  color: #004a6d;
   margin-bottom: 5px;
   box-shadow: 0 1px 1px rgba(160, 166, 179, 0.3);
 `;

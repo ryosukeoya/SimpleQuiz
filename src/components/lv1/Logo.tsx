@@ -29,7 +29,7 @@ const Logo: React.VFC = ({
           setScoreOpen(false);
         }}
       >
-        クイズの森
+        シンプルクイズ
       </div>
     </Style>
   );
@@ -41,5 +41,7 @@ const Style = styled.header`
   margin-left: 50px;
   justify-content: center;
   font-size: 20px;
+  font-weight: 500;
+  font-family: Fancy;
   cursor: pointer;
 `;
