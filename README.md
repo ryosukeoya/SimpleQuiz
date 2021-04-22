@@ -1,8 +1,6 @@
-# quiz
-
 ## 概要
 
-- quiz アプリを SPA で実装
+- Quiz アプリを SPA で実装
 
 ## 機能
 
@@ -11,15 +9,16 @@
 
 ## 技術　
 
-- typescript,react
+- TypeScript
+- React
 
 **ルーティング**
 
-- react-router
+- React-Router
 
 **状態管理**
 
-- redux
+- Redux
 
 **Style**
 
