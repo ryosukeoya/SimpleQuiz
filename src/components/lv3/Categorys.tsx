@@ -34,7 +34,7 @@ const Categorys: React.VFC = ({
     setSelectCategoryTitle(name);
   };
 
-  const image = [Game, Anime2, www];
+  const image = [www, Anime2, Game];
   let i = -1;
 
   return (
