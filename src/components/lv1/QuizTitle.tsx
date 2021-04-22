@@ -1,21 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Style from '../../style/QuizTitleStyle';
 
-interface Props {
-  quizTitleName: string;
-}
+type Props = {
+  viewQuizTitleName: string;
+};
 
-const QuizTitle: React.FC = ({ quizTitleName }: Props) => {
-  let plusTitle: String = '';
-  if (quizTitleName === 'Computer') {
-    plusTitle = ' Science';
-  }
-  return (
-    <Style>
-      {quizTitleName}
-      {plusTitle}
-    </Style>
-  );
+const QuizTitle: React.VFC = ({ viewQuizTitleName }: Props) => {
+  return <Style>{viewQuizTitleName}</Style>;
 };
 
 export default QuizTitle;

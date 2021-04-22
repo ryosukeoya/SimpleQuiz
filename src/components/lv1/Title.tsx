@@ -1,19 +1,20 @@
 import React from 'react';
-import styled from 'styled-components';
+import TitleStyle from '../../style/TitleStyle';
 
-const Title = ({ quizOpen }) => {
+type Props = {
+  quizOpen: boolean;
+};
+
+const Title: React.VFC = ({ quizOpen }: Props) => {
   if (quizOpen) {
     return null;
   }
-  return <Style>カテゴリ一覧</Style>;
+
+  return (
+    <TitleStyle color={'#2b546a'} fontSize={'1.3rem'} marginTop={'60px'}>
+      カテゴリ一覧
+    </TitleStyle>
+  );
 };
 
 export default Title;
-
-const Style = styled.div`
-  font-size: 1.3rem;
-  text-align: center;
-  color: #2c8fd1;
-  margin-top: 60px;
-  margin-bottom: 10px;
-`;

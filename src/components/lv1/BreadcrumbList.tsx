@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-interface Props {
+type Props = {
   selectedCategoryTitle: string;
   selectedQuizTitle: string | null;
-}
+};
 
 //パンくずリスト
 const BreadcrumbList: React.VFC = ({ selectedCategoryTitle, selectedQuizTitle }: Props) => {
@@ -12,7 +12,7 @@ const BreadcrumbList: React.VFC = ({ selectedCategoryTitle, selectedQuizTitle }:
     <Style>
       Home{'>'}
       {selectedCategoryTitle}カテゴリ
-      {!(selectedQuizTitle === null) ? `>${selectedQuizTitle}クイズ` : ''}
+      {selectedQuizTitle === null ? '' : `>${selectedQuizTitle}クイズ`}
     </Style>
   );
 };

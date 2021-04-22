@@ -1,22 +1,30 @@
 import React, { useState } from 'react';
 import datas from '../../dataset';
+import { FF, metalGear, Eva2, Re, kimetu, FrontEnd, BackEnd } from '../../images/_QuizImages';
+import { TitleQuiz, ReturnNav, BreadcrumbList } from '../lv1/_index';
+import { Quiz } from '../lv2/_index';
 import Question from './Question';
-import Header from '../lv3/Header';
-import Quiz from '../lv2/Quiz';
-import TitleQuiz from '../lv1/TitleQuiz';
-import ReturnCategorys from '../lv1/ReturnCategorys';
-import BreadcrumbList from '../lv1/BreadcrumbList';
-import { Computer, Anime, Finance, Game, History } from '../../images/_CategoryImages';
-import { FF, metalGear, Eva2, Re, kimetu } from '../../images/_QuizImages';
 
-interface Props {
+type Props = {
   quizOpen: boolean;
   selectedCategoryTitle: string;
-  setQuizOpen: any;
-}
+  setQuizOpen: (param: boolean) => void;
+  setCategoryOpen: (param: boolean) => void;
+  setScoreOpen: (param: boolean) => void;
+  selectedQuizTitle: string;
+  setSelectedQuizTitle: (param: string) => void;
+};
 
-const Quizs = ({ quizOpen, selectedCategoryTitle, setQuizOpen }: Props) => {
-  const [selectedQuizTitle, setSelectedQuizTitle] = useState(null);
+const Quizs: React.VFC = ({
+  quizOpen,
+  selectedCategoryTitle,
+  setQuizOpen,
+  setCategoryOpen,
+  setScoreOpen,
+  selectedQuizTitle,
+  setSelectedQuizTitle,
+}: Props) => {
+  // const [selectedQuizTitle, setSelectedQuizTitle] = useState('');
   const [text, setText] = useState(null);
 
   if (!quizOpen) {
@@ -31,15 +39,9 @@ const Quizs = ({ quizOpen, selectedCategoryTitle, setQuizOpen }: Props) => {
     } else if (selectedCategoryTitle === 'Anime') {
       const image = [kimetu, Eva2, Re];
       return image[i];
-    } else if (selectedCategoryTitle === 'Computer') {
-      const image = [Computer];
-      return image;
-    } else if (selectedCategoryTitle === 'Finance') {
-      const image = [Finance];
-      return image;
-    } else if (selectedCategoryTitle === 'History') {
-      const image = [History];
-      return image;
+    } else if (selectedCategoryTitle === 'Engineer') {
+      const image = [FrontEnd, BackEnd];
+      return image[i];
     }
   };
 
@@ -47,7 +49,6 @@ const Quizs = ({ quizOpen, selectedCategoryTitle, setQuizOpen }: Props) => {
 
   return (
     <>
-      <Header setSelectedQuizTitle={setSelectedQuizTitle} setQuizOpen={setQuizOpen} />
       <BreadcrumbList
         selectedCategoryTitle={selectedCategoryTitle}
         selectedQuizTitle={selectedQuizTitle}
@@ -59,17 +60,21 @@ const Quizs = ({ quizOpen, selectedCategoryTitle, setQuizOpen }: Props) => {
           <Quiz
             key={data.toString()}
             quizTitleName={data}
+            selectedCategoryTitle={selectedCategoryTitle}
             image={getImage()}
             setSelectedQuizTitle={setSelectedQuizTitle}
           />
         );
       })}
-      <ReturnCategorys setQuizOpen={setQuizOpen} />
+      <ReturnNav setQuizOpen={setQuizOpen} />
       <Question
         text={text}
         selectedCategoryTitle={selectedCategoryTitle}
         selectedQuizTitle={selectedQuizTitle}
         setSelectedQuizTitle={setSelectedQuizTitle}
+        setQuizOpen={setQuizOpen}
+        setCategoryOpen={setCategoryOpen}
+        setScoreOpen={setScoreOpen}
       />
     </>
   );

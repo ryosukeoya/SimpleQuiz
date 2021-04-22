@@ -1,16 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
+import { questionClose } from '../../actions';
 
-interface Props {
-  setQuizOpen: Function;
-}
+type Props = {
+  setQuizOpen: (param: boolean) => void;
+};
 
-const ReturnCategorys = ({ setQuizOpen }: Props) => {
+const ReturnNav: React.VFC = ({ setQuizOpen }: Props) => {
   const questionOpenState = useSelector((state) => state.questionOpenState);
   if (questionOpenState) {
     return null;
   }
+
   const element = '< カテゴリ一覧へ';
 
   return (
@@ -26,11 +28,11 @@ const ReturnCategorys = ({ setQuizOpen }: Props) => {
   );
 };
 
-export default ReturnCategorys;
+export default ReturnNav;
 
 const Style = styled.div`
   color: #2c8fd1;
   text-decoration: underline;
-  margin-top: 8px;
+  margin-top: 12px;
   cursor: pointer;
 `;

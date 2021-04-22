@@ -2,13 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import customMedia from '../../style/customMedia';
 
-interface Props {
-  setModalOpen: Function;
+type Props = {
+  setModalOpen: (param: boolean) => void;
   getQuestion: () => string | null;
-  nextQuestionNumber: Function;
-}
+  nextQuestionNumber: () => void;
+};
 
-const NextButton = ({ setModalOpen, getQuestion, nextQuestionNumber }: Props) => {
+const NextButton: React.VFC = ({ setModalOpen, getQuestion, nextQuestionNumber }: Props) => {
   return (
     <Style
       onClick={() => {

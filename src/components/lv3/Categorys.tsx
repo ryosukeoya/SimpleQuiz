@@ -3,22 +3,38 @@ import Category from '../lv2/Category';
 import Quizs from './Quizs';
 import datas from '../../dataset';
 import Title from '../lv1/Title';
-import { Computer, Anime, Finance, Game, History } from '../../images/_CategoryImages';
+import { Anime2, Game, www } from '../../images/_CategoryImages';
 
-interface Props {
+type Props = {
   quizOpen: boolean;
-  setQuizOpen: Function;
-}
+  setQuizOpen: (param: boolean) => void;
+  categoryOpen: boolean;
+  setCategoryOpen: (param: boolean) => void;
+  setScoreOpen: (param: boolean) => void;
+  selectedQuizTitle: string;
+  setSelectedQuizTitle: (param: string) => void;
+};
 
-const Categorys: React.FC = ({ quizOpen, setQuizOpen }: Props) => {
+const Categorys: React.VFC = ({
+  quizOpen,
+  setQuizOpen,
+  categoryOpen,
+  setCategoryOpen,
+  setScoreOpen,
+  selectedQuizTitle,
+  setSelectedQuizTitle,
+}: Props) => {
+  if (!categoryOpen) {
+    return null;
+  }
   const [selectedCategoryTitle, setSelectCategoryTitle] = useState('title');
 
-  //categoryNameでstateのcategoryTitleを変更
+  //categoryName(data(datasをmapで展開))でstateのcategoryTitleを変更
   const setSlctCategoryTitle = (name: string): void => {
     setSelectCategoryTitle(name);
   };
 
-  const image = [Game, Anime, Computer, Finance, History];
+  const image = [www, Anime2, Game];
   let i = -1;
 
   return (
@@ -34,6 +50,7 @@ const Categorys: React.FC = ({ quizOpen, setQuizOpen }: Props) => {
             setSlctCategoryTitle={setSlctCategoryTitle}
             quizOpen={quizOpen}
             setQuizOpen={setQuizOpen}
+            setCategoryOpen={setCategoryOpen}
           />
         );
       })}
@@ -41,6 +58,10 @@ const Categorys: React.FC = ({ quizOpen, setQuizOpen }: Props) => {
         selectedCategoryTitle={selectedCategoryTitle}
         quizOpen={quizOpen}
         setQuizOpen={setQuizOpen}
+        setCategoryOpen={setCategoryOpen}
+        setScoreOpen={setScoreOpen}
+        selectedQuizTitle={selectedQuizTitle}
+        setSelectedQuizTitle={setSelectedQuizTitle}
       />
     </>
   );

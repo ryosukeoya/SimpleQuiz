@@ -1,26 +1,29 @@
 import React, { useState } from 'react';
-import QuestionText from '../lv1/QuestionText';
-import QuestionAnswers from '../lv2/QuestionAnswers';
-import ReturnQuizs from '../lv1/ReturnQuizs';
-import QuestionTitle from '../lv1/QuestionTitle';
-import BreadcrumbList from '../lv1/BreadcrumbList';
-import datas from '../../dataset';
 import styled from 'styled-components';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { questionClose } from '../../actions';
+import datas from '../../dataset';
+import { QuestionText, QuestionTitle } from '../lv1/_index';
+import QuestionAnswers from '../lv2/QuestionAnswers';
 
-interface Props {
+type Props = {
   text: string;
   selectedCategoryTitle: string;
   selectedQuizTitle: string;
-  setSelectedQuizTitle: Function;
-}
+  setQuizOpen: (param: boolean) => void;
+  setCategoryOpen: (param: boolean) => void;
+  setScoreOpen: (param: boolean) => void;
+};
 
-const Question: React.FC<Props> = ({
+const Question: React.VFC<Props> = ({
   selectedCategoryTitle,
   selectedQuizTitle,
-  setSelectedQuizTitle,
+  setQuizOpen,
+  setCategoryOpen,
+  setScoreOpen,
 }: Props) => {
-  const [questionNumber, setQuestionNumber] = useState(0);
+  const [questionNumber, setQuestionNumber] = useState<number>(0);
+  const dispatch = useDispatch();
 
   const questionOpenState = useSelector((state) => state.questionOpenState);
   if (!questionOpenState) {
@@ -32,12 +35,18 @@ const Question: React.FC<Props> = ({
   }
 
   const getQuestion = (): string | null => {
-    console.log(questionNumber);
     return datas[selectedCategoryTitle][selectedQuizTitle][0].question;
   };
 
-  const nextQuestionNumber = () => {
-    setQuestionNumber(questionNumber + 1);
+  const nextQuestionNumber = (): void => {
+    if (questionNumber > 2) {
+      dispatch(questionClose());
+      setQuizOpen(false);
+      setCategoryOpen(false);
+      setScoreOpen(true);
+    } else {
+      setQuestionNumber(questionNumber + 1);
+    }
   };
 
   return (
@@ -57,10 +66,6 @@ const Question: React.FC<Props> = ({
           setQuestionNumber={setQuestionNumber}
           selectedCategoryTitle={selectedCategoryTitle}
           selectedQuizTitle={selectedQuizTitle}
-        />
-        <ReturnQuizs
-          setQuestionNumber={setQuestionNumber}
-          setSelectedQuizTitle={setSelectedQuizTitle}
         />
       </Style>
     </>

@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 
-interface Props {
-  data: any;
+type Props = {
+  data: string;
   modalOpen: boolean;
-  setModalOpen: Function;
-  setSelectedAnsName: Function;
-}
+  setModalOpen: (param: boolean) => void;
+  setSelectedAnsName: (param: string) => void;
+};
 
-const QuestionAnswer: React.FC<Props> = ({
+const QuestionAnswer: React.VFC<Props> = ({
   data,
   modalOpen,
   setModalOpen,

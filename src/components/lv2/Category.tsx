@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import CategoryImage from '../lv1/CategoryImage';
 import CategoryTitle from '../lv1/CategoryTitle';
 import Style from '../../style/QuizStyle';
@@ -10,6 +10,7 @@ type Props = {
   quizStart: VoidFunction;
   setSlctCategoryTitle: (name: string) => void;
   setQuizOpen: any;
+  setCategoryOpen: (param: boolean) => void;
 };
 
 const Category: React.VFC = ({
@@ -18,6 +19,7 @@ const Category: React.VFC = ({
   setSlctCategoryTitle,
   quizOpen,
   setQuizOpen,
+  setCategoryOpen,
 }: Props) => {
   if (quizOpen) {
     return null;

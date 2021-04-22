@@ -1,19 +1,30 @@
 import React from 'react';
-import Login from '../lv1/Login';
-import Logo from '../lv1/Logo';
 import styled from 'styled-components';
+import { Login, Logo } from '../lv1/_index';
 
-interface Props {
-  setQuizOpen: Function;
-  setSelectedQuizTitle: Function;
-}
+type Props = {
+  setQuizOpen: (param: boolean) => void;
+  setSelectedQuizTitle: (param: string | null) => void;
+  setCategoryOpen: (param: boolean) => void;
+  setScoreOpen: (param: boolean) => void;
+};
 
 //Portalで管理
-const Header: React.FC = ({ setQuizOpen, setSelectedQuizTitle }: Props) => {
+const Header: React.VFC = ({
+  setQuizOpen,
+  setSelectedQuizTitle,
+  setCategoryOpen,
+  setScoreOpen,
+}: Props) => {
   return (
     <Style>
-      <Logo setQuizOpen={setQuizOpen} setSelectedQuizTitle={setSelectedQuizTitle} />
-      <Login />
+      <Logo
+        setQuizOpen={setQuizOpen}
+        setSelectedQuizTitle={setSelectedQuizTitle}
+        setCategoryOpen={setCategoryOpen}
+        setScoreOpen={setScoreOpen}
+      />
+      <Login>login</Login>
     </Style>
   );
 };
@@ -31,7 +42,8 @@ const Style = styled.header`
   background-color: #fff;
   display: flex;
   justify-content: space-between;
-  color: #2c8fd1;
+  /* color: #007224; */
+  color: #004a6d;
   margin-bottom: 5px;
   box-shadow: 0 1px 1px rgba(160, 166, 179, 0.3);
 `;

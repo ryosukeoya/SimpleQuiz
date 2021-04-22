@@ -1,8 +1,16 @@
 import React from 'react';
-import Style from '../../style/TitleStyle';
+import TitleStyle from '../../style/TitleStyle';
 
-const QuestionTitle: React.FC = ({ selectedQuizTitle }) => {
-  return <Style>{selectedQuizTitle}クイズ</Style>;
+type Props = {
+  selectedQuizTitle: string;
+};
+
+const QuestionTitle: React.VFC = ({ selectedQuizTitle }: Props) => {
+  return (
+    <TitleStyle color={'#1d4154'} fontSize={'1.2rem'} marginTop={'0px'}>
+      {selectedQuizTitle}クイズ
+    </TitleStyle>
+  );
 };
 
 export default QuestionTitle;
