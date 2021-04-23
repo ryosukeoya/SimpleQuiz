@@ -15,7 +15,7 @@ const Score: React.VFC = ({ setCategoryOpen }: Props) => {
     <>
       <div style={{ color: 'black' }}>今回の結果は...</div>
       <br />
-      <div style={{ color: 'red', fontSize: '1.8rem' }}>
+      <div style={{ color: 'red', fontSize: '1.9rem' }}>
         正答率{(currentNumberState / 4) * 100}%！
       </div>
       <Button

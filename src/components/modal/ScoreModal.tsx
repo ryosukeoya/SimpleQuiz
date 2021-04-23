@@ -11,12 +11,10 @@ type Props = {
 };
 
 const ScoreModal: React.VFC = ({ setCategoryOpen }: Props) => {
-  console.log('a');
   const scoreOpenState = useSelector((state) => state.scoreOpenState);
   if (!scoreOpenState) {
     return null;
   }
-  console.log('scoreModalが開いた！');
   return (
     <CSSTransition
       in={scoreOpenState}

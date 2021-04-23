@@ -8,7 +8,6 @@ import Modal from './components/modal/Modal';
 const App: React.VFC = () => {
   const [quizOpen, setQuizOpen] = useState(false);
   const [categorysOpen, setCategoryOpen] = useState(true);
-  const [scoreOpen, setScoreOpen] = useState(false);
   const [selectedQuizTitle, setSelectedQuizTitle] = useState(null);
 
   return (
@@ -23,7 +22,6 @@ const App: React.VFC = () => {
         setQuizOpen={setQuizOpen}
         categoryOpen={categorysOpen}
         setCategoryOpen={setCategoryOpen}
-        setScoreOpen={setScoreOpen}
         selectedQuizTitle={selectedQuizTitle}
         setSelectedQuizTitle={setSelectedQuizTitle}
       />
