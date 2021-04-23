@@ -12,7 +12,6 @@ type Props = {
   selectedQuizTitle: string;
   setQuizOpen: (param: boolean) => void;
   setCategoryOpen: (param: boolean) => void;
-  setScoreOpen: (param: boolean) => void;
 };
 
 const Question: React.VFC<Props> = ({
@@ -20,7 +19,6 @@ const Question: React.VFC<Props> = ({
   selectedQuizTitle,
   setQuizOpen,
   setCategoryOpen,
-  setScoreOpen,
 }: Props) => {
   const [questionNumber, setQuestionNumber] = useState<number>(0);
   const dispatch = useDispatch();
@@ -39,11 +37,10 @@ const Question: React.VFC<Props> = ({
   };
 
   const nextQuestionNumber = (): void => {
-    if (questionNumber > 2) {
+    if (questionNumber >= 3) {
       dispatch(questionClose());
       setQuizOpen(false);
       setCategoryOpen(false);
-      setScoreOpen(true);
     } else {
       setQuestionNumber(questionNumber + 1);
     }

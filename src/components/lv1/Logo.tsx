@@ -7,15 +7,9 @@ type Props = {
   setQuizOpen: (param: boolean) => void;
   setSelectedQuizTitle: (param: string | null) => void;
   setCategoryOpen: (param: boolean) => void;
-  setScoreOpen: (param: boolean) => void;
 };
 
-const Logo: React.VFC = ({
-  setQuizOpen,
-  setSelectedQuizTitle,
-  setCategoryOpen,
-  setScoreOpen,
-}: Props) => {
+const Logo: React.VFC = ({ setQuizOpen, setSelectedQuizTitle, setCategoryOpen }: Props) => {
   const dispatch = useDispatch();
   return (
     <Style>
@@ -26,7 +20,6 @@ const Logo: React.VFC = ({
           dispatch(questionClose());
           dispatch(correctClear());
           setCategoryOpen(true);
-          setScoreOpen(false);
         }}
       >
         シンプルクイズ
