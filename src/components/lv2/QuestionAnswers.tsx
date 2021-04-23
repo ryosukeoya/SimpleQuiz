@@ -87,6 +87,7 @@ const QuestionAnswers: React.VFC<Props> = ({
         getQuizData={getQuizData}
         getQuestion={getQuestion}
         nextQuestionNumber={nextQuestionNumber}
+        questionNumber={questionNumber}
       />
     </>
   );

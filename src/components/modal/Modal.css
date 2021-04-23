@@ -29,3 +29,35 @@
   transform: scale(0.75);
   transition: transform 170ms;
 }
+
+/* modalアニメーション */
+
+/* 表示開始 */
+.overlay_styles2-enter-active {
+  opacity: 0;
+}
+/* 表示完了 */
+.overlay_styles2-enter-done {
+  opacity: 1;
+  transition: opacity 250ms;
+}
+/* 非表示完了  */
+.overlay_styles2-exit-active {
+  opacity: 0;
+  transition: opacity 170ms;
+}
+
+/* 表示開始 */
+.overlay_styles2-enter-active .modal_style2 {
+  transform: scale(0.75);
+}
+/* 表示完了 */
+.overlay_styles2-enter-done .modal_style2 {
+  transform: scale(1);
+  transition: transform 250ms;
+}
+/* 非表示完了  */
+.overlay_styles2-exit-active .modal_style2 {
+  transform: scale(0.75);
+  transition: transform 170ms;
+}

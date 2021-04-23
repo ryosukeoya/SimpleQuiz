@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ModalText from './ModalText';
 import NextButton from './NextButton';
 import ModalTitle from './ModalTitle';
@@ -7,7 +7,7 @@ import customMedia from '../../style/customMedia';
 import { CSSTransition } from 'react-transition-group';
 import './Modal.css';
 
-interface Props {
+type Props = {
   modalOpen: boolean;
   setModalOpen: (param: boolean) => void;
   selectedAnsName: string;
@@ -17,8 +17,9 @@ interface Props {
   getQuizData: () => any;
   getQuestion: () => string | null;
   nextQuestionNumber: () => void;
-}
-//Portals
+  questionNumber: number;
+};
+
 const Modal: React.VFC<Props> = ({
   modalOpen,
   setModalOpen,
@@ -28,31 +29,35 @@ const Modal: React.VFC<Props> = ({
   getQuizData,
   getQuestion,
   nextQuestionNumber,
+  questionNumber,
 }: Props) => {
   return (
-    // modalアニメーション　modalOpen->trueなら呼ばれる
-    <CSSTransition
-      in={modalOpen}
-      timeout={{ enter: 0, exit: 500 }}
-      unmountOnExit
-      classNames="overlay_styles"
-    >
-      <OVERLAY_STYLES>
-        <MODAL_STYLES className="modal_style">
-          <ModalTitle modalTitle={modalTitle} />
-          <ModalText
-            getQuizData={getQuizData}
-            selectAnsIndex={selectAnsIndex}
-            selectedCategoryTitle={selectedCategoryTitle}
-          />
-          <NextButton
-            setModalOpen={setModalOpen}
-            getQuestion={getQuestion}
-            nextQuestionNumber={nextQuestionNumber}
-          />
-        </MODAL_STYLES>
-      </OVERLAY_STYLES>
-    </CSSTransition>
+    <>
+      {/* // modalアニメーション　modalOpen->trueなら呼ばれる */}
+      <CSSTransition
+        in={modalOpen}
+        timeout={{ enter: 0, exit: 500 }}
+        unmountOnExit
+        classNames="overlay_styles"
+      >
+        <OVERLAY_STYLES>
+          <MODAL_STYLES className="modal_style">
+            <ModalTitle modalTitle={modalTitle} />
+            <ModalText
+              getQuizData={getQuizData}
+              selectAnsIndex={selectAnsIndex}
+              selectedCategoryTitle={selectedCategoryTitle}
+            />
+            <NextButton
+              setModalOpen={setModalOpen}
+              getQuestion={getQuestion}
+              nextQuestionNumber={nextQuestionNumber}
+              questionNumber={questionNumber}
+            />
+          </MODAL_STYLES>
+        </OVERLAY_STYLES>
+      </CSSTransition>
+    </>
   );
 };
 

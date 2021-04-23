@@ -1,18 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
 import customMedia from '../../style/customMedia';
+import { useDispatch } from 'react-redux';
+import { scoreOpen } from '../../actions';
 
 type Props = {
   setModalOpen: (param: boolean) => void;
-  getQuestion: () => string | null;
   nextQuestionNumber: () => void;
+  questionNumber: number;
 };
 
-const NextButton: React.VFC = ({ setModalOpen, getQuestion, nextQuestionNumber }: Props) => {
+const NextButton: React.VFC = ({ setModalOpen, nextQuestionNumber, questionNumber }: Props) => {
+  const dispatch = useDispatch();
+  const changeScoreOpenState = () => {
+    if (questionNumber >= 3) {
+      dispatch(scoreOpen());
+    }
+  };
   return (
     <Style
       onClick={() => {
-        nextQuestionNumber(), setModalOpen(false);
+        nextQuestionNumber(), setModalOpen(false), changeScoreOpenState();
       }}
     >
       次の問題へ

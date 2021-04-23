@@ -39,7 +39,7 @@ const Question: React.VFC<Props> = ({
   };
 
   const nextQuestionNumber = (): void => {
-    if (questionNumber > 2) {
+    if (questionNumber >= 3) {
       dispatch(questionClose());
       setQuizOpen(false);
       setCategoryOpen(false);

@@ -2,7 +2,8 @@
 import React, { useState } from 'react';
 import Header from './components/lv3/Header';
 import Categorys from './components/lv3/Categorys';
-import Score from './components/lv1/Score';
+import ScoreModal from './components/modal/ScoreModal';
+import Modal from './components/modal/Modal';
 
 const App: React.VFC = () => {
   const [quizOpen, setQuizOpen] = useState(false);
@@ -16,7 +17,6 @@ const App: React.VFC = () => {
         setSelectedQuizTitle={setSelectedQuizTitle}
         setQuizOpen={setQuizOpen}
         setCategoryOpen={setCategoryOpen}
-        setScoreOpen={setScoreOpen}
       />
       <Categorys
         quizOpen={quizOpen}
@@ -27,7 +27,7 @@ const App: React.VFC = () => {
         selectedQuizTitle={selectedQuizTitle}
         setSelectedQuizTitle={setSelectedQuizTitle}
       />
-      <Score scoreOpen={scoreOpen} />
+      <ScoreModal setCategoryOpen={setCategoryOpen} />
     </>
   );
 };

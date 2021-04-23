@@ -19,3 +19,13 @@ export const correctClear = () => {
     type: 'CLEAR',
   };
 };
+export const scoreOpen = () => {
+  return {
+    type: 'SCOREOPEN',
+  };
+};
+export const scoreClose = () => {
+  return {
+    type: 'SCORECLOSE',
+  };
+};
