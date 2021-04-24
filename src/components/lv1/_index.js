@@ -1,5 +1,5 @@
 export { default as Score } from './Score';
-export { default as TitleQuiz } from './TitleQuiz';
+export { default as QuizsTitle } from './QuizsTitle';
 export { default as BreadcrumbList } from './BreadcrumbList';
 export { default as CategoryTitle } from './CategoryTitle';
 export { default as Login } from './Login';
