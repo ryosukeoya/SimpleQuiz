@@ -7,7 +7,6 @@ import { QuestionText, QuestionTitle } from '../lv1/_index';
 import QuestionAnswers from '../lv2/QuestionAnswers';
 
 type Props = {
-  text: string;
   selectedCategoryTitle: string;
   selectedQuizTitle: string;
   setQuizOpen: (param: boolean) => void;
@@ -60,7 +59,6 @@ const Question: React.VFC<Props> = ({
           getQuestion={() => getQuestion()}
           nextQuestionNumber={() => nextQuestionNumber()}
           questionNumber={questionNumber}
-          setQuestionNumber={setQuestionNumber}
           selectedCategoryTitle={selectedCategoryTitle}
           selectedQuizTitle={selectedQuizTitle}
         />

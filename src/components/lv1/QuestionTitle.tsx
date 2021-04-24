@@ -5,7 +5,7 @@ type Props = {
   selectedQuizTitle: string;
 };
 
-const QuestionTitle: React.VFC = ({ selectedQuizTitle }: Props) => {
+const QuestionTitle: React.VFC<Props> = ({ selectedQuizTitle }: Props) => {
   return (
     <TitleStyle color={'#1d4154'} fontSize={'1.2rem'} marginTop={'0px'}>
       {selectedQuizTitle}クイズ

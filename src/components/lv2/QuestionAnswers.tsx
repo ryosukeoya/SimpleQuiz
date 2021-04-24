@@ -73,7 +73,6 @@ const QuestionAnswers: React.VFC<Props> = ({
             modalOpen={modalOpen}
             setModalOpen={setModalOpen}
             setSelectedAnsName={getSelectAnswer}
-            getModalTitle={getModalTitle}
           />
         )
       )}

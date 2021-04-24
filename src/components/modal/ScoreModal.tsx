@@ -10,7 +10,7 @@ type Props = {
   setCategoryOpen: (param: boolean) => void;
 };
 
-const ScoreModal: React.VFC = ({ setCategoryOpen }: Props) => {
+const ScoreModal: React.VFC<Props> = ({ setCategoryOpen }: Props) => {
   const scoreOpenState = useSelector((state) => state.scoreOpenState);
   if (!scoreOpenState) {
     return null;

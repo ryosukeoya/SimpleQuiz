@@ -5,7 +5,7 @@ type Props = {
   categoryName: string;
 };
 
-const CategoryTitle: React.VFC = ({ categoryName }: Props) => {
+const CategoryTitle: React.VFC<Props> = ({ categoryName }: Props) => {
   let Title: String = '';
   if (categoryName === 'Game') {
     Title = 'ゲーム';

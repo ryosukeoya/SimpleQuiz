@@ -7,7 +7,7 @@ type Props = {
   setQuizOpen: (param: boolean) => void;
 };
 
-const ReturnNav: React.VFC = ({ setQuizOpen }: Props) => {
+const ReturnNav: React.VFC<Props> = ({ setQuizOpen }: Props) => {
   const questionOpenState = useSelector((state) => state.questionOpenState);
   if (questionOpenState) {
     return null;

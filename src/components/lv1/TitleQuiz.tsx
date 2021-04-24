@@ -6,7 +6,7 @@ type Props = {
   selectedCategoryTitle: string;
 };
 
-const TitleQuiz: React.VFC = ({ selectedCategoryTitle }: Props) => {
+const TitleQuiz: React.VFC<Props> = ({ selectedCategoryTitle }: Props) => {
   const questionOpenState = useSelector((state) => state.questionOpenState);
   if (questionOpenState) {
     return null;

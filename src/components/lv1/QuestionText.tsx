@@ -2,27 +2,20 @@ import React from 'react';
 import datas from '../../dataset';
 import styled from 'styled-components';
 
-interface Props {
+type Props = {
   getQuestion: () => string | null;
-  plusTitle: any;
   questionNumber: number;
   selectedCategoryTitle: string;
   selectedQuizTitle: string;
-}
+};
 
-const QuestionText: React.VFC = ({
+const QuestionText: React.VFC<Props> = ({
   getQuestion,
-  plusTitle,
   questionNumber,
   selectedCategoryTitle,
   selectedQuizTitle,
 }: Props) => {
-  return (
-    <Style>
-      {datas[selectedCategoryTitle][selectedQuizTitle][questionNumber].question}
-      {plusTitle}
-    </Style>
-  );
+  return <Style>{datas[selectedCategoryTitle][selectedQuizTitle][questionNumber].question}</Style>;
 };
 export default QuestionText;
 

@@ -12,7 +12,7 @@ type Props = {
   setSelectedQuizTitle: any;
 };
 
-const Quiz: React.VFC = ({
+const Quiz: React.VFC<Props> = ({
   quizTitleName,
   selectedCategoryTitle,
   image,

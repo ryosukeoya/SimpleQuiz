@@ -10,7 +10,11 @@ type Props = {
   questionNumber: number;
 };
 
-const NextButton: React.VFC = ({ setModalOpen, nextQuestionNumber, questionNumber }: Props) => {
+const NextButton: React.VFC<Props> = ({
+  setModalOpen,
+  nextQuestionNumber,
+  questionNumber,
+}: Props) => {
   const dispatch = useDispatch();
   const changeScoreOpenState = () => {
     if (questionNumber >= 3) {
