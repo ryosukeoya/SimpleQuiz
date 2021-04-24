@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import { questionClose } from '../../actions';
 import datas from '../../dataset';
-import { QuestionText, QuestionTitle } from '../lv1/_index';
+import { QuestionText, QuestionTitle, ReturnNavQuiz } from '../lv1/_index';
 import QuestionAnswers from '../lv2/QuestionAnswers';
 
 type Props = {
@@ -11,6 +11,7 @@ type Props = {
   selectedQuizTitle: string;
   setQuizOpen: (param: boolean) => void;
   setCategoryOpen: (param: boolean) => void;
+  quizOpen: boolean;
 };
 
 const Question: React.VFC<Props> = ({
@@ -18,6 +19,7 @@ const Question: React.VFC<Props> = ({
   selectedQuizTitle,
   setQuizOpen,
   setCategoryOpen,
+  quizOpen,
 }: Props) => {
   const [questionNumber, setQuestionNumber] = useState<number>(0);
   const dispatch = useDispatch();
@@ -63,6 +65,7 @@ const Question: React.VFC<Props> = ({
           selectedQuizTitle={selectedQuizTitle}
         />
       </Style>
+      <ReturnNavQuiz />
     </>
   );
 };
