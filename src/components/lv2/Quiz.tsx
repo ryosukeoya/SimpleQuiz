@@ -25,27 +25,21 @@ const Quiz: React.VFC<Props> = ({
   const dispatch = useDispatch();
   let viewQuizTitleName = '';
 
-  console.log(selectedCategoryTitle);
-  console.log(quizTitleName);
-  if (selectedCategoryTitle === 'Anime') {
-    if (quizTitleName === 'Kimetu') {
-      viewQuizTitleName = '鬼滅の刃';
-    } else if (quizTitleName === 'Eva') {
-      viewQuizTitleName = 'エヴァンゲリオン';
-    } else if (quizTitleName === 'Re') {
-      viewQuizTitleName = 'Re:ゼロから始める異世界生活';
-    }
-  } else if (selectedCategoryTitle === 'Game') {
-    if (quizTitleName === 'FF10') {
-      viewQuizTitleName = 'FF10';
-    } else if (quizTitleName === 'メタルギア') {
-      viewQuizTitleName = 'メタルギア';
-    }
-  } else if (selectedCategoryTitle === 'Engineer') {
+  if (selectedCategoryTitle === 'Engineer') {
     if (quizTitleName === 'FrontEnd') {
       viewQuizTitleName = 'フロントエンド';
     } else if (quizTitleName === 'BackEnd') {
       viewQuizTitleName = 'バックエンド';
+    }
+  } else if (selectedCategoryTitle === 'Anime') {
+    if (quizTitleName === 'Kimetu') {
+      viewQuizTitleName = '鬼滅の刃';
+    } else if (quizTitleName === 'Eva') {
+      viewQuizTitleName = 'エヴァンゲリオン';
+    }
+  } else if (selectedCategoryTitle === 'Game') {
+    if (quizTitleName === 'FF10') {
+      viewQuizTitleName = 'FF10';
     }
   }
 

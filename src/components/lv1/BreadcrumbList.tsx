@@ -8,11 +8,29 @@ type Props = {
 
 //パンくずリスト
 const BreadcrumbList: React.VFC<Props> = ({ selectedCategoryTitle, selectedQuizTitle }: Props) => {
+  let listName: string = '';
+  if (selectedCategoryTitle === 'Engineer') {
+    if (selectedQuizTitle === 'FrontEnd') {
+      listName = 'フロントエンド';
+    } else if (selectedQuizTitle === 'BackEnd') {
+      listName = 'バックエンド';
+    }
+  } else if (selectedCategoryTitle === 'Anime') {
+    if (selectedQuizTitle === 'Kimetu') {
+      listName = '鬼滅の刃';
+    } else if (selectedQuizTitle === 'Eva') {
+      listName = 'エヴァンゲリオン';
+    }
+  } else if (selectedCategoryTitle === 'Game') {
+    if (selectedQuizTitle === 'FF10') {
+      listName = 'FF10';
+    }
+  }
   return (
     <Style>
       Home{'>'}
       {selectedCategoryTitle}カテゴリ
-      {selectedQuizTitle === null ? '' : `>${selectedQuizTitle}クイズ`}
+      {selectedQuizTitle === '' ? '' : `>${listName}クイズ`}
     </Style>
   );
 };

@@ -26,7 +26,6 @@ const Quizs: React.VFC<Props> = ({
     return null;
   }
 
-  //後でリファクタリング
   const getImage = () => {
     if (selectedCategoryTitle === 'Game') {
       const image = [FF, metalGear];
