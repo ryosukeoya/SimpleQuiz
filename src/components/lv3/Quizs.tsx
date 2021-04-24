@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import datas from '../../dataset';
 import { FF, metalGear, Eva2, Re, kimetu, FrontEnd, BackEnd } from '../../images/_QuizImages';
-import { TitleQuiz, ReturnNav, BreadcrumbList } from '../lv1/_index';
+import { TitleQuiz, ReturnNavCategory, BreadcrumbList } from '../lv1/_index';
 import { Quiz } from '../lv2/_index';
 import Question from './Question';
 
@@ -60,12 +60,13 @@ const Quizs: React.VFC<Props> = ({
           />
         );
       })}
-      <ReturnNav setQuizOpen={setQuizOpen} />
+      <ReturnNavCategory setQuizOpen={setQuizOpen} />
       <Question
         selectedCategoryTitle={selectedCategoryTitle}
         selectedQuizTitle={selectedQuizTitle}
         setQuizOpen={setQuizOpen}
         setCategoryOpen={setCategoryOpen}
+        quizOpen={quizOpen}
       />
     </>
   );

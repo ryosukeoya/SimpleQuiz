@@ -9,5 +9,6 @@ export { default as QuestionText } from './QuestionText';
 export { default as QuestionTitle } from './QuestionTitle';
 export { default as QuizImage } from './QuizImage';
 export { default as QuizTitle } from './QuizTitle';
-export { default as ReturnNav } from './ReturnNav';
+export { default as ReturnNavCategory } from './ReturnNavCategory';
+export { default as ReturnNavQuiz } from './ReturnNavQuiz';
 export { default as Title } from './Title';
