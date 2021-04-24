@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import datas from '../../dataset';
 import { FF, metalGear, Eva2, Re, kimetu, FrontEnd, BackEnd } from '../../images/_QuizImages';
-import { TitleQuiz, ReturnNavCategory, BreadcrumbList } from '../lv1/_index';
+import { QuizsTitle, ReturnNavCategory, BreadcrumbList } from '../lv1/_index';
 import { Quiz } from '../lv2/_index';
 import Question from './Question';
 
@@ -47,7 +47,7 @@ const Quizs: React.VFC<Props> = ({
         selectedCategoryTitle={selectedCategoryTitle}
         selectedQuizTitle={selectedQuizTitle}
       />
-      <TitleQuiz selectedCategoryTitle={selectedCategoryTitle} />
+      <QuizsTitle selectedCategoryTitle={selectedCategoryTitle} />
       {Object.keys(datas[selectedCategoryTitle]).map((data) => {
         i++;
         return (

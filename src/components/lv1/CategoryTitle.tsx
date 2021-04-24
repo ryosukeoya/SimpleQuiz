@@ -7,13 +7,14 @@ type Props = {
 
 const CategoryTitle: React.VFC<Props> = ({ categoryName }: Props) => {
   let Title: String = '';
-  if (categoryName === 'Game') {
-    Title = 'ゲーム';
-  } else if (categoryName === 'Anime') {
+  if (categoryName === 'Anime') {
     Title = 'アニメ';
   } else if (categoryName === 'Engineer') {
-    Title = 'エンジニアクイズ';
+    Title = 'エンジニア';
+  } else if (categoryName === 'Game') {
+    Title = 'ゲーム';
   }
+
   return <Style>{Title}</Style>;
 };
 
