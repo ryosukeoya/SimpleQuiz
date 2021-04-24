@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
-import { scoreClose } from '../../actions';
+import { scoreClose, correctClear } from '../../actions';
 
 type Props = {
   setCategoryOpen: (param: boolean) => void;
@@ -18,21 +18,22 @@ const Score: React.VFC<Props> = ({ setCategoryOpen }: Props) => {
       <div style={{ color: 'red', fontSize: '1.9rem' }}>
         正答率{(currentNumberState / 4) * 100}%！
       </div>
-      <Button
+      <BackCategoryButton
         onClick={() => {
           dispatch(scoreClose());
           setCategoryOpen(true);
+          dispatch(correctClear());
         }}
       >
         カテゴリ選択へ
-      </Button>
+      </BackCategoryButton>
     </>
   );
 };
 
 export default Score;
 
-const Button = styled.button`
+const BackCategoryButton = styled.button`
   position: inline-block;
   padding: 11px;
   background-color: #1976d2;

@@ -1,9 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useSelector, useDispatch } from 'react-redux';
-import { questionClose } from '../../actions';
+import { useDispatch } from 'react-redux';
+import { questionClose, correctClear } from '../../actions';
 
-const ReturnNavQuiz: React.VFC = () => {
+type Props = {
+  setQuestionNumber: (param: number) => void;
+};
+
+const ReturnNavQuiz: React.VFC<Props> = ({ setQuestionNumber }: Props) => {
   const dispatch = useDispatch();
 
   const element = '< クイズ一覧へ';
@@ -12,6 +16,8 @@ const ReturnNavQuiz: React.VFC = () => {
       <Style
         onClick={() => {
           dispatch(questionClose());
+          setQuestionNumber(0);
+          dispatch(correctClear());
         }}
       >
         {element}

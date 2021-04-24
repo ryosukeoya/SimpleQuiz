@@ -65,7 +65,7 @@ const Question: React.VFC<Props> = ({
           selectedQuizTitle={selectedQuizTitle}
         />
       </Style>
-      <ReturnNavQuiz />
+      <ReturnNavQuiz setQuestionNumber={setQuestionNumber} />
     </>
   );
 };
