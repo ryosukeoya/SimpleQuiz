@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import Header from './components/lv3/Header';
 import Categorys from './components/lv3/Categorys';
 import ScoreModal from './components/modal/ScoreModal';
-import Modal from './components/modal/Modal';
 
 const App: React.VFC = () => {
   const [quizOpen, setQuizOpen] = useState(false);
