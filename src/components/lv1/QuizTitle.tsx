@@ -5,7 +5,7 @@ type Props = {
   viewQuizTitleName: string;
 };
 
-const QuizTitle: React.VFC = ({ viewQuizTitleName }: Props) => {
+const QuizTitle: React.VFC<Props> = ({ viewQuizTitleName }: Props) => {
   return <Style>{viewQuizTitleName}</Style>;
 };
 

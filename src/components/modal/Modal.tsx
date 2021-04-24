@@ -43,14 +43,9 @@ const Modal: React.VFC<Props> = ({
         <OVERLAY_STYLES>
           <MODAL_STYLES className="modal_style">
             <ModalTitle modalTitle={modalTitle} />
-            <ModalText
-              getQuizData={getQuizData}
-              selectAnsIndex={selectAnsIndex}
-              selectedCategoryTitle={selectedCategoryTitle}
-            />
+            <ModalText getQuizData={getQuizData} selectAnsIndex={selectAnsIndex} />
             <NextButton
               setModalOpen={setModalOpen}
-              getQuestion={getQuestion}
               nextQuestionNumber={nextQuestionNumber}
               questionNumber={questionNumber}
             />

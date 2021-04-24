@@ -5,7 +5,7 @@ type Props = {
   quizOpen: boolean;
 };
 
-const Title: React.VFC = ({ quizOpen }: Props) => {
+const Title: React.VFC<Props> = ({ quizOpen }: Props) => {
   if (quizOpen) {
     return null;
   }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import datas from '../../dataset';
 import { FF, metalGear, Eva2, Re, kimetu, FrontEnd, BackEnd } from '../../images/_QuizImages';
 import { TitleQuiz, ReturnNav, BreadcrumbList } from '../lv1/_index';
@@ -10,23 +10,18 @@ type Props = {
   selectedCategoryTitle: string;
   setQuizOpen: (param: boolean) => void;
   setCategoryOpen: (param: boolean) => void;
-  setScoreOpen: (param: boolean) => void;
   selectedQuizTitle: string;
   setSelectedQuizTitle: (param: string) => void;
 };
 
-const Quizs: React.VFC = ({
+const Quizs: React.VFC<Props> = ({
   quizOpen,
   selectedCategoryTitle,
   setQuizOpen,
   setCategoryOpen,
-  setScoreOpen,
   selectedQuizTitle,
   setSelectedQuizTitle,
 }: Props) => {
-  // const [selectedQuizTitle, setSelectedQuizTitle] = useState('');
-  const [text, setText] = useState(null);
-
   if (!quizOpen) {
     return null;
   }
@@ -68,13 +63,10 @@ const Quizs: React.VFC = ({
       })}
       <ReturnNav setQuizOpen={setQuizOpen} />
       <Question
-        text={text}
         selectedCategoryTitle={selectedCategoryTitle}
         selectedQuizTitle={selectedQuizTitle}
-        setSelectedQuizTitle={setSelectedQuizTitle}
         setQuizOpen={setQuizOpen}
         setCategoryOpen={setCategoryOpen}
-        setScoreOpen={setScoreOpen}
       />
     </>
   );

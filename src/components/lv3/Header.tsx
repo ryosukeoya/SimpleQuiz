@@ -4,12 +4,16 @@ import { Login, Logo } from '../lv1/_index';
 
 type Props = {
   setQuizOpen: (param: boolean) => void;
-  setSelectedQuizTitle: (param: string | null) => void;
+  setSelectedQuizTitle: (param: string) => void;
   setCategoryOpen: (param: boolean) => void;
 };
 
 //Portalで管理
-const Header: React.VFC = ({ setQuizOpen, setSelectedQuizTitle, setCategoryOpen }: Props) => {
+const Header: React.VFC<Props> = ({
+  setQuizOpen,
+  setSelectedQuizTitle,
+  setCategoryOpen,
+}: Props) => {
   return (
     <Style>
       <Logo

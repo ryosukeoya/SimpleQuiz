@@ -7,7 +7,7 @@ type Props = {
   setCategoryOpen: (param: boolean) => void;
 };
 
-const Score: React.VFC = ({ setCategoryOpen }: Props) => {
+const Score: React.VFC<Props> = ({ setCategoryOpen }: Props) => {
   const currentNumberState = useSelector((state) => state.currentNumber);
   const dispatch = useDispatch();
 

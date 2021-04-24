@@ -7,7 +7,7 @@ type Props = {
 };
 
 //パンくずリスト
-const BreadcrumbList: React.VFC = ({ selectedCategoryTitle, selectedQuizTitle }: Props) => {
+const BreadcrumbList: React.VFC<Props> = ({ selectedCategoryTitle, selectedQuizTitle }: Props) => {
   return (
     <Style>
       Home{'>'}

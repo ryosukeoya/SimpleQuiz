@@ -5,12 +5,10 @@ type Props = {
   selectAnsIndex: number;
 };
 
-const ModalText: React.VFC = ({ getQuizData, selectAnsIndex }: Props) => {
+const ModalText: React.VFC<Props> = ({ getQuizData, selectAnsIndex }: Props) => {
   //indexから判定ver []
   const getExplain = () => {
     const explain = getQuizData().explain[selectAnsIndex];
-    console.log(getQuizData().explain);
-    console.log(selectAnsIndex);
     return explain;
   };
 

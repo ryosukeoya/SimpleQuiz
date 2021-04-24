@@ -8,7 +8,7 @@ import Modal from './components/modal/Modal';
 const App: React.VFC = () => {
   const [quizOpen, setQuizOpen] = useState(false);
   const [categorysOpen, setCategoryOpen] = useState(true);
-  const [selectedQuizTitle, setSelectedQuizTitle] = useState(null);
+  const [selectedQuizTitle, setSelectedQuizTitle] = useState('');
 
   return (
     <>
