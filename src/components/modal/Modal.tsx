@@ -66,6 +66,10 @@ const MODAL_STYLES = styled.div`
   color: red;
   border-radius: 10px;
   /* transition-delay: 0.5s; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   //スマホ
   ${customMedia.lessThan('mobile')`
@@ -73,19 +77,21 @@ const MODAL_STYLES = styled.div`
     height:50vh;
     width:80vw;
     padding: 5vw;
-    display: flex;
-    flex-direction:column;
-    justify-content: center;
-    align-items: center;
   `}
 
   //タブレット
   ${customMedia.between('mobile', 'tablet')`
     /* screen width is between 599px (tablet) and 1024px (desktop) */
+    height:40vh;
+    width:40vw;
+    padding:6vw;
   `}
   //PC
   ${customMedia.greaterThan('tablet')`
     /* screen width is greater than 1024px (tablet) */
+    height:40vh;
+    width:40vw;
+    padding:6vw;
   `}
 `;
 
