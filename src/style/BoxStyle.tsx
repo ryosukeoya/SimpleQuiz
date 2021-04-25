@@ -27,7 +27,7 @@ const BoxStyle = styled.div`
     /* screen width is greater than 1024px (tablet) */
     margin: 1.6vh 4vw;
     max-width:1550px;
-    padding: 23px 11px;
+    padding: 23px 16px;
   `}
 `;
 
