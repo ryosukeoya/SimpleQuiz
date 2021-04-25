@@ -20,7 +20,7 @@ const QuestionTitle: React.VFC<Props> = ({ selectedQuizTitle }: Props) => {
   }
 
   return (
-    <TitleStyle color={'#1d4154'} fontSize={'1.2rem'} marginTop={'0px'}>
+    <TitleStyle color={'#1d4154'} fontSize={'1.2rem'} marginTop={'15px'}>
       {selectedQuizTitleName}クイズ
     </TitleStyle>
   );

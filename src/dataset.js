@@ -77,8 +77,7 @@ const dataset = {
         ],
       },
       {
-        question:
-          'LaravelやRails、DjangoなどのMVCモデルについて適切でないこと言っているのはどれか？(Djangoは正確にはMTV)',
+        question: 'LaravelやRails、などのMVCモデルについて適切でないこと言っているのはどれか？',
         answers: [
           'MはModelのことであり、データベースに関する処理について担当します',
           'VはViewのことであり、ユーザに見せる画面を担当します',

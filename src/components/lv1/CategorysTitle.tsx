@@ -5,16 +5,16 @@ type Props = {
   quizOpen: boolean;
 };
 
-const Title: React.VFC<Props> = ({ quizOpen }: Props) => {
+const CategorysTitle: React.VFC<Props> = ({ quizOpen }: Props) => {
   if (quizOpen) {
     return null;
   }
 
   return (
-    <TitleStyle color={'#2b546a'} fontSize={'1.3rem'} marginTop={'60px'}>
+    <TitleStyle color={'#2b546a'} fontSize={'1.3rem'} marginTop={'70px'}>
       カテゴリ一覧
     </TitleStyle>
   );
 };
 
-export default Title;
+export default CategorysTitle;

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import Style from '../../style/QuizTitleStyle';
+import React from 'react';
+import TitleStyle from '../../style/QuizTitleStyle';
 
 type Props = {
   categoryName: string;
@@ -15,7 +15,7 @@ const CategoryTitle: React.VFC<Props> = ({ categoryName }: Props) => {
     Title = 'ゲーム';
   }
 
-  return <Style>{Title}</Style>;
+  return <TitleStyle>{Title}</TitleStyle>;
 };
 
 export default CategoryTitle;

@@ -11,4 +11,4 @@ export { default as QuizImage } from './QuizImage';
 export { default as QuizTitle } from './QuizTitle';
 export { default as ReturnNavCategory } from './ReturnNavCategory';
 export { default as ReturnNavQuiz } from './ReturnNavQuiz';
-export { default as Title } from './Title';
+export { default as CategorysTitle } from './CategorysTitle';
