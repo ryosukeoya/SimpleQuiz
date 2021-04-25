@@ -67,6 +67,7 @@ const Quizs: React.VFC<Props> = ({
         setQuizOpen={setQuizOpen}
         setCategoryOpen={setCategoryOpen}
         quizOpen={quizOpen}
+        setSelectedQuizTitle={setSelectedQuizTitle}
       />
     </>
   );

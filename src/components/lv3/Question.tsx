@@ -12,6 +12,7 @@ type Props = {
   setQuizOpen: (param: boolean) => void;
   setCategoryOpen: (param: boolean) => void;
   quizOpen: boolean;
+  setSelectedQuizTitle: (param: string) => void;
 };
 
 const Question: React.VFC<Props> = ({
@@ -20,6 +21,7 @@ const Question: React.VFC<Props> = ({
   setQuizOpen,
   setCategoryOpen,
   quizOpen,
+  setSelectedQuizTitle,
 }: Props) => {
   const [questionNumber, setQuestionNumber] = useState<number>(0);
   const dispatch = useDispatch();
@@ -65,7 +67,10 @@ const Question: React.VFC<Props> = ({
           selectedQuizTitle={selectedQuizTitle}
         />
       </Style>
-      <ReturnNavQuiz setQuestionNumber={setQuestionNumber} />
+      <ReturnNavQuiz
+        setQuestionNumber={setQuestionNumber}
+        setSelectedQuizTitle={setSelectedQuizTitle}
+      />
     </>
   );
 };
