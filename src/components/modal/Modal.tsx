@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ModalText from './ModalText';
 import NextButton from './NextButton';
 import ModalTitle from './ModalTitle';

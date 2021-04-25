@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Login, Logo } from '../lv1/_index';
+import customMedia from '../../style/customMedia';
 
 type Props = {
   setQuizOpen: (param: boolean) => void;
@@ -43,4 +44,19 @@ const Style = styled.header`
   color: #004a6d;
   margin-bottom: 5px;
   box-shadow: 0 1px 1px rgba(160, 166, 179, 0.3);
+  //スマホ
+  ${customMedia.lessThan('mobile')`
+    /* screen width is less than 599px (tablet) */
+  `}
+
+  //タブレット
+  ${customMedia.between('mobile', 'tablet')`
+    /* screen width is between 599px (tablet) and 1024px (desktop) */
+  `}
+  //PC
+  ${customMedia.greaterThan('tablet')`
+    /* screen width is greater than 1024px (tablet) */
+    height:58px;
+    line-height:58px;
+  `}
 `;

@@ -11,7 +11,7 @@ const CategorysTitle: React.VFC<Props> = ({ quizOpen }: Props) => {
   }
 
   return (
-    <TitleStyle color={'#2b546a'} fontSize={'1.3rem'} marginTop={'80px'}>
+    <TitleStyle color={'#2b546a'} fontSize={'1.3rem'} marginTop={'83px'}>
       カテゴリ一覧
     </TitleStyle>
   );
