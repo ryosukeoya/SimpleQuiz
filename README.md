@@ -24,10 +24,6 @@
 
 - Styled Components
 
-**CSS Frameworks**
-
-- Material UI
-
 **レスポンシブ対応**
 
 - styled-media-query

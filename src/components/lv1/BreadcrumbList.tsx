@@ -1,6 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
 import { useSelector } from 'react-redux';
+import styled from 'styled-components';
+import customMedia from '../../style/customMedia';
 
 type Props = {
   selectedCategoryTitle: string;
@@ -56,6 +57,21 @@ const Style = styled.div`
   color: #4d4d4d;
   margin-top: 60px;
   margin-bottom: 10px;
+  //スマホ
+  ${customMedia.lessThan('mobile')`
+    /* screen width is less than 599px (tablet) */
+
+  `}
+
+  //タブレット
+  ${customMedia.between('mobile', 'tablet')`
+    /* screen width is between 599px (tablet) and 1024px (desktop) */
+  `}
+  //PC
+  ${customMedia.greaterThan('tablet')`
+    /* screen width is greater than 1024px (tablet) */
+    margin-top:72px;
+  `}
 `;
 
 const UnderLine = styled.div`

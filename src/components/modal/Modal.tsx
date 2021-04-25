@@ -89,8 +89,8 @@ const MODAL_STYLES = styled.div`
   //PC
   ${customMedia.greaterThan('tablet')`
     /* screen width is greater than 1024px (tablet) */
-    height:40vh;
-    width:40vw;
+    height:30vh;
+    width:30vw;
     padding:6vw;
   `}
 `;
