@@ -5,9 +5,10 @@ import { questionClose, correctClear } from '../../actions';
 
 type Props = {
   setQuestionNumber: (param: number) => void;
+  setSelectedQuizTitle: (param: string) => void;
 };
 
-const ReturnNavQuiz: React.VFC<Props> = ({ setQuestionNumber }: Props) => {
+const ReturnNavQuiz: React.VFC<Props> = ({ setQuestionNumber, setSelectedQuizTitle }: Props) => {
   const dispatch = useDispatch();
 
   const element = '< クイズ一覧へ';
@@ -18,6 +19,7 @@ const ReturnNavQuiz: React.VFC<Props> = ({ setQuestionNumber }: Props) => {
           dispatch(questionClose());
           setQuestionNumber(0);
           dispatch(correctClear());
+          setSelectedQuizTitle('');
         }}
       >
         {element}
