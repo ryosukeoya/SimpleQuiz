@@ -5,6 +5,7 @@ import { questionClose } from '../../actions';
 import datas from '../../dataset';
 import { QuestionText, QuestionTitle, ReturnNavQuiz } from '../lv1/_index';
 import QuestionAnswers from '../lv2/QuestionAnswers';
+import customMedia from '../../style/customMedia';
 
 type Props = {
   selectedCategoryTitle: string;
@@ -76,4 +77,17 @@ export default Question;
 
 const Style = styled.div`
   margin-top: 10px;
+  //スマホ
+  ${customMedia.lessThan('mobile')`
+ /* screen width is less than 599px (tablet) */
+
+`} //タブレット
+    ${customMedia.between('mobile', 'tablet')`
+ /* screen width is between 599px (tablet) and 1024px (desktop) */
+`} //PC
+    ${customMedia.greaterThan('tablet')`
+ /* screen width is greater than 1024px (tablet) */
+ margin:0 30px 0 30px;
+
+`}
 `;

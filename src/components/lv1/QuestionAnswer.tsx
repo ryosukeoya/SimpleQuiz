@@ -1,19 +1,14 @@
 import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
+import customMedia from '../../style/customMedia';
 
 type Props = {
   data: string;
-  modalOpen: boolean;
   setModalOpen: (param: boolean) => void;
   setSelectedAnsName: (param: string) => void;
 };
 
-const QuestionAnswer: React.VFC<Props> = ({
-  data,
-  modalOpen,
-  setModalOpen,
-  setSelectedAnsName,
-}: Props) => {
+const QuestionAnswer: React.VFC<Props> = ({ data, setModalOpen, setSelectedAnsName }: Props) => {
   const [blue, setBlue] = useState(false);
 
   return (
@@ -52,4 +47,24 @@ const Style = styled.button<Color>`
           color: white;
         `
       : ''}
+
+  //スマホ
+  ${customMedia.lessThan('mobile')`
+    /* screen width is less than 599px (tablet) */
+
+  `}
+
+  //タブレット
+  ${customMedia.between('mobile', 'tablet')`
+    /* screen width is between 599px (tablet) and 1024px (desktop) */
+  `}
+  //PC
+  ${customMedia.greaterThan('tablet')`
+    /* screen width is greater than 1024px (tablet) */
+    height:120px;
+    width:47%;
+    padding:10px;
+    margin-right:2vw;
+    margin-bottom:2vh
+  `}
 `;
