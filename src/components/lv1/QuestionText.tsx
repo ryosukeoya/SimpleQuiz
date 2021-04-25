@@ -20,7 +20,7 @@ const QuestionText: React.VFC<Props> = ({
 export default QuestionText;
 
 const Style = styled.header`
-  font-size: 20px;
+  font-size: 1.14rem;
   padding: 10px;
   margin-bottom: 5px;
   background-color: #fff;

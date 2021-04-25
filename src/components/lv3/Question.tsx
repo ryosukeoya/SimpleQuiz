@@ -11,7 +11,6 @@ type Props = {
   selectedQuizTitle: string;
   setQuizOpen: (param: boolean) => void;
   setCategoryOpen: (param: boolean) => void;
-  quizOpen: boolean;
   setSelectedQuizTitle: (param: string) => void;
 };
 
@@ -20,7 +19,6 @@ const Question: React.VFC<Props> = ({
   selectedQuizTitle,
   setQuizOpen,
   setCategoryOpen,
-  quizOpen,
   setSelectedQuizTitle,
 }: Props) => {
   const [questionNumber, setQuestionNumber] = useState<number>(0);

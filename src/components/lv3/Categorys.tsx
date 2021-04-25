@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Category from '../lv2/Category';
-import Quizs from './Quizs';
 import datas from '../../dataset';
-import Title from '../lv1/Title';
+import Quizs from './Quizs';
+import Category from '../lv2/Category';
+import CategorysTitle from '../lv1/CategorysTitle';
 import { Anime2, Game, www } from '../../images/_CategoryImages';
 
 type Props = {
@@ -37,7 +37,7 @@ const Categorys: React.VFC<Props> = ({
 
   return (
     <>
-      <Title quizOpen={quizOpen} />
+      <CategorysTitle quizOpen={quizOpen} />
       {Object.keys(datas).map((data) => {
         i++;
         return (
