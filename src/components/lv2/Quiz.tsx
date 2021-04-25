@@ -1,7 +1,7 @@
 import React from 'react';
 import QuizImage from '../lv1/QuizImage';
 import QuizTitle from '../lv1/QuizTitle';
-import Style from '../../style/QuizStyle';
+import BoxStyle from '../../style/BoxStyle';
 import { useSelector, useDispatch } from 'react-redux';
 import { questionOpen } from '../../actions';
 
@@ -50,10 +50,10 @@ const Quiz: React.VFC<Props> = ({
           setSelectedQuizTitle(quizTitleName), dispatch(questionOpen());
         }}
       >
-        <Style>
+        <BoxStyle>
           <QuizImage image={image} quizTitleName={quizTitleName} />
           <QuizTitle viewQuizTitleName={viewQuizTitleName} />
-        </Style>
+        </BoxStyle>
       </div>
     </>
   );

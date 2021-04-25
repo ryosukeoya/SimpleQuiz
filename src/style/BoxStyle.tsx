@@ -19,12 +19,12 @@ const BoxStyle = styled.div`
   //タブレット
   ${customMedia.between('mobile', 'tablet')`
     /* screen width is between 599px (tablet) and 1024px (desktop) */
-    margin: 7px 3vw;
+    margin: 1.6vh 3vw;
   `}
   //PC
   ${customMedia.greaterThan('tablet')`
     /* screen width is greater than 1024px (tablet) */
-    margin: 7px 4vw;
+    margin: 1.6vh 4vw;
     max-width:1600px;
   `}
 `;
