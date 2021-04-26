@@ -71,8 +71,7 @@ const Style = styled.button<Color>`
   //タブレット
   ${customMedia.between('mobile', 'tablet')`
     /* screen width is between 599px (tablet) and 1024px (desktop) */
-    height:120px;
-    width:45%;
+    height:100px;
     padding:10px;
   `}
   //PC
@@ -81,8 +80,6 @@ const Style = styled.button<Color>`
     height:120px;
     width:50%;
     padding:10px;
-    // margin-right:8vw;
-
-    margin-bottom:2vh
+    margin-bottom:0px;
   `}
 `;
