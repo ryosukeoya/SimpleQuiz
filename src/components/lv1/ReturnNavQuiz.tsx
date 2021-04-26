@@ -44,14 +44,9 @@ const Style = styled.div`
   //タブレット
   ${customMedia.between('mobile', 'tablet')`
     /* screen width is between 599px (tablet) and 1024px (desktop) */
-    width:90%;
-    margin:0 auto;
   `}
   //PC
   ${customMedia.greaterThan('tablet')`
     /* screen width is greater than 1024px (tablet) */
-    // margin: 1.6vh 4vw;
-    width:90%;
-    margin:0 auto;
   `}
 `;

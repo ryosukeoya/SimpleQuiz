@@ -102,8 +102,6 @@ export default QuestionAnswers;
 const QuestionAnswersStyle = styled.div`
   /* display: flex; */
   /* flex-wrap: wrap; */
-  width: 80%;
-  margin: 0 auto;
   //スマホ
   ${customMedia.lessThan('mobile')`
  /* screen width is less than 599px (tablet) */
@@ -115,7 +113,5 @@ const QuestionAnswersStyle = styled.div`
 `} //PC
     ${customMedia.greaterThan('tablet')`
  /* screen width is greater than 1024px (tablet) */
- width:80%;
-
 `}
 `;

@@ -41,6 +41,6 @@ const Responsive = styled.div`
 
 ${customMedia.greaterThan('tablet')`
 /* screen width is greater than 1024px (tablet) */
-  font-size:1.5rem
+  font-size:1.5rem;
 `}
 `;
