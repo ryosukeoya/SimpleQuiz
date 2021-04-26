@@ -1,7 +1,7 @@
 import React from 'react';
 import CategoryImage from '../lv1/CategoryImage';
 import CategoryTitle from '../lv1/CategoryTitle';
-import Style from '../../style/QuizStyle';
+import BoxStyle from '../../style/BoxStyle';
 
 type Props = {
   categoryName: string;
@@ -34,10 +34,10 @@ const Category: React.VFC<Props> = ({
           setSlctCategoryTitle(categoryName), setQuizOpen(!quizOpen);
         }}
       >
-        <Style>
+        <BoxStyle>
           <CategoryImage image={image} categoryName={categoryName} />
           <CategoryTitle categoryName={categoryName} />
-        </Style>
+        </BoxStyle>
       </div>
     </>
   );

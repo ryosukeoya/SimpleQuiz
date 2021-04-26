@@ -42,4 +42,19 @@ const Style = styled.div`
   border-radius: 10px;
   margin-top: 10%;
   cursor: pointer;
+  //スマホ
+  ${customMedia.lessThan('mobile')`
+    /* screen width is less than 599px (tablet) */
+
+  `}
+
+  //タブレット
+  ${customMedia.between('mobile', 'tablet')`
+    /* screen width is between 599px (tablet) and 1024px (desktop) */
+  `}
+  //PC
+  ${customMedia.greaterThan('tablet')`
+    /* screen width is greater than 1024px (tablet) */
+
+  `}
 `;

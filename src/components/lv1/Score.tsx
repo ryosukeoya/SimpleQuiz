@@ -2,14 +2,28 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { scoreClose, correctClear } from '../../actions';
+import customMedia from '../../style/customMedia';
 
 type Props = {
   setCategoryOpen: (param: boolean) => void;
 };
 
 const Score: React.VFC<Props> = ({ setCategoryOpen }: Props) => {
-  const currentNumberState = useSelector((state) => state.currentNumber);
+  const currentNumberState: 0 | 1 | 2 | 3 | 4 = useSelector((state) => state.currentNumber);
   const dispatch = useDispatch();
+
+  let statement: string = '';
+  if (currentNumberState === 4) {
+    statement = '完璧！！';
+  } else if (currentNumberState === 3) {
+    statement = 'すごい！';
+  } else if (currentNumberState === 2) {
+    statement = 'まあまあ！';
+  } else if (currentNumberState === 1) {
+    statement = 'がんばろう！';
+  } else if (currentNumberState === 0) {
+    statement = 'なんてこった。';
+  }
 
   return (
     <>
@@ -18,6 +32,7 @@ const Score: React.VFC<Props> = ({ setCategoryOpen }: Props) => {
       <div style={{ color: 'red', fontSize: '1.9rem' }}>
         正答率{(currentNumberState / 4) * 100}%！
       </div>
+      <div style={{ color: 'black' }}>{statement}</div>
       <BackCategoryButton
         onClick={() => {
           dispatch(scoreClose());

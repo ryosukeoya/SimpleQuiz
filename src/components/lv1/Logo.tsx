@@ -32,8 +32,7 @@ export default Logo;
 
 const Style = styled.header`
   margin-left: 50px;
-  justify-content: center;
-  font-size: 20px;
+  font-size: 1.36rem;
   font-weight: 500;
   font-family: Fancy;
   cursor: pointer;

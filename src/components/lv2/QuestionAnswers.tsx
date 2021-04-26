@@ -4,6 +4,9 @@ import { useDispatch } from 'react-redux';
 import { correctIncrement1 } from '../../actions';
 import datas from '../../dataset';
 import QuestionAnswer from '../lv1/QuestionAnswer';
+import styled from 'styled-components';
+import customMedia from '../../style/customMedia';
+import Question from '../lv3/Question';
 
 type Props = {
   getQuestion: () => string | null;
@@ -65,17 +68,20 @@ const QuestionAnswers: React.VFC<Props> = ({
 
   return (
     <>
-      {datas[selectedCategoryTitle][selectedQuizTitle][questionNumber].answers.map(
-        (data: string) => (
-          <QuestionAnswer
-            key={data.toString()}
-            data={data}
-            modalOpen={modalOpen}
-            setModalOpen={setModalOpen}
-            setSelectedAnsName={getSelectAnswer}
-          />
-        )
-      )}
+      <QuestionAnswersStyle>
+        {datas[selectedCategoryTitle][selectedQuizTitle][questionNumber].answers.map(
+          (data: string, i: number) => (
+            <QuestionAnswer
+              key={data.toString()}
+              data={data}
+              setModalOpen={setModalOpen}
+              setSelectedAnsName={getSelectAnswer}
+              i={i}
+            />
+          )
+        )}
+      </QuestionAnswersStyle>
+
       <Modal
         modalOpen={modalOpen}
         setModalOpen={setModalOpen}
@@ -92,3 +98,22 @@ const QuestionAnswers: React.VFC<Props> = ({
   );
 };
 export default QuestionAnswers;
+
+const QuestionAnswersStyle = styled.div`
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  width: 80%;
+  margin: 0 auto;
+  //スマホ
+  ${customMedia.lessThan('mobile')`
+ /* screen width is less than 599px (tablet) */
+
+`} //タブレット
+    ${customMedia.between('mobile', 'tablet')`
+ /* screen width is between 599px (tablet) and 1024px (desktop) */
+`} //PC
+    ${customMedia.greaterThan('tablet')`
+ /* screen width is greater than 1024px (tablet) */
+
+`}
+`;

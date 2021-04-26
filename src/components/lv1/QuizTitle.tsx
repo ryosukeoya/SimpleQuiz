@@ -1,12 +1,12 @@
 import React from 'react';
-import Style from '../../style/QuizTitleStyle';
+import BoxTitleStyle from '../../style/BoxTitleStyle';
 
 type Props = {
   viewQuizTitleName: string;
 };
 
 const QuizTitle: React.VFC<Props> = ({ viewQuizTitleName }: Props) => {
-  return <Style>{viewQuizTitleName}</Style>;
+  return <BoxTitleStyle>{viewQuizTitleName}</BoxTitleStyle>;
 };
 
 export default QuizTitle;
