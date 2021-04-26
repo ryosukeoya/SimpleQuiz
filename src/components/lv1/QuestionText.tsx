@@ -31,6 +31,7 @@ const Style = styled.header`
   margin-bottom: 9px;
   background-color: #fff;
   border: 0.7px solid rgba(82, 83, 85, 0.3);
+  margin: 0 auto;
   //スマホ
   ${customMedia.lessThan('mobile')`
  /* screen width is less than 599px (tablet) */
@@ -38,11 +39,16 @@ const Style = styled.header`
 `} //タブレット
     ${customMedia.between('mobile', 'tablet')`
  /* screen width is between 599px (tablet) and 1024px (desktop) */
+ font-size:1.4rem;
+ padding:20px;
+ width:80%;
 `} //PC
     ${customMedia.greaterThan('tablet')`
  /* screen width is greater than 1024px (tablet) */
+  font-size:1.4rem;
   padding:30px;
   margin-bottom:23px;
+  width:80%;
 `}
 `;
 
