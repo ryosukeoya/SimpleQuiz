@@ -107,6 +107,7 @@ const QuestionAnswersStyle = styled.div`
   //スマホ
   ${customMedia.lessThan('mobile')`
  /* screen width is less than 599px (tablet) */
+ width: 98%;
 
 `} //タブレット
     ${customMedia.between('mobile', 'tablet')`

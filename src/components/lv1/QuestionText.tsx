@@ -49,4 +49,17 @@ const Style = styled.header`
 const Q = styled.span`
   font-size: 1.6rem;
   color: blue;
+  //スマホ
+  ${customMedia.lessThan('mobile')`
+ /* screen width is less than 599px (tablet) */
+  font-size:1.2rem;
+`} //タブレット
+    ${customMedia.between('mobile', 'tablet')`
+ /* screen width is between 599px (tablet) and 1024px (desktop) */
+`} //PC
+    ${customMedia.greaterThan('tablet')`
+ /* screen width is greater than 1024px (tablet) */
+  padding:30px;
+  margin-bottom:23px;
+`}
 `;
