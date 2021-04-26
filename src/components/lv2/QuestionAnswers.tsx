@@ -107,7 +107,7 @@ const QuestionAnswersStyle = styled.div`
   //スマホ
   ${customMedia.lessThan('mobile')`
  /* screen width is less than 599px (tablet) */
- width: 98%;
+ width: 100%;
 
 `} //タブレット
     ${customMedia.between('mobile', 'tablet')`
@@ -115,6 +115,7 @@ const QuestionAnswersStyle = styled.div`
 `} //PC
     ${customMedia.greaterThan('tablet')`
  /* screen width is greater than 1024px (tablet) */
+ width:80%;
 
 `}
 `;
