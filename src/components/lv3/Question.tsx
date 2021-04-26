@@ -76,6 +76,8 @@ const Question: React.VFC<Props> = ({
 export default Question;
 
 const Style = styled.div`
+  display: flex;
+  flex-direction: column;
   margin-top: 10px;
   //スマホ
   ${customMedia.lessThan('mobile')`
