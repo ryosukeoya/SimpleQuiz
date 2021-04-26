@@ -89,7 +89,7 @@ const Style = styled.div`
 `} //PC
     ${customMedia.greaterThan('tablet')`
  /* screen width is greater than 1024px (tablet) */
- margin:0 30px 0 30px;
-
+ width:65%;
+ margin:0 auto;
 `}
 `;

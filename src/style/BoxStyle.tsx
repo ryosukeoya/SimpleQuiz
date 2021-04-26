@@ -31,7 +31,7 @@ const BoxStyle = styled.div`
   ${customMedia.greaterThan('tablet')`
     /* screen width is greater than 1024px (tablet) */
     // margin: 1.6vh 4vw;
-    width:70%;
+    width:65%;
     margin:0 auto;
     margin-bottom:1.6vh;
     max-width:1550px;
