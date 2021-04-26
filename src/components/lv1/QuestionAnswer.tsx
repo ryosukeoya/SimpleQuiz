@@ -50,6 +50,9 @@ const Style = styled.button<Color>`
   color: #1976d2;
   border: 0.7px solid rgba(82, 83, 85, 0.3);
   cursor: pointer;
+  &:hover {
+    background-color: #fafafa;
+  }
   //stateのblue(引数のblue)がtrueだったら
   ${({ blue }) =>
     blue
@@ -76,7 +79,7 @@ const Style = styled.button<Color>`
   ${customMedia.greaterThan('tablet')`
     /* screen width is greater than 1024px (tablet) */
     height:120px;
-    width:45%;
+    width:50%;
     padding:10px;
     // margin-right:8vw;
 
