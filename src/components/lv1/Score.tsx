@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { scoreClose, correctClear } from '../../actions';
+import customMedia from '../../style/customMedia';
 
 type Props = {
   setCategoryOpen: (param: boolean) => void;

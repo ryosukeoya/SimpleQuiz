@@ -16,7 +16,12 @@ const QuestionText: React.VFC<Props> = ({
   selectedCategoryTitle,
   selectedQuizTitle,
 }: Props) => {
-  return <Style>{datas[selectedCategoryTitle][selectedQuizTitle][questionNumber].question}</Style>;
+  return (
+    <Style>
+      <Q>Q{questionNumber + 1}, </Q>
+      {datas[selectedCategoryTitle][selectedQuizTitle][questionNumber].question}
+    </Style>
+  );
 };
 export default QuestionText;
 
@@ -39,4 +44,9 @@ const Style = styled.header`
   padding:30px;
   margin-bottom:23px;
 `}
+`;
+
+const Q = styled.span`
+  font-size: 1.6rem;
+  color: blue;
 `;
