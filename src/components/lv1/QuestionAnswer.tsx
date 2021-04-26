@@ -6,13 +6,22 @@ type Props = {
   data: string;
   setModalOpen: (param: boolean) => void;
   setSelectedAnsName: (param: string) => void;
+  i: number;
 };
 
-const QuestionAnswer: React.VFC<Props> = ({ data, setModalOpen, setSelectedAnsName }: Props) => {
+const QuestionAnswer: React.VFC<Props> = ({ data, setModalOpen, setSelectedAnsName, i }: Props) => {
   const [blue, setBlue] = useState(false);
+
+  let floatRight = '';
+  if (i === 1) {
+    floatRight = 'right';
+  } else if (i === 3) {
+    floatRight = 'right';
+  }
 
   return (
     <Style
+      floatRight={floatRight}
       onClick={() => {
         setBlue(!blue);
         setModalOpen(true);
@@ -29,9 +38,11 @@ export default QuestionAnswer;
 
 type Color = {
   blue?: boolean;
+  floatRight?: string;
 };
 
 const Style = styled.button<Color>`
+  float: ${(props) => props.floatRight};
   width: 100%;
   padding: 30px 0;
   margin-bottom: 5px;
@@ -57,14 +68,18 @@ const Style = styled.button<Color>`
   //タブレット
   ${customMedia.between('mobile', 'tablet')`
     /* screen width is between 599px (tablet) and 1024px (desktop) */
+    height:120px;
+    width:45%;
+    padding:10px;
   `}
   //PC
   ${customMedia.greaterThan('tablet')`
     /* screen width is greater than 1024px (tablet) */
     height:120px;
-    width:47%;
+    width:45%;
     padding:10px;
-    margin-right:2vw;
+    // margin-right:8vw;
+
     margin-bottom:2vh
   `}
 `;

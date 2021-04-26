@@ -37,5 +37,6 @@ const Style = styled.header`
     ${customMedia.greaterThan('tablet')`
  /* screen width is greater than 1024px (tablet) */
   padding:30px;
+  margin-bottom:23px;
 `}
 `;

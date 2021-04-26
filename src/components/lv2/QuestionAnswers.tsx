@@ -70,16 +70,18 @@ const QuestionAnswers: React.VFC<Props> = ({
     <>
       <QuestionAnswersStyle>
         {datas[selectedCategoryTitle][selectedQuizTitle][questionNumber].answers.map(
-          (data: string) => (
+          (data: string, i: number) => (
             <QuestionAnswer
               key={data.toString()}
               data={data}
               setModalOpen={setModalOpen}
               setSelectedAnsName={getSelectAnswer}
+              i={i}
             />
           )
         )}
       </QuestionAnswersStyle>
+
       <Modal
         modalOpen={modalOpen}
         setModalOpen={setModalOpen}
@@ -98,8 +100,10 @@ const QuestionAnswers: React.VFC<Props> = ({
 export default QuestionAnswers;
 
 const QuestionAnswersStyle = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  width: 80%;
+  margin: 0 auto;
   //スマホ
   ${customMedia.lessThan('mobile')`
  /* screen width is less than 599px (tablet) */

@@ -65,11 +65,11 @@ const Question: React.VFC<Props> = ({
           selectedCategoryTitle={selectedCategoryTitle}
           selectedQuizTitle={selectedQuizTitle}
         />
+        <ReturnNavQuiz
+          setQuestionNumber={setQuestionNumber}
+          setSelectedQuizTitle={setSelectedQuizTitle}
+        />
       </Style>
-      <ReturnNavQuiz
-        setQuestionNumber={setQuestionNumber}
-        setSelectedQuizTitle={setSelectedQuizTitle}
-      />
     </>
   );
 };
