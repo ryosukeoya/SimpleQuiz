@@ -24,7 +24,7 @@ const App: React.VFC = () => {
         selectedQuizTitle={selectedQuizTitle}
         setSelectedQuizTitle={setSelectedQuizTitle}
       />
-      <ScoreModal setCategoryOpen={setCategoryOpen} />
+      <ScoreModal setCategoryOpen={setCategoryOpen} setSelectedQuizTitle={setSelectedQuizTitle} />
     </>
   );
 };

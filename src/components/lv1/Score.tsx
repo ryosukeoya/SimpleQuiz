@@ -6,9 +6,10 @@ import customMedia from '../../style/customMedia';
 
 type Props = {
   setCategoryOpen: (param: boolean) => void;
+  setSelectedQuizTitle: (param: string) => void;
 };
 
-const Score: React.VFC<Props> = ({ setCategoryOpen }: Props) => {
+const Score: React.VFC<Props> = ({ setCategoryOpen, setSelectedQuizTitle }: Props) => {
   const currentNumberState: 0 | 1 | 2 | 3 | 4 = useSelector((state) => state.currentNumber);
   const dispatch = useDispatch();
 
@@ -38,6 +39,7 @@ const Score: React.VFC<Props> = ({ setCategoryOpen }: Props) => {
           dispatch(scoreClose());
           setCategoryOpen(true);
           dispatch(correctClear());
+          setSelectedQuizTitle('');
         }}
       >
         カテゴリ選択へ

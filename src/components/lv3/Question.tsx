@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import { questionClose } from '../../actions';
 import datas from '../../dataset';
-import { QuestionText, QuestionTitle, ReturnNavQuiz } from '../lv1/_index';
-import QuestionAnswers from '../lv2/QuestionAnswers';
 import customMedia from '../../style/customMedia';
+import QuestionAnswers from '../lv2/QuestionAnswers';
+import { QuestionText, QuestionTitle, ReturnNavQuiz } from '../lv1/_index';
 
 type Props = {
   selectedCategoryTitle: string;
@@ -59,7 +59,6 @@ const Question: React.VFC<Props> = ({
           selectedQuizTitle={selectedQuizTitle}
         />
         <QuestionAnswers
-          getQuestion={() => getQuestion()}
           nextQuestionNumber={() => nextQuestionNumber()}
           questionNumber={questionNumber}
           selectedCategoryTitle={selectedCategoryTitle}

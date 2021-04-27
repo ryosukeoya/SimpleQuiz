@@ -3,13 +3,11 @@ import Modal from '../modal/Modal';
 import { useDispatch } from 'react-redux';
 import { correctIncrement1 } from '../../actions';
 import datas from '../../dataset';
-import QuestionAnswer from '../lv1/QuestionAnswer';
 import styled from 'styled-components';
 import customMedia from '../../style/customMedia';
-import Question from '../lv3/Question';
+import QuestionAnswer from '../lv1/QuestionAnswer';
 
 type Props = {
-  getQuestion: () => string | null;
   nextQuestionNumber: () => void;
   questionNumber: number;
   selectedCategoryTitle: string;
@@ -24,7 +22,6 @@ type quizData = {
 };
 
 const QuestionAnswers: React.VFC<Props> = ({
-  getQuestion,
   nextQuestionNumber,
   questionNumber,
   selectedCategoryTitle,
@@ -85,12 +82,9 @@ const QuestionAnswers: React.VFC<Props> = ({
       <Modal
         modalOpen={modalOpen}
         setModalOpen={setModalOpen}
-        selectedAnsName={selectedAnsName}
-        selectedCategoryTitle={selectedCategoryTitle}
         selectAnsIndex={selectAnsIndex}
         modalTitle={modalTitle}
         getQuizData={getQuizData}
-        getQuestion={getQuestion}
         nextQuestionNumber={nextQuestionNumber}
         questionNumber={questionNumber}
       />
