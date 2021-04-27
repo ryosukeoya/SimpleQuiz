@@ -34,6 +34,8 @@ const Style = styled.div`
   text-decoration: underline;
   margin-top: 12px;
   cursor: pointer;
+  max-width: 1000px;
+
   //スマホ
   ${customMedia.lessThan('mobile')`
     /* screen width is less than 599px (tablet) */
