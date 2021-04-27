@@ -44,8 +44,9 @@ const Style = styled.div`
   //タブレット
   ${customMedia.between('mobile', 'tablet')`
     /* screen width is between 599px (tablet) and 1024px (desktop) */
-    width:70%;
+    width:85%;
     margin:0 auto;
+
   `}
   //PC
   ${customMedia.greaterThan('tablet')`

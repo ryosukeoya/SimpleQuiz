@@ -70,13 +70,12 @@ const Style = styled.div`
   ${customMedia.between('mobile', 'tablet')`
     /* screen width is between 599px (tablet) and 1024px (desktop) */
     margin-top:72px;
-    width:70%;
+    width:85%;
   `}
   //PC
   ${customMedia.greaterThan('tablet')`
     /* screen width is greater than 1024px (tablet) */
     margin-top:72px;
-    // width: 54vw;
     width:65%;
   `}
 `;
