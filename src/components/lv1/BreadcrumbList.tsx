@@ -57,20 +57,27 @@ const Style = styled.div`
   color: #4d4d4d;
   margin-top: 60px;
   margin-bottom: 10px;
+  margin: 0 auto;
+  max-width: 1000px;
+
   //スマホ
   ${customMedia.lessThan('mobile')`
     /* screen width is less than 599px (tablet) */
-
+    margin-top:60px;
   `}
 
   //タブレット
   ${customMedia.between('mobile', 'tablet')`
     /* screen width is between 599px (tablet) and 1024px (desktop) */
+    margin-top:72px;
+    width:70%;
   `}
   //PC
   ${customMedia.greaterThan('tablet')`
     /* screen width is greater than 1024px (tablet) */
     margin-top:72px;
+    // width: 54vw;
+    width:65%;
   `}
 `;
 
