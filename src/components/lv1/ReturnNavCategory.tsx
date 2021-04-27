@@ -35,6 +35,7 @@ const Style = styled.div`
   margin-top: 12px;
   cursor: pointer;
   max-width: 1000px;
+  margin: 0 auto;
 
   //スマホ
   ${customMedia.lessThan('mobile')`
@@ -45,13 +46,11 @@ const Style = styled.div`
   ${customMedia.between('mobile', 'tablet')`
     /* screen width is between 599px (tablet) and 1024px (desktop) */
     width:85%;
-    margin:0 auto;
 
   `}
   //PC
   ${customMedia.greaterThan('tablet')`
     /* screen width is greater than 1024px (tablet) */
     width:65%;
-    margin:0 auto;
   `}
 `;

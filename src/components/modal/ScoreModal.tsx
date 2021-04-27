@@ -8,9 +8,10 @@ import { useSelector } from 'react-redux';
 
 type Props = {
   setCategoryOpen: (param: boolean) => void;
+  setSelectedQuizTitle: (param: string) => void;
 };
 
-const ScoreModal: React.VFC<Props> = ({ setCategoryOpen }: Props) => {
+const ScoreModal: React.VFC<Props> = ({ setCategoryOpen, setSelectedQuizTitle }: Props) => {
   const scoreOpenState = useSelector((state) => state.scoreOpenState);
   if (!scoreOpenState) {
     return null;
@@ -24,7 +25,7 @@ const ScoreModal: React.VFC<Props> = ({ setCategoryOpen }: Props) => {
     >
       <OVERLAY_STYLES>
         <MODAL_STYLES className="modal_style2">
-          <Score setCategoryOpen={setCategoryOpen} />
+          <Score setCategoryOpen={setCategoryOpen} setSelectedQuizTitle={setSelectedQuizTitle} />
         </MODAL_STYLES>
       </OVERLAY_STYLES>
     </CSSTransition>

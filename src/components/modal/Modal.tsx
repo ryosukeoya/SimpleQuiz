@@ -10,12 +10,9 @@ import './Modal.css';
 type Props = {
   modalOpen: boolean;
   setModalOpen: (param: boolean) => void;
-  selectedAnsName: string;
-  selectedCategoryTitle: string;
   selectAnsIndex: any;
   modalTitle: string;
   getQuizData: () => any;
-  getQuestion: () => string | null;
   nextQuestionNumber: () => void;
   questionNumber: number;
 };
@@ -23,11 +20,9 @@ type Props = {
 const Modal: React.VFC<Props> = ({
   modalOpen,
   setModalOpen,
-  selectedCategoryTitle,
   selectAnsIndex,
   modalTitle,
   getQuizData,
-  getQuestion,
   nextQuestionNumber,
   questionNumber,
 }: Props) => {
