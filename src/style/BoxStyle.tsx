@@ -24,7 +24,7 @@ const BoxStyle = styled.div`
   //タブレット
   ${customMedia.between('mobile', 'tablet')`
     /* screen width is between 599px (tablet) and 1024px (desktop) */
-    width:70%;
+    width:85%;
     margin-bottom: 1.6vh;
     padding: 20px 11px;
   `}

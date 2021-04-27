@@ -88,10 +88,10 @@ const Style = styled.div`
 `} //タブレット
     ${customMedia.between('mobile', 'tablet')`
  /* screen width is between 599px (tablet) and 1024px (desktop) */
- width:80%;
+ width:85%;
 `} //PC
     ${customMedia.greaterThan('tablet')`
  /* screen width is greater than 1024px (tablet) */
- width:75%;
+ width:65%;
 `}
 `;
