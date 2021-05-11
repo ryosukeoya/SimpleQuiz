@@ -21,7 +21,7 @@
 
 **レスポンシブ対応**
 
-- styled-media-query
+- Styled-Media-Query
 
 **Hosting**
 
