@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Login, Logo } from '../lv1/_index';
+import { Logo } from '../lv1/_index';
 import customMedia from '../../style/customMedia';
 
 type Props = {
@@ -9,20 +9,10 @@ type Props = {
   setCategoryOpen: (param: boolean) => void;
 };
 
-//Portalで管理
-const Header: React.VFC<Props> = ({
-  setQuizOpen,
-  setSelectedQuizTitle,
-  setCategoryOpen,
-}: Props) => {
+const Header: React.VFC<Props> = ({ setQuizOpen, setSelectedQuizTitle, setCategoryOpen }: Props) => {
   return (
     <Style>
-      <Logo
-        setQuizOpen={setQuizOpen}
-        setSelectedQuizTitle={setSelectedQuizTitle}
-        setCategoryOpen={setCategoryOpen}
-      />
-      <Login>login</Login>
+      <Logo setQuizOpen={setQuizOpen} setSelectedQuizTitle={setSelectedQuizTitle} setCategoryOpen={setCategoryOpen} />
     </Style>
   );
 };
@@ -40,20 +30,15 @@ const Style = styled.header`
   background-color: #fff;
   display: flex;
   justify-content: space-between;
-  /* color: #007224; */
   color: #004a6d;
   margin-bottom: 5px;
   box-shadow: 0 1px 1px rgba(160, 166, 179, 0.3);
-  //スマホ
   ${customMedia.lessThan('mobile')`
     /* screen width is less than 599px (tablet) */
   `}
-
-  //タブレット
   ${customMedia.between('mobile', 'tablet')`
     /* screen width is between 599px (tablet) and 1024px (desktop) */
   `}
-  //PC
   ${customMedia.greaterThan('tablet')`
     /* screen width is greater than 1024px (tablet) */
     height:58px;
